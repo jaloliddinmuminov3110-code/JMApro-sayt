@@ -48,9 +48,9 @@
 
 ## 5. Ish Oqimi (Workflow)
 Saytni yangilash va yuritish tartibi:
-1. **Ishlab chiqish:** Antigravity yordamida HTML/CSS kodlar yoziladi va lokal sinovdan o'tkaziladi.
-2. **Sinxronizatsiya:** O'zgartirilgan fayllar GitHub'dagi `jmapro-sayt` omboriga yuklanadi (Commit).
-3. **Avto-deploy:** Vercel o'zgarishlarni avtomatik aniqlab, soniyalar ichida `https://jmapro-sayt.vercel.app` (va keyinchalik `jmapro.uz`) manzilida yangilaydi.
+1. **AI yordamida (Antigravity):** Matnlar yoki yangi kod aytiladi, Antigravity uni o'zgartirib darhol avtomatik `git push` qiladi.
+2. **Qo'lda tahrirlanganda (1-klik):** Foydalanuvchi `index.html`ni o'zi tahrirlasa, papkadagi `saytni_yangilash.bat` fayliga 2 marta bosadi.
+3. **Avto-deploy:** Vercel har qanday o'zgarishni 15 soniya ichida qabul qilib, `https://jmapro-sayt.vercel.app` (va `jmapro.uz`) da yangilaydi. Foydalanuvchi brauzer orqali GitHub'ga kirishi umuman talab etilmaydi.
 
 ## 6. Navbatdagi Amaliy Qadamlar
 1. [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash (07.11.2026 da muvaffaqiyatli bajarildi va tekshirildi).

@@ -35,21 +35,27 @@
   * Issiqlik almashinish qurilmalari va havoli sovitish apparatlarini (HSA) hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
   * Talabalar va tadqiqotchilar uchun shaxsiy kabinet / avtorizatsiya tizimi zarur bo'lganda mustaqil VPS hostingga ko'chirish.
 
-## 4. Sayt Arxitekturasi (Sitemap)
-1. **Bosh sahifa (Hero Section):** Shaxsiy tanishtiruv ("PhD | Tadqiqotchi | Muhandis"), muhandislik va havoli sovitish texnologiyalari yo'nalishi va muhim bo'limlarga tezkor havolalar.
-2. **Men haqimda (`#about`):** Tarjimai hol, ilmiy daraja (PhD), ilmiy yo'l va kasbiy ko'nikmalar (Kompas 3D, SolidWorks, AutoCAD, Blender).
-3. **Ilmiy faoliyat (`#research`):**
-   * Havoli sovitish apparatlari (HSA), issiqlik-massa almashinuv tizimlari, gidrogazodinamika va CFD tahlil.
-   * Xalqaro jurnallardagi nashrlar (ARPN, Acta Polytechnica va b.) bazasi, DGU dasturlari va ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate).
-4. **Ta'lim va talabalar (`#teaching`):**
-   * Texnologik mashinalar va jihozlar (TMJ) yo'nalishi uchun ma'ruzalar, darsliklar, taqdimotlar va amaliy topshiriqlar.
-   * Ilmiy rahbarlik va muhandislik maslahatlari.
-5. **Muhandislik 3D Animatsiyalari (`#channel`):**
-   * `@jaloliddinMuminov_yt` YouTube muhandislik kanali.
-   * Sanoat uskunalari (havoli sovitish apparatlari - HSA, issiqlik almashinuv bloklari) ning 3D vizualizatsiyalari (Kompas 3D, SolidWorks, Blender).
-6. **IT va Avtomatlashtirish:** Google Apps Script, Python, Google Colab va injiniring hisoblash dasturlari bo'yicha amaliy qo'llanmalar.
-7. **Interaktiv Muhandislik Kalkulyatori (`#it-calc`):** Havoli Sovitish Apparati (HSA) issiqlik yuklamasi ($Q$), logarifmik haroratlar farqi ($\Delta t_{log}$), zaruriy sirt yuzasi ($F$), quvurlar soni ($n$) va sovituvchi havo sarfi ($V_{havo}$) ni real vaqt rejimida hisoblovchi interaktiv modul.
-8. **Bog'lanish (`#contact`):** Murojaat formasi (`@JMApro_bot` Telegram boti bilan to'g'ridan-to'g'ri bog'langan), elektron pochta va ijtimoiy tarmoqlar.
+## 4. Sayt Arxitekturasi (Multi-page Arxitektura)
+1. **Bosh sahifa (`index.html`):**
+   * Shaxsiy tanishtiruv ("PhD | Tadqiqotchi | Muhandis"), muhandislik 3D fotosurati.
+   * Qisqa tarjimai hol va akademik bosqichlar (`#about`).
+   * Ilmiy faoliyat ko'rgazmasi (`#research`) -> to'liq sahifa: `research.html`.
+   * Ta'lim resurslari ko'rgazmasi (`#teaching`) -> to'liq sahifa: `teaching.html`.
+   * YouTube kanali taqdimoti (`#channel`) -> to'liq sahifa: `channel.html`.
+   * Interaktiv HSA Muhandislik Kalkulyatori (`#it-calc`).
+   * Qayta aloqa formasi (`#contact` - Telegram `@JMApro_bot` ga ulangan).
+2. **Ilmiy faoliyat sahifasi (`research.html`):**
+   * Xalqaro ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate).
+   * 3 ta chuqurlashtirilgan tadqiqot yo'nalishi (HSA, issiqlik tizimlari, CFD tahlil).
+   * Interaktiv filtrli nashrlar bazasi (Scopus, OAK, DGU EHM dasturlari).
+3. **Ta'lim va Resurslar sahifasi (`teaching.html`):**
+   * TMJ yo'nalishi uchun o'qitiladigan fanlar.
+   * Ma'ruzalar matni, laboratoriya va amaliy mashg'ulotlar, kurs loyihalari va slaydlar bazasi.
+   * Talabalar va magistrantlar uchun ilmiy rahbarlik bo'limi.
+4. **YouTube Ilmiy Kanal sahifasi (`channel.html`):**
+   * Rasmiy brend: **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`).
+   * Qizil YouTube obuna tugmasi va dasturiy ta'minot nishonlari (Kompas 3D, SolidWorks, Blender, Ansys Fluent).
+   * Mavzuli video to'plamlar va 3D sanoat animatsiyalari buyurtma moduli.
 
 ## 5. Ish Oqimi (Workflow)
 Saytni yangilash va yuritish tartibi:

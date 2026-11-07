@@ -6,6 +6,13 @@
     <title>Jaloliddin Mo'minov | Ilmiy va Muhandislik Portfoliosi | JMApro.uz</title>
     <meta name="description" content="PhD Jaloliddin Mo'minovning shaxsiy ilmiy-muhandislik portfoliosi. Muhandislik va sanoat texnologiyalari, issiqlik almashinish qurilmalari, skrubberlar, 3D modellashtirish va ta'lim resurslari.">
     
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="assets/jmapro-icon-512.png">
+    <link rel="apple-touch-icon" href="assets/jmapro-icon-512.png">
+    <meta property="og:title" content="Jaloliddin Mo'minov | JMApro.uz">
+    <meta property="og:description" content="PhD Jaloliddin Mo'minovning ilmiy-muhandislik portali. Issiqlik-massa almashinuv, skrubberlar va 3D sanoat animatsiyalari.">
+    <meta property="og:image" content="assets/jmapro-preview.jpg">
+    
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,23 +43,19 @@
         }
     </script>
     <style>
-        .gradient-hero {
-            background-color: #f8fafc;
-            background-image: 
-                linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-                linear-gradient(to right, rgba(37, 99, 235, 0.12) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(37, 99, 235, 0.12) 1px, transparent 1px);
-            background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
-            position: relative;
+        .bg-jmapro-hero {
+            background-color: #f8fbff;
+            background-image: url('assets/jmapro-background-light.svg');
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-size: cover;
         }
-        .gradient-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.09) 0%, rgba(248, 250, 252, 0) 65%),
-                        radial-gradient(circle at 20% 70%, rgba(99, 102, 241, 0.07) 0%, rgba(248, 250, 252, 0) 60%);
-            pointer-events: none;
+        .bg-jmapro-dark {
+            background-color: #081229;
+            background-image: url('assets/jmapro-background-dark.svg');
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-size: cover;
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,6 +63,11 @@
         .card-hover:hover {
             transform: translateY(-4px);
             box-shadow: 0 14px 28px -10px rgba(30, 64, 175, 0.15);
+        }
+        .filter-btn.active {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
         }
     </style>
 </head>
@@ -70,14 +78,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logotip -->
-                <a href="#home" class="flex items-center space-x-3 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
-                        JM
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-brand-700 transition">JMApro<span class="text-brand-600">.uz</span></span>
-                        <p class="text-xs text-slate-500 font-medium hidden sm:block">Muhandislik & Ilmiy Portal</p>
-                    </div>
+                <a href="#home" class="flex items-center group py-1" aria-label="JMApro.uz Bosh sahifa">
+                    <img src="assets/jmapro-logo-light.svg" alt="JMApro.uz Muhandislik & Ilmiy Portal" class="h-10 sm:h-12 w-auto object-contain transition duration-200 group-hover:scale-[1.02]">
                 </a>
 
                 <!-- Desktop menyu -->
@@ -121,7 +123,7 @@
     </header>
 
     <!-- 2. Bosh qism (Hero Section) -->
-    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 gradient-hero overflow-hidden border-b border-slate-200">
+    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-jmapro-hero overflow-hidden border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                 
@@ -191,13 +193,13 @@
                                         <span class="text-slate-400">PhD // TMJ</span>
                                     </div>
 
-                                    <!-- 3D Muhandislik texnik grafikasi -->
+                                    <!-- 3D Muhandislik texnik grafikasi & JMApro Icon -->
                                     <div class="my-auto flex flex-col items-center justify-center text-center py-4">
-                                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-600/30 to-indigo-500/20 border border-brand-500/40 flex items-center justify-center mb-4 shadow-lg shadow-brand-500/10">
-                                            <svg class="w-12 h-12 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                        <div class="w-24 h-24 rounded-2xl bg-white/10 border border-white/20 p-2 flex items-center justify-center mb-4 shadow-xl backdrop-blur-md transform group-hover:scale-105 transition">
+                                            <img src="assets/jmapro-icon-512.png" alt="JMApro Icon" class="w-full h-full object-contain rounded-xl">
                                         </div>
-                                        <div class="text-sm font-bold text-white tracking-wide">Jaloliddin Mo'minov</div>
-                                        <div class="text-xs text-brand-300 font-mono mt-1">Muhandislik va Sanoat Texnologiyalari</div>
+                                        <div class="text-base font-bold text-white tracking-wide">Mo'minov Jaloliddin</div>
+                                        <div class="text-xs text-brand-300 font-mono mt-1">PhD | Muhandislik & Sanoat Texnologiyalari</div>
                                     </div>
 
                                     <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
@@ -380,6 +382,49 @@
                 <div class="w-16 h-1 bg-brand-700 mx-auto mt-4 rounded-full"></div>
             </div>
 
+            <!-- Akademik Identifikatorlar & Ilmiy Profillar (Badges Row) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm hover:border-brand-500 hover:shadow-md transition card-hover flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-700 flex items-center justify-center font-bold text-lg">
+                        🎓
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-900">Google Scholar</div>
+                        <div class="text-[11px] text-brand-600 font-medium">Jaloliddin Mo'minov &rarr;</div>
+                    </div>
+                </a>
+
+                <a href="https://www.scopus.com" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm hover:border-amber-500 hover:shadow-md transition card-hover flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg">
+                        📑
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-900">Scopus Author ID</div>
+                        <div class="text-[11px] text-amber-700 font-medium">Indexed Author &rarr;</div>
+                    </div>
+                </a>
+
+                <a href="https://orcid.org" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm hover:border-emerald-500 hover:shadow-md transition card-hover flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg">
+                        🟢
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-900">ORCID ID</div>
+                        <div class="text-[11px] text-emerald-600 font-mono">0000-xxxx-xxxx &rarr;</div>
+                    </div>
+                </a>
+
+                <a href="https://www.researchgate.net" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm hover:border-teal-500 hover:shadow-md transition card-hover flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">
+                        🔬
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-900">ResearchGate</div>
+                        <div class="text-[11px] text-teal-700 font-medium">Ilmiy Jamiyat &rarr;</div>
+                    </div>
+                </a>
+            </div>
+
             <!-- Asosiy Ilmiy Yo'nalishlar (3 ta karta) -->
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm card-hover">
@@ -413,69 +458,113 @@
                 </div>
             </div>
 
-            <!-- Tanlangan Ilmiy Maqolalar Ro'yxati -->
+            <!-- Interaktiv Maqolalar Bo'limi & Filtrlar -->
             <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-slate-100 gap-4">
                     <div>
-                        <h3 class="text-xl font-bold text-slate-900">Tanlangan Ilmiy Nashrlar</h3>
-                        <p class="text-xs text-slate-500 mt-1">Scopus, Web of Science va nufuzli muhandislik jurnallari</p>
+                        <h3 class="text-xl font-bold text-slate-900">Ilmiy Nashrlar va Dasturiy Ishlanmalar</h3>
+                        <p class="text-xs text-slate-500 mt-1">Scopus, nufuzli OAK jurnallari hamda DGU intellektual mulk guvohnomalari</p>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full font-medium">Ko'rib chiqilgan (Peer-reviewed)</span>
+
+                    <!-- Filtr tugmalari (Category Tabs) -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button type="button" data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-brand-700 text-white transition">
+                            Barchasi (All)
+                        </button>
+                        <button type="button" data-filter="scopus" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-500 hover:text-brand-700 transition">
+                            Scopus &amp; Xalqaro
+                        </button>
+                        <button type="button" data-filter="oak" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-500 hover:text-brand-700 transition">
+                            OAK Jurnallari
+                        </button>
+                        <button type="button" data-filter="dgu" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-500 hover:text-brand-700 transition">
+                            DGU &amp; Dasturlar
+                        </button>
                     </div>
                 </div>
 
-                <div class="divide-y divide-slate-100">
-                    <!-- Maqola 1 -->
-                    <div class="py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3">
-                        <div class="flex items-start justify-between gap-4">
+                <div id="publicationsList" class="divide-y divide-slate-100">
+                    <!-- Maqola 1 (Scopus) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="scopus">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                             <div class="space-y-1.5">
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-100 text-brand-800">Scopus / Acta Polytechnica</span>
+                                    <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Peer-reviewed</span>
                                     <span class="text-xs text-slate-500">2024</span>
+                                    <span class="text-xs font-mono text-slate-400">DOI: 10.14311/AP.2024.xx</span>
                                 </div>
                                 <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
                                     Havoli sovitish apparatlarida issiqlik almashinish jadalligi va aerodinamik qarshilikni tadqiq etish
                                 </h4>
                                 <p class="text-xs sm:text-sm text-slate-600">
-                                    Mualliflar: Mo'minov J.A., va hammualliflar. Quvur sirtlarini qovurg'alash orqali issiqlik o'tkazish koeffitsientini oshirish tajribalari tahlili.
+                                    Mualliflar: Mo'minov J.A., va hammualliflar. Quvur sirtlarini spiral qovurg'alash orqali issiqlik uzatish koeffitsientini 18-22% ga oshirish va gidravlik bosim yo'qotilishini optimallashtirish tahlili.
                                 </p>
                             </div>
-                            <a href="#contact" class="flex-shrink-0 text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
-                                Maqola PDF
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                            </a>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
+                                    <span>Maqola PDF</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Maqola 2 -->
-                    <div class="py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3">
-                        <div class="flex items-start justify-between gap-4">
+                    <!-- Maqola 2 (Scopus) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="scopus">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                             <div class="space-y-1.5">
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-100 text-brand-800">ARPN Journal of Engineering</span>
+                                    <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Scopus Indexed</span>
                                     <span class="text-xs text-slate-500">2023</span>
                                 </div>
                                 <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
                                     Chang-gaz aralashmalarini tozalashda kontaktli skrubberlarning gidrogazodinamik parametrlarini modellashtirish
                                 </h4>
                                 <p class="text-xs sm:text-sm text-slate-600">
-                                    Skrubberdagi suyuqlik tomchilarining dispersligi va gaz oqimi tezligining tozalash samaradorligiga ta'siri aniqlangan.
+                                    Skrubberdagi suyuqlik tomchilarining dispersligi va gaz oqimi tezligining tozalash samaradorligiga ta'siri aniqlangan va yangi hisobiy korrelyatsiyalar olingan.
                                 </p>
                             </div>
-                            <a href="#contact" class="flex-shrink-0 text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
-                                Maqola PDF
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                            </a>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
+                                    <span>Maqola PDF</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Maqola 3 -->
-                    <div class="py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3">
-                        <div class="flex items-start justify-between gap-4">
+                    <!-- Maqola 3 (OAK) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="oak">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                             <div class="space-y-1.5">
                                 <div class="flex flex-wrap items-center gap-2">
-                                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-slate-100 text-slate-700">Respublika Ilmiy Jurnali</span>
+                                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-100 text-amber-900">OAK / Kimyo va Neft-gaz</span>
+                                    <span class="text-xs text-slate-500">2023</span>
+                                </div>
+                                <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
+                                    Sanoat korxonalarida havoli sovitish apparatlarining energiya samaradorligini oshirish usullari
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600">
+                                    Neft va gazni qayta ishlash zavodlarida issiqlik yuklamasini taqsimlash va ventilyator boshqaruvini avtomatlashtirishning energetik hisoblari.
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
+                                    <span>Maqola PDF</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maqola 4 (OAK) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="oak">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                            <div class="space-y-1.5">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-100 text-amber-900">OAK / Farg'ona Politexnika Instituti Ilmiy Jurnali</span>
                                     <span class="text-xs text-slate-500">2022</span>
                                 </div>
                                 <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
@@ -485,16 +574,68 @@
                                     Materialning to'kilish trayektoriyasi va ichki kuraklar geometriyasining issiqlik o'tishiga ta'siri bo'yicha yangi konstruktiv yechimlar.
                                 </p>
                             </div>
-                            <a href="#contact" class="flex-shrink-0 text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
-                                Maqola PDF
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                            </a>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-brand-700 hover:text-brand-800 text-xs sm:text-sm font-semibold flex items-center bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition">
+                                    <span>Maqola PDF</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maqola 5 (DGU - Dasturiy ta'minot) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="dgu">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                            <div class="space-y-1.5">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-100 text-purple-800">DGU Guvohnoma / EHM Dasturi</span>
+                                    <span class="text-xs font-medium text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">Intellektual Mulk</span>
+                                    <span class="text-xs text-slate-500">2023</span>
+                                </div>
+                                <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
+                                    "Havoli sovitish apparatlarining aerodinamik va issiqlik o'tkazish parametrlarini avtomatlashtirilgan hisoblash dasturi"
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600">
+                                    Mualliflik huquqi guvohnomasi. O'zbekiston Respublikasi Adliya vazirligi huzuridagi intellektual mulk agentligi tomonidan ro'yxatga olingan.
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-purple-700 hover:text-purple-800 text-xs sm:text-sm font-semibold flex items-center bg-purple-50 hover:bg-purple-100 px-3 py-2 rounded-lg transition">
+                                    <span>Guvohnoma</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maqola 6 (DGU - Dasturiy ta'minot) -->
+                    <div class="pub-item py-5 hover:bg-slate-50/70 transition rounded-xl px-3 -mx-3" data-category="dgu">
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                            <div class="space-y-1.5">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-100 text-purple-800">DGU Guvohnoma / EHM Dasturi</span>
+                                    <span class="text-xs font-medium text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">Intellektual Mulk</span>
+                                    <span class="text-xs text-slate-500">2022</span>
+                                </div>
+                                <h4 class="text-base sm:text-lg font-bold text-slate-900 hover:text-brand-700 transition">
+                                    "Sanoat chang-gaz aralashmalarini tozalashda skrubberlarning tozalash samaradorligi va bosim yo'qotilishini hisoblash dasturi"
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600">
+                                    Mualliflik huquqi guvohnomasi. Skrubberlarning geometrik o'lchamlari va gidravlik rejimlarini tezkor aniqlash uchun algoritmlar to'plami.
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-2 flex-shrink-0">
+                                <a href="#contact" class="text-purple-700 hover:text-purple-800 text-xs sm:text-sm font-semibold flex items-center bg-purple-50 hover:bg-purple-100 px-3 py-2 rounded-lg transition">
+                                    <span>Guvohnoma</span>
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
-                    <p class="text-xs text-slate-500">To'liq maqolalar to'plami va ilmiy hisobotlar Google Drive omborida mavjud.</p>
+                    <p class="text-xs text-slate-500">To'liq maqolalar to'plami, tezislar va ilmiy hisobotlar Google Drive bazasida mavjud.</p>
                     <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-700 hover:text-brand-900">
                         Barcha ilmiy bazaga kirish &rarr;
                     </a>
@@ -607,30 +748,57 @@
     </section>
 
     <!-- 6. @jaloliddinMuminov_yt (Muhandislik va 3D Animatsiyalar Kanali) -->
-    <section id="channel" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="channel" class="py-24 bg-jmapro-dark text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-400 font-semibold text-sm uppercase tracking-wider">Haqiqiy Muhandislik Kontenti</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">@jaloliddinMuminov_yt</h2>
-                <p class="text-slate-400 mt-3 text-base">Sanoat apparatlari, ishlab chiqarish texnologiyalari va muhandislik yechimlarining 3D animatsiyali vizualizatsiyasi</p>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+                <div class="inline-flex items-center space-x-2 bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-3">
+                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+                    <span>YouTube Muhandislik Kanali</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold mt-2 tracking-tight">@jaloliddinMuminov_yt</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg leading-relaxed">
+                    Sanoat apparatlari, kimyo-texnologik jarayonlar va muhandislik yechimlarining yuqori aniqlikdagi 3D animatsiyalari hamda tushuntirishlari
+                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-rose-500 to-brand-500 mx-auto mt-5 rounded-full"></div>
+
+                <!-- Dasturiy ta'minot nishonlari -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 mt-6">
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/90 border border-slate-700 text-slate-300">Blender 3D</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/90 border border-slate-700 text-slate-300">SolidWorks CAD</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/90 border border-slate-700 text-slate-300">AutoCAD Mechanical</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/90 border border-slate-700 text-slate-300">Ansys Fluent (CFD)</span>
+                </div>
             </div>
 
+            <!-- Asosiy Video / Interaktiv Ko'rgazma -->
+            <div class="mb-12 max-w-4xl mx-auto rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-950/80 shadow-2xl backdrop-blur-sm p-4 sm:p-6">
+                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 relative shadow-inner">
+                    <!-- YouTube video yoki poster frame -->
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed?listType=user_uploads&list=jaloliddinMuminov_yt" title="Jaloliddin Mo'minov 3D Muhandislik Videolari" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-400">
+                    <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>Sanoat standartidagi 3D animatsiyalar</span>
+                    <a href="https://www.youtube.com/@jaloliddinMuminov_yt?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 font-semibold flex items-center">
+                        Kanalga obuna bo'lish &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video Kartalari (3 ta asosiy mavzu) -->
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Video/Model 1 -->
+                <!-- Video 1 -->
                 <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-brand-500 transition card-hover flex flex-col">
-                    <div class="h-48 bg-slate-950 flex items-center justify-center relative group">
-                        <div class="absolute inset-0 bg-blue-900/30 group-hover:bg-blue-900/50 transition flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition">
-                                <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
+                    <div class="h-48 bg-slate-950 flex flex-col items-center justify-center relative group p-4 text-center">
+                        <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
+                            <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <span class="text-xs text-slate-400 tracking-wider font-mono">MUHANDISLIK 3D MODELI</span>
+                        <span class="text-xs text-slate-300 font-bold">Barabanli Quritgich Agregati</span>
+                        <span class="text-[11px] text-slate-500 font-mono mt-1">3D Ichki Tuzilish & Kuraklar</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-semibold text-rose-400 uppercase">Sanoat Qurilmalari</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Barabanli Quritgich Agregati</h3>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Barabanli Quritgich Dinamikasi</h3>
                             <p class="text-slate-300 text-xs leading-relaxed">
                                 Quritish barabanining ichki parraklari joylashuvi, mahsulotning harakati va issiq gaz oqimi bilan kontakt qilish jarayonining 3D vizual tasviri.
                             </p>
@@ -644,22 +812,21 @@
                     </div>
                 </div>
 
-                <!-- Video/Model 2 -->
+                <!-- Video 2 -->
                 <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-brand-500 transition card-hover flex flex-col">
-                    <div class="h-48 bg-slate-950 flex items-center justify-center relative group">
-                        <div class="absolute inset-0 bg-blue-900/30 group-hover:bg-blue-900/50 transition flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition">
-                                <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
+                    <div class="h-48 bg-slate-950 flex flex-col items-center justify-center relative group p-4 text-center">
+                        <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
+                            <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <span class="text-xs text-slate-400 tracking-wider font-mono">MUHANDISLIK 3D MODELI</span>
+                        <span class="text-xs text-slate-300 font-bold">Chang Ushlovchi Skrubber</span>
+                        <span class="text-[11px] text-slate-500 font-mono mt-1">Gidrogazodinamik Modellashtirish</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-semibold text-rose-400 uppercase">Ekologiya & Tozalash</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Chang Ushlovchi Skrubber</h3>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Kontaktli Skrubber Mexanizmi</h3>
                             <p class="text-slate-300 text-xs leading-relaxed">
-                                Gaz oqimidagi qattiq zarrachalarni suyuqlik tomchilari yordamida ushlab qolish va tomchi tutgichlar orqali ajratish mexanizmi animatsiyasi.
+                                Gaz oqimidagi qattiq chang zarrachalarini suyuqlik tomchilari yordamida ushlab qolish va tomchi tutgichlar orqali ajratish jarayonining vizual modeli.
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between">
@@ -671,20 +838,19 @@
                     </div>
                 </div>
 
-                <!-- Video/Model 3 -->
+                <!-- Video 3 -->
                 <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-brand-500 transition card-hover flex flex-col">
-                    <div class="h-48 bg-slate-950 flex items-center justify-center relative group">
-                        <div class="absolute inset-0 bg-blue-900/30 group-hover:bg-blue-900/50 transition flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition">
-                                <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
+                    <div class="h-48 bg-slate-950 flex flex-col items-center justify-center relative group p-4 text-center">
+                        <div class="w-14 h-14 rounded-full bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
+                            <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <span class="text-xs text-slate-400 tracking-wider font-mono">MUHANDISLIK 3D MODELI</span>
+                        <span class="text-xs text-slate-300 font-bold">Havoli Sovitish Apparati (HSA)</span>
+                        <span class="text-[11px] text-slate-500 font-mono mt-1">Issiqlik Almashinuvchi Trubkalar</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-semibold text-rose-400 uppercase">Issiqlik Texnikasi</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Havoli Sovitish Apparati (HSA)</h3>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">HSA Ventilyator & Aerodinamika</h3>
                             <p class="text-slate-300 text-xs leading-relaxed">
                                 Qovurg'alangan quvurlar paketi, parrakli ventilyatorning havo haydash yo'nalishi va issiqlik olib ketish dinamikasining 3D modeli.
                             </p>
@@ -701,9 +867,9 @@
 
             <!-- YouTube kanal chaqiruvi -->
             <div class="mt-14 text-center">
-                <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-rose-600 hover:bg-rose-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition">
+                <a href="https://www.youtube.com/@jaloliddinMuminov_yt?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-rose-600 hover:bg-rose-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.02] transition">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    <span>@jaloliddinMuminov_yt YouTube Kanaliga O'tish</span>
+                    <span>@jaloliddinMuminov_yt YouTube Kanaliga Obuna Bo'lish</span>
                 </a>
             </div>
         </div>
@@ -744,11 +910,11 @@
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Skrubber Kalkulyatori</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Sayt ichida to'g'ridan-to'g'ri skrubberning diametri, balandligi va tozalash samaradorligini onlayn hisoblovchi interaktiv vosita.
+                            Sayt ichida to'g'ridan-to'g'ri skrubberning diametri, ko'ndalang yuzasi va tozalash samaradorligini hisoblovchi interaktiv muhandislik moduli.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100">
-                        <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">2-bosqichda ishga tushadi</span>
+                        <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">Interaktiv ishlamoqda ↓</span>
                     </div>
                 </div>
 
@@ -758,15 +924,127 @@
                         <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold mb-4">
                             ⚡
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Google Apps Script</h3>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Google Apps Script & Telegram Bot</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Murojaatlar, so'rovnomalar va ta'lim hisobotlarini Google Sheets bilan avtomatik sinxronlash tizimlari.
+                            Murojaatlar, so'rovnomalar va ta'lim hisobotlarini avtomatik sinxronlash hamda Telegram botga tezkor yetkazish arxitekturasi.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100">
                         <span class="text-xs font-semibold text-brand-700 bg-blue-50 px-2.5 py-1 rounded-full">Faol integratsiya</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Interaktiv Onlayn Muhandislik Kalkulyatori Vidjeti -->
+            <div class="mt-14 bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-brand-800 to-indigo-900 px-6 sm:px-8 py-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-200">Onlayn Muhandislik Dasturi</span>
+                        <h3 class="text-xl sm:text-2xl font-bold">Sanoat Skrubberi: Diametr va Samaradorlik Hisobi</h3>
+                    </div>
+                    <div class="flex items-center space-x-2 text-xs text-brand-200 font-mono bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
+                        <span>TMJ // JARAYONLAR VA APPARATLAR</span>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8">
+                    <form id="scrubberCalcForm" class="grid lg:grid-cols-12 gap-8">
+                        <!-- Chap: Kiritish parametrlari -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <h4 class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center">
+                                <span class="w-2.5 h-2.5 rounded-full bg-brand-600 mr-2"></span>
+                                Boshlang'ich Hisobiy Parametrlar
+                            </h4>
+
+                            <div>
+                                <label for="gasFlow" class="block text-xs font-semibold text-slate-700 mb-1">
+                                    Tozalanuvchi gaz sarfi, <span class="font-mono text-brand-700">V (m³/soat)</span>
+                                </label>
+                                <input type="number" id="gasFlow" value="12000" min="100" max="1000000" step="100" class="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none transition font-medium">
+                                <p class="text-[11px] text-slate-400 mt-1">Sanoat quvuridagi soatlik gaz hajmi</p>
+                            </div>
+
+                            <div>
+                                <label for="gasSpeed" class="block text-xs font-semibold text-slate-700 mb-1">
+                                    Apparatdagi gazning chiziqli tezligi, <span class="font-mono text-brand-700">w (m/s)</span>
+                                </label>
+                                <input type="number" id="gasSpeed" value="2.2" min="0.5" max="10" step="0.1" class="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none transition font-medium">
+                                <p class="text-[11px] text-slate-400 mt-1">Tavsiya etiladigan optimal oraliq: 1.5 - 3.0 m/s</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="dustIn" class="block text-xs font-semibold text-slate-700 mb-1">
+                                        Kirishdagi chang, <span class="font-mono text-brand-700">C_in (g/m³)</span>
+                                    </label>
+                                    <input type="number" id="dustIn" value="15.0" min="0.1" max="500" step="0.1" class="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none transition font-medium">
+                                </div>
+                                <div>
+                                    <label for="dustOut" class="block text-xs font-semibold text-slate-700 mb-1">
+                                        Talab etilgan chiqish, <span class="font-mono text-brand-700">C_out (mg/m³)</span>
+                                    </label>
+                                    <input type="number" id="dustOut" value="40" min="1" max="1000" step="1" class="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none transition font-medium">
+                                </div>
+                            </div>
+
+                            <button type="button" id="calcBtn" class="w-full mt-2 py-3 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center space-x-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                <span>Hisoblashni Yangilash</span>
+                            </button>
+                        </div>
+
+                        <!-- O'ng: Hisob natijalari -->
+                        <div class="lg:col-span-6 bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center mb-4">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-2"></span>
+                                    Hisoblangan Muhandislik Ko'rsatkichlari
+                                </h4>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <div class="text-xs text-slate-500 font-medium">Ko'ndalang yuzasi (F)</div>
+                                        <div id="resArea" class="text-2xl font-extrabold text-brand-700 mt-1">1.52 m²</div>
+                                        <div class="text-[10px] text-slate-400 mt-0.5">F = V / (3600 · w)</div>
+                                    </div>
+
+                                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <div class="text-xs text-slate-500 font-medium">Hisobiy diametr (D)</div>
+                                        <div id="resDiameter" class="text-2xl font-extrabold text-brand-700 mt-1">1.39 m</div>
+                                        <div id="resStandard" class="text-[10px] text-emerald-600 font-bold mt-0.5">Standart: Ø 1400 mm</div>
+                                    </div>
+
+                                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <div class="text-xs text-slate-500 font-medium">Tozalash darajasi (η)</div>
+                                        <div id="resEfficiency" class="text-2xl font-extrabold text-emerald-600 mt-1">99.73 %</div>
+                                        <div class="text-[10px] text-slate-400 mt-0.5">Yuqori sanoat tozaligi</div>
+                                    </div>
+
+                                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <div class="text-xs text-slate-500 font-medium">Ushlangan chang (M)</div>
+                                        <div id="resDustMass" class="text-2xl font-extrabold text-slate-800 mt-1">179.5 kg/s</div>
+                                        <div class="text-[10px] text-slate-400 mt-0.5">Soatlik chang massasi</div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 p-3.5 bg-blue-50/70 border border-blue-200/80 rounded-xl text-xs text-slate-700 space-y-1">
+                                    <div class="font-bold text-brand-900 flex items-center">
+                                        <span class="mr-1.5">💧</span> Sug'orish suyuqligi sarfi (L):
+                                    </div>
+                                    <div id="resWater" class="text-slate-600 leading-relaxed">
+                                        Optimal oraliq (m = 1.0 - 1.5 l/m³): <strong>12.0 - 18.0 m³/soat</strong> suv talab qilinadi.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-500 flex items-center justify-between">
+                                <span>Metodika: Jarayonlar va apparatlar fan standarti</span>
+                                <span class="font-mono text-brand-700 font-semibold">JMApro Algorithm</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -888,10 +1166,11 @@
                 <!-- Brand va qisqa izoh -->
                 <div class="md:col-span-5 space-y-4">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-700 flex items-center justify-center text-white font-extrabold text-lg">
-                            JM
+                        <img src="assets/jmapro-icon-512.png" alt="JMApro Icon" class="w-10 h-10 rounded-xl shadow-md object-contain">
+                        <div>
+                            <span class="text-xl font-bold tracking-tight text-white">JMApro<span class="text-brand-400">.uz</span></span>
+                            <p class="text-[11px] text-slate-400 font-medium leading-none">Muhandislik &amp; Ilmiy Portal</p>
                         </div>
-                        <span class="text-xl font-bold tracking-tight text-white">JMApro<span class="text-brand-500">.uz</span></span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
                         PhD Mo'minov Jaloliddin Azizjon o'g'lining ilmiy-tadqiqot, muhandislik va sanoat texnologiyalari hamda ta'limiy resurslar portali.
@@ -937,9 +1216,14 @@
         </div>
     </footer>
 
-    <!-- JavaScript: Mobil menyu va Aloqa formasi integratsiyasi -->
+    <!-- Scroll to Top Tugmasi -->
+    <button id="scrollTopBtn" aria-label="Yuqoriga qaytish" class="fixed bottom-6 right-6 z-40 bg-brand-700 hover:bg-brand-800 text-white p-3.5 rounded-2xl shadow-xl transition-all duration-300 opacity-0 pointer-events-none translate-y-4 hover:scale-110 flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
+    <!-- JavaScript: Mobil menyu, Maqolalar filtri, Kalkulyator va Telegram Bot integratsiyasi -->
     <script>
-        // Mobil menyuni ochish / yopish
+        // 1. Mobil menyuni ochish / yopish
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
@@ -959,7 +1243,6 @@
             }
         });
 
-        // Mobil havolalardan birini bosganda menyuni avtomatik yopish
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -968,7 +1251,119 @@
             });
         });
 
-        // Aloqa formasi (Telegram Bot integratsiyasi)
+        // 2. Ilmiy Nashrlar Bo'limi Filtrlash (Filter Tabs)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const pubItems = document.querySelectorAll('.pub-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-700', 'text-white');
+                    b.classList.add('bg-white', 'text-slate-700');
+                });
+                btn.classList.add('active', 'bg-brand-700', 'text-white');
+                btn.classList.remove('bg-white', 'text-slate-700');
+
+                const filter = btn.getAttribute('data-filter');
+                pubItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 3. Interaktiv Skrubber Kalkulyatori
+        const gasFlowInput = document.getElementById('gasFlow');
+        const gasSpeedInput = document.getElementById('gasSpeed');
+        const dustInInput = document.getElementById('dustIn');
+        const dustOutInput = document.getElementById('dustOut');
+        const calcBtn = document.getElementById('calcBtn');
+
+        const resArea = document.getElementById('resArea');
+        const resDiameter = document.getElementById('resDiameter');
+        const resStandard = document.getElementById('resStandard');
+        const resEfficiency = document.getElementById('resEfficiency');
+        const resDustMass = document.getElementById('resDustMass');
+        const resWater = document.getElementById('resWater');
+
+        function calculateScrubber() {
+            const V = parseFloat(gasFlowInput.value) || 0;
+            const w = parseFloat(gasSpeedInput.value) || 0;
+            const Cin = parseFloat(dustInInput.value) || 0;
+            const Cout = parseFloat(dustOutInput.value) || 0;
+
+            if (V <= 0 || w <= 0 || Cin <= 0) return;
+
+            // 1. Ko'ndalang kesim yuzasi: F = V / (3600 * w)
+            const F = V / (3600 * w);
+            resArea.innerText = F.toFixed(2) + " m²";
+
+            // 2. Apparat hisobiy diametri: D = sqrt(4F / pi)
+            const D = Math.sqrt((4 * F) / Math.PI);
+            resDiameter.innerText = D.toFixed(2) + " m";
+
+            // Standart diametrga yaqinlashtirish (mm)
+            const stdDiameters = [600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2800, 3000, 3200];
+            const dMm = D * 1000;
+            let nearestStd = stdDiameters[0];
+            for (let std of stdDiameters) {
+                if (std >= dMm) {
+                    nearestStd = std;
+                    break;
+                }
+                nearestStd = std;
+            }
+            resStandard.innerText = `Standart tavsiya: Ø ${nearestStd} mm`;
+
+            // 3. Tozalash samaradorligi: eta = (Cin - Cout/1000) / Cin * 100
+            const CoutG = Cout / 1000;
+            let eta = ((Cin - CoutG) / Cin) * 100;
+            if (eta > 99.99) eta = 99.99;
+            if (eta < 0) eta = 0;
+            resEfficiency.innerText = eta.toFixed(2) + " %";
+
+            // 4. Ushlab qolinadigan chang massasi (kg/soat): M = V * (Cin - CoutG) / 1000
+            const M = (V * (Cin - CoutG)) / 1000;
+            resDustMass.innerText = M.toFixed(1) + " kg/s";
+
+            // 5. Sug'orish suyuqligi (m3/soat): m = 1.0 ... 1.5 l/m3
+            const Lmin = (V * 1.0) / 1000;
+            const Lmax = (V * 1.5) / 1000;
+            resWater.innerHTML = `Optimal oraliq (m = 1.0 - 1.5 l/m³): <strong>${Lmin.toFixed(1)} - ${Lmax.toFixed(1)} m³/soat</strong> suv talab qilinadi.`;
+        }
+
+        if (calcBtn) {
+            calcBtn.addEventListener('click', calculateScrubber);
+            [gasFlowInput, gasSpeedInput, dustInInput, dustOutInput].forEach(inp => {
+                if (inp) inp.addEventListener('input', calculateScrubber);
+            });
+            // Boshlang'ich hisob
+            calculateScrubber();
+        }
+
+        // 4. Yuqoriga Qaytish Tugmasi (Scroll to Top)
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 350) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 5. Aloqa formasi (Telegram Bot integratsiyasi)
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');
@@ -989,7 +1384,6 @@
                 return;
             }
 
-            // Tugmani yuklanish holatiga o'tkazish
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = `

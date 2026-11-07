@@ -3,8 +3,12 @@
 ## 1. Asosiy Ma'lumotlar va Muallif
 * **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida).
 * **Muallif:** Mo'minov Jaloliddin Azizjon o'g'li (Texnika fanlari bo'yicha PhD, tadqiqotchi va o'qituvchi).
+* **Ta'lim va ilmiy darajalar:**
+  * PhD: Neft va gaz kimyosi va texnologiyasi (jarayon va apparatlar yo'nalishi)
+  * Magistratura: Kimyo sanoati va qurilish materiallari korxonalarining mashinalari hamda apparatlari (pedagog-tadqiqotchi)
+  * Bakalavriat: Texnologik mashinalar va jihozlar (muhandis-mexanik)
+* **Aloqa:** `JaloliddinMuminov3110@gmail.com` | Telegram: `@jaloliddinMuminov` | YouTube: `@jaloliddinMuminov_yt`
 * **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari).
-* **YouTube Kanal:** `@jaloliddinMuminov_yt` (Haqiqiy muhandislik va 3D vizualizatsiya kanali).
 * **Loyihaning maqsadi:** Akademik, muhandislik-texnik (issiqlik almashinish jarayonlari, chang ushlash qurilmalari, skrubberlar) hamda muhandislik 3D animatsiyalari faoliyatini yaxlit namoyish etuvchi markaziy shaxsiy portfolio va resurslar bazasini yaratish.
 
 ## 2. Joriy Holat va Infratuzilma (07.11.2026)

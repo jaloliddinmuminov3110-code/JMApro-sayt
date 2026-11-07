@@ -24,8 +24,9 @@
   * Sof HTML + Tailwind CSS bilan barcha asosiy bo'limlarni yaratish.
   * Vercel + GitHub orqali avtomatik yangilanish.
   * Google Drive va Google Sheets integratsiyasi.
-* **O'rta bosqich (Ish oqimini qulaylashtirish):**
-  * Sayt hajmi va funksionali kengaygach, GitHub veb-interfeysi orqali qo'lda yuklashdan VS Code (Git CLI) orqali to'g'ridan-to'g'ri sinxronlashga o'tish.
+* **O'rta bosqich (Ish oqimini qulaylashtirish) - BAJARILDI (07.11.2026):**
+  * Git CLI o'rnatildi va kompyuter to'g'ridan-to'g'ri `jaloliddinmuminov3110-code/JMApro-sayt` bilan ulandi.
+  * Har bir o'zgarish Antigravity tomonidan avtomatik `git push` orqali Vercel'ga jo'natiladi. Qo'lda fayl yuklash bosqichi to'liq bekor qilindi.
 * **2-bosqich (Kelajak – Katta ekotizim):**
   * Issiqlik almashinish qurilmalari, gidravlik qarshilik va skrubberlarni hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
   * Talabalar va tadqiqotchilar uchun shaxsiy kabinet / avtorizatsiya tizimi zarur bo'lganda mustaqil VPS hostingga ko'chirish.

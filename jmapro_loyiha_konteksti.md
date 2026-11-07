@@ -8,8 +8,8 @@
   * Magistratura: Kimyo sanoati va qurilish materiallari korxonalarining mashinalari hamda apparatlari (pedagog-tadqiqotchi)
   * Bakalavriat: Texnologik mashinalar va jihozlar (muhandis-mexanik)
 * **Aloqa:** `JaloliddinMuminov3110@gmail.com` | Telegram: `@jaloliddinMuminov` | YouTube: `@jaloliddinMuminov_yt`
-* **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari).
-* **Loyihaning maqsadi:** Akademik, muhandislik-texnik (issiqlik almashinish jarayonlari, chang ushlash qurilmalari, skrubberlar) hamda muhandislik 3D animatsiyalari faoliyatini yaxlit namoyish etuvchi markaziy shaxsiy portfolio va resurslar bazasini yaratish.
+* **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari: issiqlik almashinish jarayonlari va havoli sovitish apparatlari - HSA).
+* **Loyihaning maqsadi:** Akademik, muhandislik-texnik (issiqlik almashinish jarayonlari va qurilmalari, havoli sovitish apparatlari - HSA, qovurg'alangan quvurlar aerodinamikasi) hamda muhandislik 3D animatsiyalari va hisoblash dasturlari faoliyatini yaxlit namoyish etuvchi markaziy shaxsiy portfolio va resurslar bazasini yaratish.
 
 ## 2. Joriy Holat va Infratuzilma (07.11.2026)
 * **Jonli havola (Test/Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app)
@@ -32,23 +32,24 @@
   * Git CLI o'rnatildi va kompyuter to'g'ridan-to'g'ri `jaloliddinmuminov3110-code/JMApro-sayt` bilan ulandi.
   * Har bir o'zgarish Antigravity tomonidan avtomatik `git push` orqali Vercel'ga jo'natiladi. Qo'lda fayl yuklash bosqichi to'liq bekor qilindi.
 * **2-bosqich (Kelajak – Katta ekotizim):**
-  * Issiqlik almashinish qurilmalari, gidravlik qarshilik va skrubberlarni hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
+  * Issiqlik almashinish qurilmalari va havoli sovitish apparatlarini (HSA) hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
   * Talabalar va tadqiqotchilar uchun shaxsiy kabinet / avtorizatsiya tizimi zarur bo'lganda mustaqil VPS hostingga ko'chirish.
 
 ## 4. Sayt Arxitekturasi (Sitemap)
-1. **Bosh sahifa (Hero Section):** Shaxsiy tanishtiruv, muhandislik va sanoat texnologiyalari yo'nalishi va muhim bo'limlarga tezkor havolalar.
-2. **Men haqimda (`#about`):** Tarjimai hol, ilmiy daraja (PhD), ilmiy yo'l va kasbiy ko'nikmalar.
+1. **Bosh sahifa (Hero Section):** Shaxsiy tanishtiruv ("PhD | Tadqiqotchi | Muhandis"), muhandislik va havoli sovitish texnologiyalari yo'nalishi va muhim bo'limlarga tezkor havolalar.
+2. **Men haqimda (`#about`):** Tarjimai hol, ilmiy daraja (PhD), ilmiy yo'l va kasbiy ko'nikmalar (Kompas 3D, SolidWorks, AutoCAD, Blender).
 3. **Ilmiy faoliyat (`#research`):**
-   * Issiqlik almashinish qurilmalari, havoli sovitish tizimlari, chang ushlash apparatlari (skrubberlar).
-   * Xalqaro jurnallardagi nashrlar (ARPN, Acta Polytechnica va b.) bazasi va elektron nusxalari.
+   * Havoli sovitish apparatlari (HSA), issiqlik-massa almashinuv tizimlari, gidrogazodinamika va CFD tahlil.
+   * Xalqaro jurnallardagi nashrlar (ARPN, Acta Polytechnica va b.) bazasi, DGU dasturlari va ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate).
 4. **Ta'lim va talabalar (`#teaching`):**
    * Texnologik mashinalar va jihozlar (TMJ) yo'nalishi uchun ma'ruzalar, darsliklar, taqdimotlar va amaliy topshiriqlar.
    * Ilmiy rahbarlik va muhandislik maslahatlari.
 5. **Muhandislik 3D Animatsiyalari (`#channel`):**
    * `@jaloliddinMuminov_yt` YouTube muhandislik kanali.
-   * Sanoat uskunalari (barabanli quritgichlar, skrubberlar, havoli sovitish apparatlari) ning 3D vizualizatsiyalari.
+   * Sanoat uskunalari (havoli sovitish apparatlari - HSA, issiqlik almashinuv bloklari) ning 3D vizualizatsiyalari (Kompas 3D, SolidWorks, Blender).
 6. **IT va Avtomatlashtirish:** Google Apps Script, Python, Google Colab va injiniring hisoblash dasturlari bo'yicha amaliy qo'llanmalar.
-7. **Bog'lanish (`#contact`):** Murojaat formasi (`@JMApro_bot` Telegram boti bilan bog'langan), elektron pochta, telefon va ijtimoiy tarmoqlar (Telegram, YouTube va b.).
+7. **Interaktiv Muhandislik Kalkulyatori (`#it-calc`):** Havoli Sovitish Apparati (HSA) issiqlik yuklamasi ($Q$), logarifmik haroratlar farqi ($\Delta t_{log}$), zaruriy sirt yuzasi ($F$), quvurlar soni ($n$) va sovituvchi havo sarfi ($V_{havo}$) ni real vaqt rejimida hisoblovchi interaktiv modul.
+8. **Bog'lanish (`#contact`):** Murojaat formasi (`@JMApro_bot` Telegram boti bilan to'g'ridan-to'g'ri bog'langan), elektron pochta va ijtimoiy tarmoqlar.
 
 ## 5. Ish Oqimi (Workflow)
 Saytni yangilash va yuritish tartibi:
@@ -62,16 +63,18 @@ Saytni yangilash va yuritish tartibi:
 3. [x] Rasmiy vektor logotip va muhandislik SVG fonlari (`jmapro-logo-light.svg`, `jmapro-background-light.svg`, `jmapro-background-dark.svg`, `jmapro-icon-512.png`) Header, Hero, YouTube bo'limi va Footerga to'liq tatbiq etildi (08.11.2026).
 4. [x] Ilmiy nashrlar (`#research`) bo'limida interaktiv filtr teglari (Scopus, OAK, DGU dasturlari) va xalqaro ilmiy identifikatorlar (Google Scholar, Scopus ID, ORCID, ResearchGate) yaratildi.
 5. [x] YouTube `@jaloliddinMuminov_yt` bo'limi sanoat 3D modellar ko'rgazmasi va CAD/CFD dasturiy nishonlari bilan boyitildi.
-6. [x] Interaktiv Sanoat Skrubberi Kalkulyatori (`#it-calc`) yaratildi (gaz sarfi, tezlik va chang konsentratsiyasiga qarab diametr, tozalash samaradorligi va suv sarfini real vaqtda hisoblaydi).
-7. [x] Foydalanuvchi qulayligi uchun suzuvchi "Scroll to Top" tugmasi qo'shildi.
-8. [ ] Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.
-9. [ ] Infografik zamonaviy CV (Section 7) vizual sahifasini ishlab chiqish.
+6. [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori (`#it-calc`) yaratildi (mahsulot sarfi, haroratlar va issiqlik uzatish koeffitsientiga qarab issiqlik yuki, logarifmik harorat, zaruriy sirt, quvurlar soni va havo sarfini real vaqtda hisoblaydi).
+7. [x] Rasmiy Profile2 kompozitsiyasi (HSA zavodi, 3D CAD/CFD geksagonlari va JMApro.uz brendi bilan) asosiy kartaga joylashtirildi va WebP formatida tezlashtirildi.
+8. [x] Foydalanuvchi qulayligi uchun suzuvchi "Scroll to Top" tugmasi qo'shildi.
+9. [ ] Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.
+10. [ ] YouTube videolari havolalari muallif tomonidan taqdim etilganda bo'limni real videolar bilan boyitish.
+11. [ ] Infografik zamonaviy CV (Section 7) vizual sahifasini ishlab chiqish.
 
 ## 7. Reja: Zamonaviy Infografik CV (Interaktiv Rezyume)
 * **Konsepsiya:** Standart quruq matnli CV emas, balki markazda muallif portreti joylashgan, atrofida esa shoxlangan zamonaviy infografik vizual bloklar:
   * 🎓 **Akademik unvonlar:** PhD (Neft-gaz kimyosi va texnologiyasi, jarayon va apparatlar), Magistratura, Bakalavriat.
-  * 🔬 **Ilmiy natijalar:** Scopus, Acta Polytechnica, ARPN xalqaro maqolalari, iqtiboslar ko'rsatkichi.
-  * ⚙️ **Muhandislik yo'nalishlari:** Issiqlik almashinish tizimlari, skrubberlar, havoli sovitish, CFD tahlil.
-  * 💻 **Dasturiy kompetensiyalar:** Blender 3D, SolidWorks, AutoCAD, Python, Colab.
+  * 🔬 **Ilmiy natijalar:** Scopus, Acta Polytechnica, ARPN xalqaro maqolalari, DGU dasturlari, iqtiboslar ko'rsatkichi.
+  * ⚙️ **Muhandislik yo'nalishlari:** Issiqlik almashinish tizimlari, havoli sovitish apparatlari (HSA), CFD tahlil va aerodinamika.
+  * 💻 **Dasturiy kompetensiyalar:** Kompas 3D, SolidWorks, AutoCAD, Blender 3D, Ansys Fluent, Python, Colab.
   * 👨‍🏫 **Pedagogik faoliyat:** TMJ kafedrasi o'qituvchisi, darsliklar va ilmiy rahbarlik.
 * **Format:** Sayt ichida alohida interaktiv infografik sahifa/modal hamda yuklab olish uchun yuqori sifatli A4 PDF formatida tayyorlanadi.

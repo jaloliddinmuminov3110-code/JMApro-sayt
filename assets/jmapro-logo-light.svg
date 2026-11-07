@@ -1,8 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="118" viewBox="0 0 450 118" role="img" aria-label="JMApro.uz Muhandislik va ilmiy portal">
-      <defs><linearGradient id="mark" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#112c80"/><stop offset="0.62" stop-color="#1d4ed8"/><stop offset="1" stop-color="#1673ec"/></linearGradient><linearGradient id="flash" x1="0" x2="1"><stop stop-color="#81e0e5"/><stop offset="1" stop-color="#42b4ff"/></linearGradient></defs>
-      <g transform="translate(7 9)"><rect x="0" y="0" width="96" height="96" rx="24" fill="url(#mark)"/>
-         <path d="M 13,67 C 33,81 69,81 85,56" fill="none" stroke="url(#flash)" stroke-width="4" stroke-linecap="round"/>
-         <text x="48" y="62" text-anchor="middle" font-family="Arial,Segoe UI,sans-serif" font-size="43" font-weight="900" letter-spacing="-4.4" fill="white">JM</text><circle cx="78" cy="20" r="4" fill="#71e4dc"/></g>
-      <text x="126" y="64" font-family="Arial,Segoe UI,sans-serif" font-size="46" font-weight="800" letter-spacing="-1.2"><tspan fill="#10192e">JMA</tspan><tspan fill="#1d4ed8">pro</tspan><tspan fill="#10192e">.uz</tspan></text>
-      <text x="128" y="94" font-family="Arial,Segoe UI,sans-serif" font-weight="500" font-size="20" letter-spacing=".1" fill="#60718b">Muhandislik &amp; Ilmiy Portal</text>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="130" viewBox="0 0 500 130" role="img" aria-label="JMApro.uz Muhandislik va ilmiy portal">
+  <defs>
+    <!-- Mark background gradient -->
+    <linearGradient id="markGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2569"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    
+    <!-- Wave / Streamline gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+
+    <!-- JMA Letters Gradient (Rich Royal Navy to Cobalt) -->
+    <linearGradient id="jmaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e3282"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- PRO Letters Gradient (Vibrant Cyan-Blue) -->
+    <linearGradient id="proGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- UZ Letters Gradient -->
+    <linearGradient id="uzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="glow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1d4ed8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Left Icon Emblem -->
+  <g transform="translate(10, 15)" filter="url(#glow)">
+    <rect x="0" y="0" width="100" height="100" rx="24" fill="url(#markGrad)"/>
+    <!-- Gear accent subtle -->
+    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <!-- Flow curve -->
+    <path d="M 16,72 C 38,88 74,84 88,58" fill="none" stroke="url(#waveGrad)" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- JM Typography -->
+    <text x="50" y="66" text-anchor="middle" font-family="'Inter', Arial, 'Segoe UI', sans-serif" font-size="44" font-weight="900" letter-spacing="-3.5" fill="#ffffff">JM</text>
+    <!-- Dot accent -->
+    <circle cx="82" cy="24" r="4.5" fill="#38bdf8"/>
+  </g>
+
+  <!-- Brand Text: JMA in rich royal blue, pro in bright electric cyan, .uz in vibrant cobalt -->
+  <g transform="translate(130, 20)">
+    <text x="0" y="54" font-family="'Inter', Arial, 'Segoe UI', sans-serif" font-size="52" font-weight="900" letter-spacing="-1.5">
+      <tspan fill="url(#jmaGrad)">JMA</tspan><tspan fill="url(#proGrad)">pro</tspan><tspan fill="url(#uzGrad)">.uz</tspan>
+    </text>
+    
+    <!-- Subtitle with engineering badge pill accent -->
+    <rect x="0" y="70" width="8" height="8" rx="2" fill="#0284c7" />
+    <text x="14" y="78" font-family="'Inter', Arial, 'Segoe UI', sans-serif" font-weight="600" font-size="16.5" letter-spacing="1.2" fill="#475569" text-transform="uppercase">
+      Muhandislik &amp; Ilmiy Portal
+    </text>
+  </g>
+</svg>

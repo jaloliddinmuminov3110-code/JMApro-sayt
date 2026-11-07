@@ -1,0 +1,57 @@
+# Loyiha Konteksti: JMAPRO.UZ - Ilmiy va Muhandislik Portfolio Sayti
+
+## 1. Asosiy Ma'lumotlar va Muallif
+* **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida).
+* **Muallif:** Mo'minov Jaloliddin Azizjon o'g'li (Texnika fanlari bo'yicha PhD, tadqiqotchi va o'qituvchi).
+* **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari).
+* **YouTube Kanal:** `@jaloliddinMuminov_yt` (Haqiqiy muhandislik va 3D vizualizatsiya kanali).
+* **Loyihaning maqsadi:** Akademik, muhandislik-texnik (issiqlik almashinish jarayonlari, chang ushlash qurilmalari, skrubberlar) hamda muhandislik 3D animatsiyalari faoliyatini yaxlit namoyish etuvchi markaziy shaxsiy portfolio va resurslar bazasini yaratish.
+
+## 2. Joriy Holat va Infratuzilma (07.11.2026)
+* **Jonli havola (Test/Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app)
+* **GitHub ombori (Repository):** `jmapro-sayt` (Vercel CI/CD ga ulangan).
+* **Texnologik stek (Stack):** Sof HTML5 va Tailwind CSS (CDN orqali).
+* **Xosting:** Vercel (bepul bulutli hosting, avtomatik deploy).
+* **Domen va DNS sozlamalari:**
+  * Domen provayderi: `my.eskiz.uz`
+  * Vercel'ning A va CNAME yozuvlari tayyorlangan.
+  * Domen faollashishi bilan (kutilayotgan vaqt: dushanba kuni) DNS yozuvlari `my.eskiz.uz` boshqaruv paneliga kiritiladi.
+* **Fayllar va ma'lumotlar saqlash:** Google Drive (5 TB hajm – maqolalar, darsliklar, 3D modellar va video materiallar uchun).
+* **Qayta aloqa (Backend):** Google Apps Script + Google Sheets (bepul va ishonchli murojaatlar bazasi).
+
+## 3. Rivojlanish Bosqichlari va Texnik Strategiya
+* **1-bosqich (Joriy – Tejamkor va Tezkor):**
+  * Sof HTML + Tailwind CSS bilan barcha asosiy bo'limlarni yaratish.
+  * Vercel + GitHub orqali avtomatik yangilanish.
+  * Google Drive va Google Sheets integratsiyasi.
+* **O'rta bosqich (Ish oqimini qulaylashtirish):**
+  * Sayt hajmi va funksionali kengaygach, GitHub veb-interfeysi orqali qo'lda yuklashdan VS Code (Git CLI) orqali to'g'ridan-to'g'ri sinxronlashga o'tish.
+* **2-bosqich (Kelajak – Katta ekotizim):**
+  * Issiqlik almashinish qurilmalari, gidravlik qarshilik va skrubberlarni hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
+  * Talabalar va tadqiqotchilar uchun shaxsiy kabinet / avtorizatsiya tizimi zarur bo'lganda mustaqil VPS hostingga ko'chirish.
+
+## 4. Sayt Arxitekturasi (Sitemap)
+1. **Bosh sahifa (Hero Section):** Shaxsiy tanishtiruv, muhandislik va sanoat texnologiyalari yo'nalishi va muhim bo'limlarga tezkor havolalar.
+2. **Men haqimda (`#about`):** Tarjimai hol, ilmiy daraja (PhD), ilmiy yo'l va kasbiy ko'nikmalar.
+3. **Ilmiy faoliyat (`#research`):**
+   * Issiqlik almashinish qurilmalari, havoli sovitish tizimlari, chang ushlash apparatlari (skrubberlar).
+   * Xalqaro jurnallardagi nashrlar (ARPN, Acta Polytechnica va b.) bazasi va elektron nusxalari.
+4. **Ta'lim va talabalar (`#teaching`):**
+   * Texnologik mashinalar va jihozlar (TMJ) yo'nalishi uchun ma'ruzalar, darsliklar, taqdimotlar va amaliy topshiriqlar.
+   * Ilmiy rahbarlik va muhandislik maslahatlari.
+5. **Muhandislik 3D Animatsiyalari (`#channel`):**
+   * `@jaloliddinMuminov_yt` YouTube muhandislik kanali.
+   * Sanoat uskunalari (barabanli quritgichlar, skrubberlar, havoli sovitish apparatlari) ning 3D vizualizatsiyalari.
+6. **IT va Avtomatlashtirish:** Google Apps Script, Python, Google Colab va injiniring hisoblash dasturlari bo'yicha amaliy qo'llanmalar.
+7. **Bog'lanish (`#contact`):** Murojaat formasi (Google Sheets bilan bog'langan), elektron pochta, telefon va ijtimoiy tarmoqlar (Telegram, YouTube va b.).
+
+## 5. Ish Oqimi (Workflow)
+Saytni yangilash va yuritish tartibi:
+1. **Ishlab chiqish:** Antigravity yordamida HTML/CSS kodlar yoziladi va lokal sinovdan o'tkaziladi.
+2. **Sinxronizatsiya:** O'zgartirilgan fayllar GitHub'dagi `jmapro-sayt` omboriga yuklanadi (Commit).
+3. **Avto-deploy:** Vercel o'zgarishlarni avtomatik aniqlab, soniyalar ichida `https://jmapro-sayt.vercel.app` (va keyinchalik `jmapro.uz`) manzilida yangilaydi.
+
+## 6. Navbatdagi Amaliy Qadamlar
+1. [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash (07.11.2026 da muvaffaqiyatli bajarildi va tekshirildi).
+2. [ ] Aloqa formasi uchun Google Apps Script kodini Google Sheets jadvaliga ulash va URL'ni `index.html`ga kiritish (`google_apps_script.js` tayyorlandi).
+3. [ ] Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.

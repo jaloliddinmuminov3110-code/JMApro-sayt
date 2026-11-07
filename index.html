@@ -38,15 +38,28 @@
     <style>
         .gradient-hero {
             background-color: #f8fafc;
-            background-image: radial-gradient(rgba(37, 99, 235, 0.09) 1.2px, transparent 1.2px);
-            background-size: 24px 24px;
+            background-image: 
+                linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+                linear-gradient(to right, rgba(37, 99, 235, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+            position: relative;
+        }
+        .gradient-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.09) 0%, rgba(248, 250, 252, 0) 65%),
+                        radial-gradient(circle at 20% 70%, rgba(99, 102, 241, 0.07) 0%, rgba(248, 250, 252, 0) 60%);
+            pointer-events: none;
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px -10px rgba(30, 64, 175, 0.15);
+            box-shadow: 0 14px 28px -10px rgba(30, 64, 175, 0.15);
         }
     </style>
 </head>
@@ -168,12 +181,32 @@
 
                         <!-- Asosiy Foto Kartasi -->
                         <div class="relative bg-white p-3 rounded-3xl shadow-2xl border border-slate-200/80">
-                            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200 relative group">
-                                <!-- Surat (images/profile.jpg mavjud bo'lsa darhol chiqadi, bo'lmasa professional avatar chiqadi) -->
-                                <img src="images/profile.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Jaloliddin+Muminov&background=1d4ed8&color=fff&size=600&font-size=0.35&bold=true';" alt="Mo'minov Jaloliddin Azizjon o'g'li" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 relative group">
+                                <!-- Agar images/profile.jpg bo'lsa, chiqadi; bo'lmasa zamonaviy 3D muhandislik vizuali ko'rinadi -->
+                                <img src="images/profile.jpg" onerror="this.style.display='none'; document.getElementById('engVisualFallback').classList.remove('hidden');" alt="Mo'minov Jaloliddin Azizjon o'g'li" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105 z-10 relative">
                                 
-                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <div id="engVisualFallback" class="hidden w-full h-full flex flex-col justify-between p-6 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 text-white relative">
+                                    <div class="flex items-center justify-between text-xs font-mono text-brand-400">
+                                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>CAD // 3D MODEL</span>
+                                        <span class="text-slate-400">PhD // TMJ</span>
+                                    </div>
+
+                                    <!-- 3D Muhandislik texnik grafikasi -->
+                                    <div class="my-auto flex flex-col items-center justify-center text-center py-4">
+                                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-600/30 to-indigo-500/20 border border-brand-500/40 flex items-center justify-center mb-4 shadow-lg shadow-brand-500/10">
+                                            <svg class="w-12 h-12 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                        </div>
+                                        <div class="text-sm font-bold text-white tracking-wide">Jaloliddin Mo'minov</div>
+                                        <div class="text-xs text-brand-300 font-mono mt-1">Muhandislik va Sanoat Texnologiyalari</div>
+                                    </div>
+
+                                    <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+                                        <span>Issiqlik almashinuv tizimlari</span>
+                                        <span class="text-emerald-400 font-mono">CFD // ONLINE</span>
+                                    </div>
+                                </div>
+
+                                <div class="absolute bottom-4 left-4 right-4 text-white z-20 pointer-events-none">
                                     <div class="text-base font-bold drop-shadow">Jaloliddin Mo'minov</div>
                                     <div class="text-xs text-slate-200 font-medium drop-shadow">PhD | Texnika fanlari</div>
                                 </div>
@@ -235,11 +268,11 @@
 
                 <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition card-hover">
                     <div class="flex items-center space-x-3 mb-2">
-                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-brand-700 flex items-center justify-center font-bold text-sm">💾</span>
-                        <div class="text-3xl font-extrabold text-brand-700">5 TB</div>
+                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-brand-700 flex items-center justify-center font-bold text-sm">⚙️</span>
+                        <div class="text-3xl font-extrabold text-brand-700">Sanoat</div>
                     </div>
-                    <div class="text-xs font-bold text-slate-800">Resurslar Bazasi</div>
-                    <div class="text-[11px] text-slate-500 mt-0.5">Maqolalar, darsliklar va 3D fayllar</div>
+                    <div class="text-xs font-bold text-slate-800">Amaliy Ishlanmalar</div>
+                    <div class="text-[11px] text-slate-500 mt-0.5">Kimyo va neft-gaz texnologiyalari</div>
                 </div>
             </div>
         </div>

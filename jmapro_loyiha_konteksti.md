@@ -1,4 +1,4 @@
-# Loyiha Konteksti: JMAPRO.UZ - Ilmiy va Muhandislik Portfolio Sayti
+# Loyiha Konteksti: JMApro.uz - Ilmiy va Muhandislik Portfolio Sayti
 
 ## 1. Asosiy Ma'lumotlar va Muallif
 * **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida).

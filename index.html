@@ -712,9 +712,9 @@
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                             </div>
                             <div>
-                                <h4 class="text-xs text-slate-500 uppercase font-bold">Telegram</h4>
-                                <a href="https://t.me/jaloliddinmuminov" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-brand-700 transition">@jaloliddinMuminov</a>
-                                <p class="text-xs text-slate-500">Tezkor xabarlar va ilmiy guruh</p>
+                                <h4 class="text-xs text-slate-500 uppercase font-bold">Telegram Aloqa Boti</h4>
+                                <a href="https://t.me/JMApro_bot" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-brand-700 transition">@JMApro_bot</a>
+                                <p class="text-xs text-slate-500">Murojaat va savollar uchun rasmiy bot</p>
                             </div>
                         </div>
 
@@ -823,8 +823,8 @@
                 <div class="md:col-span-3 space-y-3">
                     <h4 class="text-sm font-bold text-white uppercase tracking-wider">Tarmoqlar</h4>
                     <div class="flex flex-col space-y-2 text-xs">
-                        <a href="https://t.me/jaloliddinmuminov" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
-                            Telegram: @jaloliddinMuminov
+                        <a href="https://t.me/JMApro_bot" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
+                            Telegram: @JMApro_bot
                         </a>
                         <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
                             YouTube: @jaloliddinMuminov_yt
@@ -877,13 +877,13 @@
             });
         });
 
-        // Aloqa formasi (Google Apps Script Web App integratsiyasi uchun tayyor)
+        // Aloqa formasi (Telegram Bot integratsiyasi)
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');
 
-        // Google Apps Script Deploy qilingan Web App URL shu yerga qo'yiladi
-        const GOOGLE_SCRIPT_WEBAPP_URL = ""; 
+        const TELEGRAM_BOT_TOKEN = "9039848468:AAEx2BXB2VrWELvm4K71JfQffBFPbhicOXY";
+        const TELEGRAM_CHAT_ID = "6471413331";
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -909,37 +909,43 @@
                 <span class="ml-2">Yuborilmoqda...</span>
             `;
 
-            // Agar Google Apps Script URL berilgan bo'lsa, unga POST qiladi:
-            if (GOOGLE_SCRIPT_WEBAPP_URL) {
-                try {
-                    const formData = new FormData();
-                    formData.append("fullName", fullName);
-                    formData.append("contactInfo", contactInfo);
-                    formData.append("subject", subject);
-                    formData.append("message", message);
-                    formData.append("date", new Date().toLocaleString());
+            try {
+                const now = new Date().toLocaleString("uz-UZ", { timeZone: "Asia/Tashkent" });
+                const telegramText = 
+`🔔 <b>JMApro.uz saytidan yangi murojaat!</b>
 
-                    await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
-                        method: "POST",
-                        body: formData,
-                        mode: "no-cors"
-                    });
+👤 <b>F.I.Sh:</b> ${fullName}
+📞 <b>Aloqa:</b> ${contactInfo}
+📌 <b>Mavzu:</b> ${subject}
+💬 <b>Xabar:</b>
+${message}
 
-                    showStatus("Tashakkur! Xabaringiz muvaffaqiyatli qabul qilindi. Tez orada siz bilan bog'lanamiz.", "success");
+🕒 <i>Vaqt: ${now}</i>`;
+
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: telegramText,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.ok) {
+                    showStatus("Tashakkur, " + fullName + "! Murojaatingiz to'g'ridan-to'g'ri Telegramimizga qabul qilindi. Tez orada siz bilan bog'lanamiz.", "success");
                     contactForm.reset();
-                } catch (err) {
-                    showStatus("Xatolik yuz berdi. Iltimos, Telegram orqali bog'laning.", "error");
+                } else {
+                    showStatus("Xatolik yuz berdi. Iltimos, to'g'ridan-to'g'ri @JMApro_bot orqali yozing.", "error");
                 }
-            } else {
-                // Hozirgi simulyatsiya / vaqtinchalik muvaffaqiyat holati
-                setTimeout(() => {
-                    showStatus("Rahmat, " + fullName + "! Xabaringiz yuborildi. (Google Apps Script ulanganda bevosita jadvalga tushadi).", "success");
-                    contactForm.reset();
-                }, 800);
+            } catch (err) {
+                showStatus("Aloqa xatosi. Iltimos, to'g'ridan-to'g'ri Telegram (@JMApro_bot) orqali bog'laning.", "error");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
-
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
         });
 
         function showStatus(msg, type) {

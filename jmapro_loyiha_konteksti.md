@@ -21,7 +21,7 @@
   * Vercel'ning A va CNAME yozuvlari tayyorlangan.
   * Domen faollashishi bilan (kutilayotgan vaqt: dushanba kuni) DNS yozuvlari `my.eskiz.uz` boshqaruv paneliga kiritiladi.
 * **Fayllar va ma'lumotlar saqlash:** Google Drive (5 TB hajm – maqolalar, darsliklar, 3D modellar va video materiallar uchun).
-* **Qayta aloqa (Backend):** Google Apps Script + Google Sheets (bepul va ishonchli murojaatlar bazasi).
+* **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`) orqali xabarlarni to'g'ridan-to'g'ri muallifning shaxsiy Telegramiga yetkazish (faol).
 
 ## 3. Rivojlanish Bosqichlari va Texnik Strategiya
 * **1-bosqich (Joriy – Tejamkor va Tezkor):**
@@ -48,7 +48,7 @@
    * `@jaloliddinMuminov_yt` YouTube muhandislik kanali.
    * Sanoat uskunalari (barabanli quritgichlar, skrubberlar, havoli sovitish apparatlari) ning 3D vizualizatsiyalari.
 6. **IT va Avtomatlashtirish:** Google Apps Script, Python, Google Colab va injiniring hisoblash dasturlari bo'yicha amaliy qo'llanmalar.
-7. **Bog'lanish (`#contact`):** Murojaat formasi (Google Sheets bilan bog'langan), elektron pochta, telefon va ijtimoiy tarmoqlar (Telegram, YouTube va b.).
+7. **Bog'lanish (`#contact`):** Murojaat formasi (`@JMApro_bot` Telegram boti bilan bog'langan), elektron pochta, telefon va ijtimoiy tarmoqlar (Telegram, YouTube va b.).
 
 ## 5. Ish Oqimi (Workflow)
 Saytni yangilash va yuritish tartibi:
@@ -58,5 +58,5 @@ Saytni yangilash va yuritish tartibi:
 
 ## 6. Navbatdagi Amaliy Qadamlar
 1. [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash (07.11.2026 da muvaffaqiyatli bajarildi va tekshirildi).
-2. [ ] Aloqa formasi uchun Google Apps Script kodini Google Sheets jadvaliga ulash va URL'ni `index.html`ga kiritish (`google_apps_script.js` tayyorlandi).
+2. [x] Aloqa formasini to'g'ridan-to'g'ri Telegram botga (`@JMApro_bot`) ulash (07.11.2026 da muvaffaqiyatli ulandi va sinovdan o'tkazildi).
 3. [ ] Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.

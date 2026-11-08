@@ -15,7 +15,11 @@
 * **Jonli havola (Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app) (kelgusida `https://jmapro.uz`)
 * **GitHub ombori:** `jaloliddinmuminov3110-code/JMApro-sayt` (Vercel CI/CD ga ulangan, avtomatik deploy).
 * **Texnologik stek:** Sof HTML5, Tailwind CSS, JavaScript (Vanilla Canvas/SVG/DOM), Vercel Hosting.
-* **Domen va DNS sozlamalari:** Domen provayderi `my.eskiz.uz`, Vercel DNS A va CNAME yozuvlari tayyorlangan.
+* **Domen va DNS sozlamalari:**
+  * Domen provayderi: `my.eskiz.uz`
+  * Asosiy domen (A Record): `jmapro.uz` -> `76.76.21.21` (Vercel Anycast IP)
+  * Subdomen (CNAME Record): `www.jmapro.uz` -> `cname.vercel-dns.com` (Vercel CNAME)
+  * Domen UZINFOCOM tomonidan tasdiqlandi va faol holatda.
 * **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`, Token va Chat ID `6471413331` bilan to'g'ridan-to'g'ri integratsiya qilingan).
 * **Arxitektura:** Ko'p sahifali (Multi-page) modulli tizim: `index.html`, `research.html`, `teaching.html`, `channel.html`.
 

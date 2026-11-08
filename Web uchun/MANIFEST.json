@@ -1,0 +1,112 @@
+{
+  "app_version": "1.3",
+  "core_version": "1.2",
+  "snapshot_date": "2026-11-09",
+  "counts": {
+    "latin_to_cyrillic": 313,
+    "cyrillic_to_latin": 312,
+    "golden_cases": 847
+  },
+  "files": {
+    "assets/app.ico": {
+      "bytes": 119491,
+      "sha256": "ce826d08acaad9ff663aa8e3cf998c21df15659ddd25fe7ec3cf6e97b2b42086",
+      "origin": "exact copy of assets/app.ico"
+    },
+    "assets/logo-original.png": {
+      "bytes": 1525091,
+      "sha256": "93883d79f3a22f6304332cdcaba413534edb147ece4e24af67f71be88f7ad62d",
+      "origin": "exact copy of assets/logo-original.png"
+    },
+    "assets/logo.png": {
+      "bytes": 7308,
+      "sha256": "6917d58eb6d1e9b366bf29707cd34023f09573e94975fd220998eae3d09c064f",
+      "origin": "exact copy of assets/logo.png"
+    },
+    "converter.py": {
+      "bytes": 12150,
+      "sha256": "64170d0d9a58430326f0d4fe56b9b358375aa2fb8a7fba605fe49767bd96dcd1",
+      "origin": "exact copy of converter.py"
+    },
+    "data/SOURCES.md": {
+      "bytes": 2283,
+      "sha256": "634aa5fa3af5ab45230f3a65b4a3c2e0a10d22f4e73cbabfde639e1645f42e37",
+      "origin": "exact copy of data/SOURCES.md"
+    },
+    "data/ts_words_source.tsv": {
+      "bytes": 9106,
+      "sha256": "ec84598524870ec4236b8e48ae01f61e1948177a9f500b877e04fa4c3a27ff38",
+      "origin": "exact copy of data/ts_words_source.tsv"
+    },
+    "namuna.txt": {
+      "bytes": 335,
+      "sha256": "92b7593c36dc220665e0a3a64040a702e64c3a7e232971e2ac38c5356c7c19d2",
+      "origin": "exact copy of namuna.txt"
+    },
+    "namuna_1_2.txt": {
+      "bytes": 313,
+      "sha256": "d4d9ab55ea222d4855f84cbf1f27a620c348db10c2dc406544d9bf74b54f4967",
+      "origin": "exact copy of namuna_1_2.txt"
+    },
+    "OQING.md": {
+      "bytes": 3994,
+      "sha256": "f6dfe08dd3c145c33c8d595fbabc9e46f3264801899fdd78da990eecb7f320b8",
+      "origin": "generated for web handoff"
+    },
+    "rules.json": {
+      "bytes": 25626,
+      "sha256": "cbb7246dbc6ed0510164ee8695898c0c1d6fe07161d35e93b923e1705d56fc4b",
+      "origin": "exact copy of rules.json"
+    },
+    "safety.py": {
+      "bytes": 1180,
+      "sha256": "7024a82a870538b7b5d226f655aaae0681fd8bc4a5b84c9206cdfe14b2003568",
+      "origin": "exact copy of safety.py"
+    },
+    "tests/golden_cases.json": {
+      "bytes": 349893,
+      "sha256": "1f0380063f958912d11cef18966a1d15c1b2eaf9851666f145934753bd53814b",
+      "origin": "generated for web handoff"
+    },
+    "tests/test_converter.py": {
+      "bytes": 8105,
+      "sha256": "dba243d6f9dc86c5a5eeb2d7dc2fbe010e4a0c7bd694ac3fac4afb18f52ef2ee",
+      "origin": "exact copy of tests/test_converter.py"
+    },
+    "tests/test_safety.py": {
+      "bytes": 3956,
+      "sha256": "8741a8dfe6b4ab79bf5bcec1cc2df9ff7e11823d721b82c16dbeecddc23a05e9",
+      "origin": "exact copy of tests/test_safety.py"
+    },
+    "tests/test_ts.py": {
+      "bytes": 5008,
+      "sha256": "dcad2bd0c1d4fd146354dfae693e720a937e068cb6a05d211b041049f5716cae",
+      "origin": "exact copy of tests/test_ts.py"
+    },
+    "text_files.py": {
+      "bytes": 1524,
+      "sha256": "4fe0668386ab74f9f6bb07d7075869bdee21374ec07adfe7c02a0d02d493bb74",
+      "origin": "exact copy of text_files.py"
+    },
+    "tools/build_lexicon.py": {
+      "bytes": 2408,
+      "sha256": "5f6c5c5472607463edb2016a688476f3409bbecda98ba557dbda6c49fa0bcdac",
+      "origin": "exact copy of tools/build_lexicon.py"
+    },
+    "verify_golden.py": {
+      "bytes": 787,
+      "sha256": "24728ec6bdd1dd148cd9e296c2bc76deb3ed42a319a4c2cea5b6e0a2bfb6a546",
+      "origin": "generated for web handoff"
+    },
+    "web-data.json": {
+      "bytes": 2835,
+      "sha256": "7b25295ab377b683ab89318db3312212f6bea177447a2e2af9ca8895b337038c",
+      "origin": "generated for web handoff"
+    },
+    "TEKSHIRUV.txt": {
+      "bytes": 292,
+      "sha256": "dda167e434f1509754fb5d9d4b380bc664f05359a9b2724a96d35a68661195f3",
+      "origin": "local verification report"
+    }
+  }
+}

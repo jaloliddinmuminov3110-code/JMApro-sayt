@@ -1,0 +1,6 @@
+﻿2026-11-09
+15 ta asl fayl baytma-bayt nusxalandi.
+847 ta konvertatsiya/natija, ogohlantirish va aniqlash misoli: PASS.
+24 ta yadro va xavfsizlik testi: PASS.
+MANIFEST.json nazorat summalari tekshirildi.
+Bu sinovlar Python etaloniga tegishli; JavaScript konvertori hali yaratilmagan.

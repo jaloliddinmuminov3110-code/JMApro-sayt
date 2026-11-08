@@ -1,0 +1,44 @@
+﻿JMA Alifbo V1.3 — sinov to'plami
+
+1. JMA-Alifbo-1.3.exe — o'rnatmasdan ochiladigan mustaqil dastur.
+2. JMA-Alifbo-Word-1.3.dotm — Word qo'shimchasi.
+3. JMA-Alifbo-Excel-1.3.xlam — Excel qo'shimchasi.
+
+Bu to'plamda o'rnatuvchi yo'q. V1.2 o'rnatuvchisini bu fayllarga
+qo'llamang — u V1.2 nusxalarini joylaydi.
+
+Office qo'shimchalarini sinashdan oldin Word va Excelni to'liq yoping.
+Eski JMA qo'shimchasini startup papkasidan TASHQARIGA zaxiralang yoki
+qo'shimchalar sozlamasidan uzing. Faqat bitta JMA versiyasi yuklansin:
+aks holda bir xil klavishlar va Ribbon bo'limlari to'qnashishi mumkin.
+Word: amaldagi STARTUP papkasiga DOTM joylanadi. Odatiy manzil:
+%APPDATA%\Microsoft\Word\STARTUP
+Excel: amaldagi XLSTART papkasiga XLAM joylanadi. Odatiy manzil:
+%APPDATA%\Microsoft\Excel\XLSTART
+Office papkalari o'zgartirilgan bo'lsa amaldagi manzildan foydalaning.
+Office xavfsizlik sozlamalarini umumiy tarzda pasaytirmang.
+
+Alt+Q — amaldagi lotin; Alt+W — kirill; Alt+E — yangi lotin.
+Word'da Ctrl+Alt muqobillari ham bor. Progress, Bekor qilish/Esc va Undo
+saqlangan. Hujjatlar avtomatik saqlanmaydi.
+Word JMA lentasida Qaytarish tugmasi bor: hujjatdagi oxirgi amalni
+qaytaradi (Ctrl+Z bilan bir xil). Konvertatsiya bitta amal sifatida qaytariladi.
+
+Dastur ochilganda natija alifbosi yangi lotin bo'ladi.
+Muallif ismi Telegram profilini ochadi. Yordam tugmasi oldingi yordam
+matnini ko'rsatadi. Aloqa alohida tugma orqali saytdagi kontaktlarni ochadi.
+
+Yangilanish: https://jmapro.uz/alifbo
+Aloqa: https://www.jmapro.uz/#contact
+Havola faqat bosilganda ochiladi. Yuklab olish va o'rnatish foydalanuvchi
+tomonidan bajariladi; bu versiya o'zini avtomatik almashtirmaydi.
+
+Word va Excel VBA loyihalari administrator qo'ygan parol bilan qulflangan.
+Tahrir uchun Jaloliddin Mo'minovga murojaat qiling. Parol himoyasi
+tasodifiy tahrirdan himoya qiladi; mutlaq buzilmas himoya emas.
+Tayyor EXE va makroslarda mahalliy Defender tahdid topmadi. Bu boshqa
+kompyuterlar yoki kelajakdagi barcha antivirus natijalariga kafolat emas.
+Raqamli imzo qo'yilmagan: ishonchli imzolash sertifikati hali mavjud emas.
+To'plam Windows 11 / Word va Excel 2021 x64 muhitida tekshirildi.
+
+manifest.json fayllarning SHA-256 nazorat summalarini o'z ichiga oladi.

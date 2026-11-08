@@ -1,0 +1,26 @@
+{
+  "version": "1.3",
+  "revision": "2026-11-09.2",
+  "core_version": "1.2",
+  "installer_included": false,
+  "digitally_signed": false,
+  "vba_project_lock": "Word and Excel password prompts verified after reopening",
+  "defender": "2026-11-09 local custom scans: no threats, exit 0",
+  "update_url": "https://jmapro.uz/alifbo",
+  "contact_url": "https://www.jmapro.uz/#contact",
+  "telegram_url": "https://t.me/JaloliddinMuminov",
+  "files": {
+    "JMA-Alifbo-1.3.exe": {
+      "bytes": 12930045,
+      "sha256": "1790107cc52ad5b3661477baa9a824af38b265b4d6411c3b7850dbd4cff442f8"
+    },
+    "JMA-Alifbo-Word-1.3.dotm": {
+      "bytes": 150006,
+      "sha256": "96f566b39e510ccc8b34b4b5649a4cd802e6ff6fed119cf5ba142239aed6d192"
+    },
+    "JMA-Alifbo-Excel-1.3.xlam": {
+      "bytes": 103902,
+      "sha256": "140d6f0ae3a3e0757a91415df10877320d44c4784624e872a098fa1673181c96"
+    }
+  }
+}

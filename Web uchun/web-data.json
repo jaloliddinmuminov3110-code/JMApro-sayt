@@ -1,0 +1,120 @@
+{
+  "app_version": "1.3",
+  "core_version": "1.2",
+  "encoding": "UTF-8",
+  "normalization": "NFC per word; detection uses NFC",
+  "alphabet_ids": {
+    "auto": "Avto aniqlash",
+    "latin": "Lotin (amaldagi)",
+    "new_latin": "Yangi lotin (Ö, Ğ, Ş, Ç)",
+    "cyrillic": "Kirill"
+  },
+  "default_source": "auto",
+  "default_target": "new_latin",
+  "apostrophes": [
+    "'",
+    "‘",
+    "’",
+    "ʻ",
+    "ʼ",
+    "`",
+    "ʹ"
+  ],
+  "normalized_letter_apostrophe": "‘",
+  "new_latin_internal_tutuq": "ʼ",
+  "letter_maps": {
+    "_latin_to_cyr": {
+      "singles": {
+        "a": "а",
+        "b": "б",
+        "d": "д",
+        "f": "ф",
+        "g": "г",
+        "h": "ҳ",
+        "i": "и",
+        "j": "ж",
+        "k": "к",
+        "l": "л",
+        "m": "м",
+        "n": "н",
+        "o": "о",
+        "p": "п",
+        "q": "қ",
+        "r": "р",
+        "s": "с",
+        "t": "т",
+        "u": "у",
+        "v": "в",
+        "x": "х",
+        "y": "й",
+        "z": "з"
+      },
+      "pairs": {
+        "o‘": "ў",
+        "g‘": "ғ",
+        "sh": "ш",
+        "ch": "ч",
+        "yo": "ё",
+        "yu": "ю",
+        "ya": "я",
+        "ye": "е"
+      }
+    },
+    "_cyr_to_latin": {
+      "mapping": {
+        "а": "a",
+        "б": "b",
+        "в": "v",
+        "г": "g",
+        "д": "d",
+        "ж": "j",
+        "з": "z",
+        "и": "i",
+        "й": "y",
+        "к": "k",
+        "л": "l",
+        "м": "m",
+        "н": "n",
+        "о": "o",
+        "п": "p",
+        "р": "r",
+        "с": "s",
+        "т": "t",
+        "у": "u",
+        "ф": "f",
+        "х": "x",
+        "э": "e",
+        "ҳ": "h",
+        "қ": "q",
+        "ў": "o‘",
+        "ғ": "g‘",
+        "ш": "sh",
+        "ч": "ch",
+        "ё": "yo",
+        "ю": "yu",
+        "я": "ya",
+        "ъ": "‘",
+        "ь": ""
+      }
+    }
+  },
+  "python_regex_reference": {
+    "word": "(?:[^\\W\\d_]|[\\u0300-\\u036f])+(?:['‘’ʻʼ`ʹ](?:[^\\W\\d_]|[\\u0300-\\u036f])+)*(?:(?<=[oOgG])['‘’`ʹ])?",
+    "cyrillic": "[А-Яа-яЁёЎўҚқҒғҲҳ]",
+    "latin": "[A-Za-zÖöĞğŞşÇç]",
+    "nominal_suffix": "(?:lar)?(?:cha|chi|lik|li|siz|simon)?(?:lar)?(?:im|ing|imiz|ingiz|i|si)?(?:ning|ni|ga|ka|qa|da|dan|gacha)?(?:dir|mi|ku)?"
+  },
+  "spelling_hints": {
+    "senariy": "ssenariy",
+    "episentr": "epitsentr"
+  },
+  "limits": {
+    "max_text_characters": 500000,
+    "max_rules_bytes": 131072
+  },
+  "rules_file": "rules.json",
+  "reference_implementation": "converter.py",
+  "update_url": "https://jmapro.uz/alifbo",
+  "contact_url": "https://www.jmapro.uz/#contact",
+  "telegram_url": "https://t.me/JaloliddinMuminov"
+}

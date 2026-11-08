@@ -35,12 +35,18 @@ Tizim mantiqiy bog'langan, ammo texnik jihatdan mustaqil bo'lgan quyidagi 4 ta a
 * **YouTube Ilmiy Kanal (`channel.html`):** "Jaloliddin Mo'minov - Ilmiy kanal" (@jaloliddinMuminov_yt), 3D animatsiyalar, video to'plamlar va sanoat korxonalari uchun 3D vizualizatsiya xizmatlari.
 
 ### 3.2. JMA Alifbo (Amaliy Lingvistik Vosita)
-* **URL joylashuvi:** `/alifbo` bo'limi (yoki `alifbo.html`).
-* **Vazifasi:** Lotin-Kirill-Lotin matnlarini yuqori aniqlikda, o'zbek tili orfografik qoidalariga to'liq rioya qilgan holda o'girish tizimi (apostrof, tutuq belgisi, sh, ch, ng, yo, yu, ya qoidalari).
+* **URL joylashuvi:** `https://jmapro.uz/alifbo` (Clean URL, `alifbo.html`).
+* **Vazifasi:** Lotin-Kirill-Lotin matnlarini yuqori aniqlikda, o'zbek tili orfografik qoidalariga to'liq rioya qilgan holda o'girish tizimi (apostrof, tutuq belgisi, sh, ch, ng, yo, yu, ya qoidalari, 625 ta lug'at istisnolari va yangi qabul qilingan alifbo: ō, ğ, ş, ç).
 * **Tarkibi:**
-  1. **Web App:** Brauzerda ishlovchi, hech narsa o'rnatmasdan matnni onlayn tezkor konvertatsiya qiluvchi toza va qulay interfeys.
-  2. **Desktop Installer (.exe):** Inno Setup orqali yig'ilgan avtomatlashtirilgan o'rnatuvchi. Foydalanuvchi kompyuteridagi Microsoft Word dasturining `Startup` papkasiga maxsus tayyorlangan Word makrosini to'g'ridan-to'g'ri joylashtiradi (Word lentasida JMA Alifbo tugmasi paydo bo'ladi).
-  3. **Yangilanish mexanizmi:** Makros ichidagi "Yangilash" tugmasi bosilganda brauzerda `jmapro.uz/alifbo` sahifasi ochilib, foydalanuvchiga so'nggi versiyani yuklab olish imkonini beradi.
+  1. **Web App (Onlayn Veb-Konverter):** Brauzerning o'zida 100% client-side ishlovchi (`assets/alifbo/alifbo-engine.js`), xavfsiz (matn serverga jo'natilmaydi), 847 ta golden test holatlaridan 100% muvaffaqiyatli o'tgan dvigatel. Jonli alifboni avtomatik aniqlash (`Auto-detect`), ikki tomonlama o'girish, tezkor nusxalash, TXT eksport va maxsus harflar virtual klaviaturasi.
+  2. **Universal Desktop Installer (`downloads/JMA-Alifbo-Setup-1.3.exe`):** Inno Setup orqali yig'ilgan yagona 14.4 MB universal o'rnatuvchi. 1 ta fayl ichida:
+     - Mustaqil Desktop dastur (`Program Files\JMA\JMA Alifbo` + Desktop yorlig'i);
+     - MS Word uchun VBA makrosi (`STARTUP` papkasiga `JMA-Alifbo-Word.dotm`);
+     - MS Excel uchun plagin (`XLSTART` papkasiga `JMA-Alifbo-Excel.xlam`);
+     - Qaytarish (Undo / Ctrl+Z) integratsiyasi, tezkor klavishlar: `Alt+Q`, `Alt+W`, `Alt+E`;
+     - Xavfsiz zaxira (`%LOCALAPPDATA%\JMA\AlifboOffice`) va Windows Ilovalari orqali toza o'chirish (Uninstall).
+  3. **Yangilanish mexanizmi:** Desktop dastur va Office makrosidagi "Yangilash" tugmasi to'g'ridan-to'g'ri `https://jmapro.uz/alifbo` sahifasiga ulanadi.
+  4. **Arxiv:** Oldingi barqaror v1.2 nashri (`downloads/JMA-Alifbo-1.2.exe`) arxiv sifatida saqlangan.
 
 ### 3.3. Muhandislik Dasturlari va Vizual Simulyatorlar (Vizual Laboratoriya)
 * **Bog'liqligi:** Asosiy saytdagi muhandislik kalkulyatorlari va "IT & Dasturlash" bo'limi bilan uzviy integratsiya.

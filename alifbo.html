@@ -518,12 +518,48 @@
                         </div>
                     </div>
 
-                    <!-- Asosiy yuklab olish tugmasi -->
-                    <div class="flex-shrink-0 w-full lg:w-auto">
-                        <a href="downloads/JMA-Alifbo-Setup-1.3.exe" download="JMA-Alifbo-Setup-1.3.exe" class="w-full lg:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5 transition-all group">
-                            <svg class="w-6 h-6 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                            <span>O'rnatuvchini Yuklab Olish (v1.3)</span>
+                    <!-- Asosiy yuklab olish tugmalari -->
+                    <div class="flex-shrink-0 w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-2.5">
+                        <a href="downloads/JMA-Alifbo-Setup-1.3.exe" download="JMA-Alifbo-Setup-1.3.exe" class="w-full inline-flex items-center justify-center space-x-3 px-7 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5 transition-all group">
+                            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span>O'rnatuvchini Yuklab Olish (.EXE)</span>
                         </a>
+
+                        <a href="downloads/JMA-Alifbo-Setup-1.3.zip" download="JMA-Alifbo-Setup-1.3.zip" class="w-full inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 hover:border-emerald-500 font-bold text-xs sm:text-sm rounded-xl shadow-sm transition">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                            <span>ZIP Arxiv sifatida yuklab olish (14.6 MB)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brauzer / Windows SmartScreen ogohlantirishi bo'yicha qulay yo'riqnoma -->
+                <div class="my-6 p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 text-xs sm:text-sm text-amber-950 space-y-2.5 shadow-sm">
+                    <div class="flex items-center space-x-2 font-bold text-amber-900 text-sm sm:text-base">
+                        <span class="text-lg">💡</span>
+                        <span>Brauzer (Chrome) yoki Windows «Xavfli / Noma'lum ilova» deb ogohlantirsa nima qilish kerak?</span>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed text-xs sm:text-sm">
+                        Dastur yangi ishlab chiqilgani va bepul ochiq taqdim etilayotgani sababli (pullik xalqaro EV sertifikatisiz), brauzer va Windows Defender uni <i>«kam yuklab olingan»</i> deb ogohlantirishi mutlaqo tabiiy. <b>Dastur 100% toza va xavfsiz.</b>
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-3 pt-1">
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
+                            <div class="font-bold text-slate-900 flex items-center space-x-1.5">
+                                <span class="w-5 h-5 rounded-md bg-blue-100 text-brand-700 flex items-center justify-center text-xs font-black">1</span>
+                                <span>Chrome'da yuklab olishda:</span>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                Ogohlantirish oynasida <b>«Скачать подозрительный файл»</b> (yoki «Baribir saqlash») tugmasini bosing. Yoki yuqoridagi <b>ZIP arxiv</b> tugmasi orqali yuklab oling.
+                            </p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
+                            <div class="font-bold text-slate-900 flex items-center space-x-1.5">
+                                <span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-black">2</span>
+                                <span>Windows SmartScreen (ko'k oyna):</span>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                Ko'k oynadagi <b>«Подробнее»</b> (Batafsil) havolasini bosing, so'ng paydo bo'ladigan <b>«Выполнить в любом случае»</b> (Baribir ishga tushirish) tugmasini bosing.
+                            </p>
+                        </div>
                     </div>
                 </div>
 

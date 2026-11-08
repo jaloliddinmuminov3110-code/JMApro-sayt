@@ -71,12 +71,104 @@
             color: #ffffff;
             box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
         }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee2 {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(0%); }
+        }
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee2 {
+            animation: marquee2 35s linear infinite;
+        }
+        .ticker-wrapper:hover .animate-marquee,
+        .ticker-wrapper:hover .animate-marquee2 {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
 
     <!-- 1. Navigatsiya paneli -->
     <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-xl z-50 border-b border-blue-100/90 shadow-sm shadow-blue-900/5 transition-all">
+        <!-- 0. Test Rejimi Animatsion E'lon Tasmasi (O'ngdan chapga) -->
+        <div class="relative bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 text-xs sm:text-sm py-1.5 overflow-hidden border-b border-amber-600/40 shadow-sm select-none z-50">
+            <div class="flex items-center">
+                <!-- Chap tomondagi doimiy belgi (Badge) -->
+                <div class="relative z-10 flex-shrink-0 flex items-center pl-3 sm:pl-6 pr-3 bg-amber-400 shadow-[6px_0_12px_rgba(245,158,11,0.6)]">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-xs font-black uppercase tracking-wider bg-slate-950 text-amber-300 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 mr-1.5 animate-pulse"></span>
+                        TEST REJIMI
+                    </span>
+                </div>
+
+                <!-- O'ngdan chapga uzluksiz oquvchi lenta -->
+                <div class="ticker-wrapper overflow-hidden whitespace-nowrap flex-1 flex cursor-default">
+                    <div class="ticker-track flex animate-marquee whitespace-nowrap font-medium text-slate-950">
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                    </div>
+                    <div class="ticker-track flex animate-marquee2 whitespace-nowrap font-medium text-slate-950" aria-hidden="true">
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                        <span class="mx-6 inline-flex items-center space-x-2">
+                            <span>⚠️</span>
+                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
+                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
+                            <span class="text-amber-900 font-black">✦</span>
+                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
                 <!-- Logotip -->
@@ -164,7 +256,7 @@
     </header>
 
     <!-- 2. Bosh qism (Hero Section) -->
-    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-jmapro-hero overflow-hidden border-b border-slate-200">
+    <section id="home" class="relative pt-36 pb-16 md:pt-44 md:pb-24 bg-jmapro-hero overflow-hidden border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                 

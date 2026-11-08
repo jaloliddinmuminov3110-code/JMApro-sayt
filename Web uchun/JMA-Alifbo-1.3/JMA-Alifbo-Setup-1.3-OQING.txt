@@ -1,0 +1,42 @@
+﻿JMA Alifbo 1.3 — o'rnatish
+
+O'rnatishdan oldin Word va Excel oynalarini to'liq yoping.
+JMA-Alifbo-Setup-1.3.exe faylini ishga tushiring va o'rnatishni yakunlang.
+Program Files\JMA\JMA Alifbo: JMA Alifbo.exe va Office sozlash yordamchisi.
+Desktop: JMA Alifbo yorlig'i (barcha foydalanuvchilar uchun).
+Word: joriy foydalanuvchining amaldagi STARTUP papkasiga DOTM.
+Excel: joriy foydalanuvchining XLSTART papkasiga XLAM.
+Office mavjud bo'lmasa, tegishli komponent o'tkazib yuboriladi.
+Office makroslari o'rnatishni boshlagan ish stoli foydalanuvchisi uchun qo'yiladi.
+Boshqa Windows foydalanuvchisi Start > JMA Alifbo > Office makroslarini sozlash
+orqali o'z profili uchun qo'shimchalarni o'rnatishi mumkin.
+
+Alt+Q — amaldagi lotin; Alt+W — kirill; Alt+E — yangi lotin.
+Word'da Ctrl+Alt+Q/W/E muqobil tugmalari ham mavjud.
+Office qayta ochilganda JMA Alifbo bo'limi yuklanadi.
+Office xavfsizlik siyosati o'zgartirilmaydi. Tashkilot siyosati makroslarni
+taqiqlasa, tashkilot administratori bilan kelishing.
+
+Word'da JMA-Alifbo-Word.dotm, Excel'da JMA-Alifbo-Excel.xlam o'rnatiladi.
+Bu doimiy nomlar; ichki versiya 1.3. Eski 1.0 va 1.3 nomli JMA fayllari
+zaxiralanib startup papkasidan olinadi. Oldingi installer qaydi ham yangilanadi.
+Shu nomdagi oldingi JMA makroslari zaxiralanadi. Boshqa qo'shimchalar saqlanadi.
+Zaxira va qayd: %LOCALAPPDATA%\JMA\AlifboOffice
+JMA fayli qo'lda o'zgartirilgan bo'lsa, ustiga yozish/o'chirish to'xtatiladi:
+avval fayl nusxasini boshqa joyga saqlab, startup papkasidan olib qo'ying.
+Qayta o'rnatish dastlabki zaxirani almashtirmaydi.
+Windows Sozlamalar > Ilovalar orqali JMA Alifbo 1.3 ni o'chirish mumkin.
+Joriy foydalanuvchidagi o'rnatuvchi qo'ygan makroslar olinadi va avvalgi
+JMA nusxalari tiklanadi. Boshqa foydalanuvchilar oldin OfficeSetup.exe --remove
+orqali o'z makroslarini olib tashlashi kerak.
+Hujjatlar, ish kitoblari va foydalanuvchi matnlari o'zgartirilmaydi.
+
+Windows 10 / 11, x64; .NET Framework 4.5+.
+Office qo'shimchalari Word/Excel 2021 64-bitda foydalanuvchi tomonidan sinalgan;
+boshqa Office versiyalarida qo'shimcha sinov kerak. PowerPoint kiritilmagan.
+O'rnatuvchi raqamli sertifikat bilan imzolanmagan.
+Yordam: Jaloliddin Mo'minov — https://t.me/JaloliddinMuminov
+Aloqa: https://www.jmapro.uz/#contact
+Rasmiy sayt: https://jmapro.uz/alifbo
+Chiqish bosilganda shu rasmiy sahifa ochiladi (jim rejimda ochilmaydi).
+Telefon: +998 90 166 99 44

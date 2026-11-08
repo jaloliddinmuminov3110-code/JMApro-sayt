@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMA Alifbo | Lotin-Kirill Konverter &amp; MS Word Makrosi | JMApro.uz</title>
-    <meta name="description" content="JMA Alifbo — Microsoft Word uchun aqlli makros, avtomatlashtirilgan desktop o'rnatuvchi va onlayn Lotin-Kirill o'giruvchi ekotizimi. So'nggi v1.2 versiyasini yuklab oling.">
-    <meta name="keywords" content="JMA Alifbo, Lotin Kirill o'giruvchi, MS Word makros, Lotin Kirill konverter, Kirilldan Lotinga, Jaloliddin Mo'minov, Inno Setup, JMApro">
+    <title>JMA Alifbo | Onlayn Lotin-Kirill Konverteri &amp; MS Office Ekotizimi | JMApro.uz</title>
+    <meta name="description" content="JMA Alifbo — To'g'ridan-to'g'ri brauzerda ishlovchi onlayn Lotin-Kirill konverteri, Microsoft Word va Excel uchun universal o'rnatuvchi ekotizimi. So'nggi v1.3 versiyasini yuklab oling.">
+    <meta name="keywords" content="JMA Alifbo, Lotin Kirill o'giruvchi, MS Word makros, MS Excel konverter, Lotin Kirill konverter, Kirilldan Lotinga, Jaloliddin Mo'minov, Inno Setup, JMApro, Yangi lotin">
     <meta name="author" content="Mo'minov Jaloliddin Azizjon o'g'li">
     
     <!-- Open Graph / Meta -->
     <link rel="canonical" href="https://jmapro.uz/alifbo">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jmapro.uz/alifbo">
-    <meta property="og:title" content="JMA Alifbo — Lotin-Kirill Ekotizimi | JMApro.uz">
-    <meta property="og:description" content="MS Word makrosi va onlayn konverter. Formatlashni buzmasdan bir klikda sifatli o'girish vositasi.">
+    <meta property="og:title" content="JMA Alifbo — Lotin-Kirill Konverteri &amp; MS Office Ekotizimi | JMApro.uz">
+    <meta property="og:description" content="Onlayn konverter hamda MS Word va Excel uchun universal o'rnatuvchi. Formatlashni buzmasdan bir klikda sifatli o'giring.">
     <meta property="og:image" content="assets/jmapro-preview.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/jmapro-logo-light.svg">
     <link rel="apple-touch-icon" href="assets/jmapro-icon-512.png">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -63,7 +63,7 @@
         }
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 14px 28px -10px rgba(16, 185, 129, 0.18);
+            box-shadow: 0 16px 32px -10px rgba(16, 185, 129, 0.2);
         }
         @keyframes marquee {
             0% { transform: translateX(0%); }
@@ -83,7 +83,25 @@
         .ticker-wrapper:hover .animate-marquee2 {
             animation-play-state: paused;
         }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
     </style>
+
+    <!-- JMA Alifbo 100% Client-Side Engine -->
+    <script src="assets/alifbo/alifbo-engine.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900">
 
@@ -100,52 +118,34 @@
                     </span>
                 </div>
 
-                <!-- O'ngdan chapga uzluksiz oquvchi lenta -->
-                <div class="ticker-wrapper overflow-hidden whitespace-nowrap flex-1 flex cursor-default">
-                    <div class="ticker-track flex animate-marquee whitespace-nowrap font-medium text-slate-950">
-                        <span class="mx-6 inline-flex items-center space-x-2">
-                            <span>⚠️</span>
-                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
-                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
-                        </span>
-                        <span class="mx-6 inline-flex items-center space-x-2">
-                            <span>⚠️</span>
-                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
-                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
-                        </span>
+                <!-- Harakatlanuvchi matn (Marquee) -->
+                <div class="ticker-wrapper relative flex overflow-x-hidden w-full font-bold cursor-default" title="To'xtatish uchun kursorni ustiga olib keling">
+                    <div class="animate-marquee whitespace-nowrap flex items-center space-x-8 text-slate-950 pr-8">
+                        <span>⚠️ Diqqat: JMApro.uz portali ayni damda test rejimida ishlamoqda!</span>
+                        <span>•</span>
+                        <span>🚀 Loyihalar, tadqiqotlar va yangi bo'limlar bosqichma-bosqich sozlanmoqda</span>
+                        <span>•</span>
+                        <span>✍️ Fikr-mulohaza yoki takliflaringiz bo'lsa, @JMApro_bot orqali yozib qoldirishingiz mumkin!</span>
+                        <span>•</span>
+                        <span>🌐 JMA Alifbo v1.3 yangi versiyasi foydalanishga tayyor</span>
+                        <span>•</span>
                     </div>
-                    <div class="ticker-track flex animate-marquee2 whitespace-nowrap font-medium text-slate-950" aria-hidden="true">
-                        <span class="mx-6 inline-flex items-center space-x-2">
-                            <span>⚠️</span>
-                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
-                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
-                        </span>
-                        <span class="mx-6 inline-flex items-center space-x-2">
-                            <span>⚠️</span>
-                            <span class="font-bold">Sayt test rejimida ishlamoqda:</span>
-                            <span>yangi bo'limlar, muhandislik kalkulyatorlari va ilmiy resurslar bosqichma-bosqich to'ldirilmoqda.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span class="font-bold">Murojaat va takliflar uchun aloqa bo'limi faol.</span>
-                            <span class="text-amber-900 font-black">✦</span>
-                            <span>JMApro.uz — Ilmiy-muhandislik portali</span>
-                        </span>
+
+                    <div class="animate-marquee2 absolute top-0 whitespace-nowrap flex items-center space-x-8 text-slate-950 pr-8">
+                        <span>⚠️ Diqqat: JMApro.uz portali ayni damda test rejimida ishlamoqda!</span>
+                        <span>•</span>
+                        <span>🚀 Loyihalar, tadqiqotlar va yangi bo'limlar bosqichma-bosqich sozlanmoqda</span>
+                        <span>•</span>
+                        <span>✍️ Fikr-mulohaza yoki takliflaringiz bo'lsa, @JMApro_bot orqali yozib qoldirishingiz mumkin!</span>
+                        <span>•</span>
+                        <span>🌐 JMA Alifbo v1.3 yangi versiyasi foydalanishga tayyor</span>
+                        <span>•</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Asosiy menyu qatori -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
                 <!-- Logotip -->
@@ -232,8 +232,8 @@
         </div>
     </header>
 
-    <!-- 2. Sahifa Bosh qismi (Page Header & Breadcrumbs) -->
-    <section class="pt-36 pb-12 md:pt-44 md:pb-16 bg-jmapro-hero border-b border-slate-200">
+    <!-- 2. Sahifa Bosh qismi (Page Header & Hero) -->
+    <section class="pt-36 pb-10 md:pt-44 md:pb-14 bg-jmapro-hero border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
             <nav class="flex items-center space-x-2 text-xs sm:text-sm text-slate-500 mb-6 font-medium">
@@ -252,29 +252,29 @@
                         JMA Alifbo — <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-700 to-brand-800">Lotin &bull; Kirill</span> Konverteri
                     </h1>
                     <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
-                        Microsoft Word uchun aqlli avtomatlashtirilgan makros, tezkor desktop o'rnatuvchi hamda to'g'ridan-to'g'ri brauzerda ishlovchi onlayn konverter platformasi. Hujjatlaringiz formatini buzmasdan 1-klikda sifatli o'giring.
+                        To'g'ridan-to'g'ri brauzeringizda ishlovchi tezkor <b>onlayn veb-konverter</b> hamda <b>Microsoft Word va Excel</b> uchun yagona avtomatlashtirilgan o'rnatuvchi ekotizimi. Hujjatlaringiz formatini buzmasdan 1-klikda sifatli o'giring.
                     </p>
                 </div>
 
-                <!-- Tezkor harakat tugmasi (So'nggi versiyaga sakrash) -->
+                <!-- Tezkor harakat tugmalari -->
                 <div class="flex-shrink-0 flex flex-col sm:flex-row gap-3">
-                    <a href="#latest-version" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-600/25 transition flex items-center justify-center space-x-2 group">
-                        <svg class="w-5 h-5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                        <span>So'nggi v1.2 yuklab olish</span>
+                    <a href="#web-app" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-600/25 transition flex items-center justify-center space-x-2 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span>Onlayn Konverter</span>
                     </a>
-                    <a href="#web-app" class="px-5 py-3.5 bg-white border border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 font-bold text-sm sm:text-base rounded-xl shadow-sm transition flex items-center justify-center space-x-2">
-                        <span>Onlayn dastur</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    <a href="#latest-version" class="px-5 py-3.5 bg-white border border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 font-bold text-sm sm:text-base rounded-xl shadow-sm transition flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>v1.3 O'rnatuvchini yuklab olish</span>
                     </a>
                 </div>
             </div>
 
             <!-- Asosiy imkoniyatlar (Badges) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg">⚡</div>
                     <div>
-                        <div class="text-xs text-slate-500 font-medium">Tezlik</div>
+                        <div class="text-xs text-slate-500 font-medium">Bir zumda</div>
                         <div class="text-sm font-bold text-slate-900">1-klikda o'girish</div>
                     </div>
                 </div>
@@ -286,76 +286,189 @@
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-lg">💻</div>
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-lg">📊</div>
                     <div>
-                        <div class="text-xs text-slate-500 font-medium">MS Word</div>
-                        <div class="text-sm font-bold text-slate-900">2016-2024 / M365</div>
+                        <div class="text-xs text-slate-500 font-medium">MS Office</div>
+                        <div class="text-sm font-bold text-slate-900">Word &amp; Excel 2016-365</div>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg">🔄</div>
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg">🛡️</div>
                     <div>
-                        <div class="text-xs text-slate-500 font-medium">Doimiy</div>
-                        <div class="text-sm font-bold text-slate-900">Avto-yangilanish</div>
+                        <div class="text-xs text-slate-500 font-medium">O'rnatish</div>
+                        <div class="text-sm font-bold text-slate-900">1 dona Setup fayl</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. WEB DASTUR BO'LIMI (Foydalanuvchi talabi bo'yicha birinchi ochiladigan veb-konverter maydoni) -->
-    <section id="web-app" class="py-14 sm:py-20 bg-slate-100/70 border-b border-slate-200">
+    <!-- 3. WEB DASTUR BO'LIMI: INTERAKTIV ONLAYN VEB-KONVERTER (100% BRAUZERDA ISHLOVCHI) -->
+    <section id="web-app" class="py-12 sm:py-16 bg-slate-100/80 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="text-emerald-700 font-semibold text-xs sm:text-sm uppercase tracking-wider">Brauzerda Ishlovchi Modul</span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="inline-flex items-center space-x-2 text-xs font-black uppercase tracking-widest text-emerald-700 bg-emerald-100/70 border border-emerald-300 px-3 py-1 rounded-full mb-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>100% Xavfsiz &bull; Serverga yuborilmaydi &bull; Bir zumda</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
                     JMA Alifbo — Onlayn Veb-Konverter
                 </h2>
-                <p class="text-slate-600 mt-2 text-sm sm:text-base">
-                    Dastur o'rnatmasdan to'g'ridan-to'g'ri brauzeringizda matnlarni Lotin ⇄ Kirill yo'nalishida o'girish tizimi
+                <p class="text-slate-600 mt-2 text-xs sm:text-base">
+                    Matnni kiriting yoki joylang — dvigatel avtomatik ravishda yozuv turini aniqlaydi va bir zumda belgilangan alifboga o'giradi.
                 </p>
             </div>
 
-            <!-- Veb dastur uchun tayyorlangan qulay ishchi maydon (Container / Placeholder) -->
-            <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden">
-                <!-- Boshqaruv paneli (Toolbar) -->
-                <div class="bg-slate-900 px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800">
+            <!-- Interaktiv Web Konverter Ilovasi -->
+            <div class="bg-white rounded-3xl border border-slate-200/90 shadow-2xl overflow-hidden">
+                <!-- Yuqori Boshqaruv / Toolbar -->
+                <div class="bg-slate-900 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
                     <div class="flex items-center space-x-3">
                         <div class="flex items-center space-x-1.5">
-                            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block shadow-sm"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block shadow-sm"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-sm"></span>
                         </div>
-                        <span class="text-xs font-mono font-medium text-slate-400 pl-2 border-l border-slate-700">JMA Alifbo Web Engine v1.0</span>
+                        <span class="text-xs font-mono font-medium text-slate-300 pl-2 border-l border-slate-700 flex items-center space-x-1.5">
+                            <span>JMA Alifbo Web Engine v1.3</span>
+                            <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-800">ONLINE</span>
+                        </span>
                     </div>
 
+                    <!-- Jonli aniqlangan yozuv ko'rsatkichi (Live Detection Badge) -->
                     <div class="flex items-center space-x-2">
-                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800 flex items-center space-x-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>Dasturiy qism tayyorlanmoqda</span>
+                        <span class="text-xs text-slate-400 font-medium hidden sm:inline">Aniqlangan yozuv:</span>
+                        <span id="detectedBadge" class="px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 transition">
+                            Aniqlash kutilmoqda...
                         </span>
                     </div>
                 </div>
 
-                <!-- Web dastur ishchi maydoni (Bo'sh joy / Mockup UI) -->
-                <div class="p-6 sm:p-10 bg-slate-50/50">
-                    <div class="max-w-4xl mx-auto py-12 px-6 border-2 border-dashed border-emerald-300 rounded-2xl bg-white text-center space-y-5 shadow-sm">
-                        <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center font-bold text-2xl shadow-inner">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <!-- Yo'nalish va Asosiy Boshqaruv Qatori -->
+                <div class="bg-slate-50 px-4 sm:px-6 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+                    <!-- Chap: Manba alifbosi -->
+                    <div class="flex items-center space-x-2 flex-grow sm:flex-grow-0">
+                        <label for="sourceSelect" class="font-bold text-slate-700 whitespace-nowrap">Qayerdan:</label>
+                        <select id="sourceSelect" class="bg-white border border-slate-300 rounded-xl px-3 py-2 font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm cursor-pointer">
+                            <option value="auto" selected>✨ Avtomatik aniqlash (Tavsiya)</option>
+                            <option value="latin">Lotin (amaldagi)</option>
+                            <option value="cyrillic">Kirill</option>
+                            <option value="new_latin">Yangi lotin (Ö, Ğ, Ş, Ç)</option>
+                        </select>
+                    </div>
+
+                    <!-- O'rta: Almashtirish tugmasi (Swap) -->
+                    <div class="flex items-center justify-center">
+                        <button id="swapBtn" type="button" title="Yo'nalishni almashtirish" class="p-2.5 rounded-xl bg-white border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 shadow-sm transition active:scale-95 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- O'ng: Natija alifbosi -->
+                    <div class="flex items-center space-x-2 flex-grow sm:flex-grow-0">
+                        <label for="targetSelect" class="font-bold text-slate-700 whitespace-nowrap">Qayerga:</label>
+                        <select id="targetSelect" class="bg-white border border-slate-300 rounded-xl px-3 py-2 font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm cursor-pointer">
+                            <option value="new_latin" selected>Yangi lotin (Ö, Ğ, Ş, Ç)</option>
+                            <option value="latin">Lotin (amaldagi)</option>
+                            <option value="cyrillic">Kirill</option>
+                        </select>
+                    </div>
+
+                    <!-- Tezkor amallar: Namuna, Tozalash, O'girish -->
+                    <div class="flex items-center space-x-2 ml-auto">
+                        <button id="sampleBtn" type="button" class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold shadow-sm transition">
+                            Namuna matn
+                        </button>
+                        <button id="clearBtn" type="button" class="px-3 py-2 rounded-xl bg-white hover:bg-rose-50 text-rose-600 border border-slate-300 hover:border-rose-300 text-xs font-semibold shadow-sm transition">
+                            Tozalash
+                        </button>
+                        <button id="convertBtn" type="button" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition flex items-center space-x-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            <span>O'girish</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Matn Maydonlari (2 ustunli Grid) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+                    <!-- Chap Ustun: Manba Matni (Input) -->
+                    <div class="flex flex-col bg-white p-4 sm:p-6">
+                        <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center space-x-1.5">
+                                <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                                <span>Kiritish Matni</span>
+                            </span>
+                            <div class="flex items-center space-x-3 text-xs text-slate-400 font-mono">
+                                <span id="sourceStats">0 ta belgi &bull; 0 ta so'z</span>
+                                <button id="pasteBtn" type="button" title="Xotiradan joylash" class="text-emerald-700 hover:text-emerald-800 font-sans font-bold hover:underline">
+                                    Joylash
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
-                                Onlayn Konverter Ishchi Maydoni
-                            </h3>
-                            <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                                Ushbu bo'limda to'g'ridan-to'g'ri matn kiritish, yo'nalishni tanlash (Lotin ⇄ Kirill), bir zumda natijani olish va bitta klik bilan nusxa olish imkonini beruvchi <b>interaktiv JavaScript konverteri</b> integratsiya qilinadi.
-                            </p>
+                        <textarea id="sourceText" rows="11" placeholder="Matnni shu yerga kiriting yoki nusxalab qo'ying (Word, Excel, maqola, xabar)..." class="w-full flex-grow p-3 bg-transparent text-slate-800 text-sm sm:text-base font-sans resize-y focus:outline-none custom-scrollbar leading-relaxed" spellcheck="false"></textarea>
+
+                        <!-- Maxsus harflar klavishlari (Virtual Harf Tugmalari) -->
+                        <div class="pt-3 mt-2 border-t border-slate-100 flex flex-wrap items-center gap-1.5 text-xs">
+                            <span class="text-slate-400 text-[11px] font-medium mr-1">Tezkor harflar:</span>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="O‘">O‘</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="o‘">o‘</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="G‘">G‘</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="g‘">g‘</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="Sh">Sh</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 hover:text-emerald-800 font-semibold rounded-lg border border-slate-200 shadow-2xs transition" data-char="Ch">Ch</button>
+                            <span class="text-slate-300 mx-1">|</span>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="Ö">Ö</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="ö">ö</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="Ğ">Ğ</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="ğ">ğ</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="Ş">Ş</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="ş">ş</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="Ç">Ç</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-emerald-50 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-200 shadow-2xs transition" data-char="ç">ç</button>
+                            <button type="button" class="char-key px-2.5 py-1 bg-slate-100 hover:bg-emerald-100 text-slate-800 font-bold rounded-lg border border-slate-200 shadow-2xs transition" data-char="ʼ">ʼ (tutuq)</button>
+                        </div>
+                    </div>
+
+                    <!-- O'ng Ustun: Natija Matni (Output) -->
+                    <div class="flex flex-col bg-slate-50/50 p-4 sm:p-6">
+                        <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-200">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 flex items-center space-x-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span>Natija</span>
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span id="targetStats" class="text-xs text-slate-400 font-mono hidden sm:inline mr-2">0 ta belgi &bull; 0 ta so'z</span>
+                                <button id="downloadTxtBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold shadow-sm transition flex items-center space-x-1">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    <span>.txt</span>
+                                </button>
+                                <button id="copyBtn" type="button" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition flex items-center space-x-1 relative">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                    <span id="copyBtnText">Nusxa olish</span>
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="inline-flex items-center space-x-2 px-4 py-2 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-xl text-xs sm:text-sm font-semibold">
-                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <span>Hozircha Microsoft Word uchun to'liq avtomatlashtirilgan desktop dasturidan (quyida) foydalanishingiz mumkin</span>
+                        <textarea id="targetText" rows="11" readonly placeholder="Natija bu yerda bir zumda shakllanadi..." class="w-full flex-grow p-3 bg-transparent text-slate-800 text-sm sm:text-base font-sans resize-y focus:outline-none custom-scrollbar leading-relaxed" spellcheck="false"></textarea>
+
+                        <!-- Pastki holat bildirishnomasi -->
+                        <div class="pt-3 mt-2 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center space-x-1">
+                                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                <span>625 ta lug'at istisnolari va kontekst qoidalari faol</span>
+                            </span>
+                            <span class="text-slate-400">JMApro.uz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ogohlantirishlar va Imlo Eslatmalari Maydoni (Dinamik) -->
+                <div id="warningsBox" class="hidden bg-amber-50/90 border-t border-amber-200 px-6 py-3.5 text-xs text-amber-900">
+                    <div class="flex items-start space-x-2.5">
+                        <span class="text-amber-600 text-base leading-none font-bold mt-0.5">ℹ️</span>
+                        <div id="warningsContent" class="space-y-1 flex-grow">
+                            <!-- JS orqali dinamik to'ldiriladi -->
                         </div>
                     </div>
                 </div>
@@ -363,50 +476,88 @@
         </div>
     </section>
 
-    <!-- 4. SO'NGGI VERSIYA BO'LIMI (LATEST RELEASE - Yangilanish tugmasi olib keladigan asosiy hudud) -->
+    <!-- 4. SO'NGGI VERSIYA BO'LIMI: UNIVERSAL O'RNATUVCHI (JMA-Alifbo-Setup-1.3.exe) -->
     <section id="latest-version" class="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
                 <span class="inline-flex items-center space-x-2 text-xs font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span>Tavsiya etiladi &bull; Rasmiy Nashr</span>
+                    <span>Tavsiya etiladi &bull; Rasmiy Universal O'rnatuvchi</span>
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    So'nggi Versiya: JMA Alifbo v1.2
+                    So'nggi Versiya: JMA Alifbo 1.3
                 </h2>
                 <p class="text-slate-600 mt-3 text-base">
-                    Dastur va MS Word makrosidagi "Yangilanishlarni tekshirish" tugmasi aynan ushbu sahifaga ulanadi
+                    Dastur va MS Office makrosidagi <b>«Yangilanishlarni tekshirish»</b> tugmasi to'g'ridan-to'g'ri ushbu sahifaga ulanadi
                 </p>
             </div>
 
-            <!-- Katta So'nggi Versiya Kartasi -->
+            <!-- Katta So'nggi Versiya Kartasi (1 ta universal o'rnatuvchi) -->
             <div class="relative max-w-4xl mx-auto bg-gradient-to-br from-white via-slate-50 to-emerald-50/40 rounded-3xl border-2 border-emerald-500/80 shadow-2xl p-6 sm:p-10 overflow-hidden">
-                <!-- Yuqori ribbon/badge -->
+                <!-- Yuqori badge -->
                 <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[11px] font-black uppercase tracking-wider py-1.5 px-6 rounded-bl-2xl shadow-md">
-                    So'nggi Barqaror Versiya
+                    Eng So'nggi Barqaror Nashr
                 </div>
 
                 <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-8 border-b border-slate-200/80">
                     <div class="space-y-2">
                         <div class="flex flex-wrap items-center gap-3">
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900">JMA-Alifbo-1.2.exe</span>
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg border border-emerald-300">v1.2 (Latest)</span>
+                            <span class="text-2xl sm:text-3xl font-black text-slate-900">JMA-Alifbo-Setup-1.3.exe</span>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg border border-emerald-300">v1.3 (Universal Setup)</span>
                         </div>
                         <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-500 font-medium">
-                            <span>📅 Sana: <b>24-oktyabr, 2026</b></span>
+                            <span>📅 Sana: <b>Noyabr, 2026</b></span>
                             <span>&bull;</span>
-                            <span>📦 Hajmi: <b>11.8 MB</b></span>
+                            <span>📦 Hajmi: <b>14.4 MB</b></span>
                             <span>&bull;</span>
-                            <span>💻 Tizim: <b>Windows 10 / 11 (MS Word 2016-2024 / M365)</b></span>
+                            <span>💻 Tizim: <b>Windows 10 / 11 (x64) • .NET 4.5+</b></span>
+                        </div>
+                        <div class="text-xs text-emerald-800 font-semibold flex items-center space-x-1.5 pt-1">
+                            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span>1 ta o'rnatuvchi ichida: Mustaqil Desktop dastur + Word makrosi + Excel plagini</span>
                         </div>
                     </div>
 
                     <!-- Asosiy yuklab olish tugmasi -->
                     <div class="flex-shrink-0 w-full lg:w-auto">
-                        <a href="downloads/JMA-Alifbo-1.2.exe" download="JMA-Alifbo-1.2.exe" class="w-full lg:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5 transition-all group">
+                        <a href="downloads/JMA-Alifbo-Setup-1.3.exe" download="JMA-Alifbo-Setup-1.3.exe" class="w-full lg:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5 transition-all group">
                             <svg class="w-6 h-6 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                            <span>Dasturni Yuklab Olish (v1.2)</span>
+                            <span>O'rnatuvchini Yuklab Olish (v1.3)</span>
                         </a>
+                    </div>
+                </div>
+
+                <!-- 3 in 1: O'rnatuvchi nimalarni o'z ichiga oladi? -->
+                <div class="py-8 border-b border-slate-200/80">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-4 flex items-center space-x-2">
+                        <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">📦</span>
+                        <span>Ushbu yagona o'rnatuvchi o'z ichiga nimalarni oladi?</span>
+                    </h3>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-xl bg-blue-50 text-brand-600 font-bold flex items-center justify-center text-sm">💻</div>
+                            <h4 class="text-sm font-bold text-slate-900">Mustaqil Desktop Ilova</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <code>Program Files\JMA\JMA Alifbo</code> katalogiga o'rnatiladi va Ish stoliga (Desktop) qulay yorliq chiqaradi. Office dasturlaridan alohida mustaqil ishlaydi.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 font-bold flex items-center justify-center text-sm">📝</div>
+                            <h4 class="text-sm font-bold text-slate-900">Microsoft Word Integratsiyasi</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <code>STARTUP</code> papkasiga makrosni avtomatik joylaydi. Word ochilganda lentada (Ribbon) <b>"JMA Alifbo"</b> tugmalari paydo bo'ladi.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 font-bold flex items-center justify-center text-sm">📊</div>
+                            <h4 class="text-sm font-bold text-slate-900">Microsoft Excel Integratsiyasi</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <code>XLSTART</code> papkasiga Excel modulini avtomatik joylaydi. Jadvallar katakchalari matnini formatlashni buzmasdan bir zumda o'giradi.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -414,44 +565,58 @@
                 <div class="pt-8 space-y-5">
                     <h3 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
                         <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✨</span>
-                        <span>v1.2 versiyasida nimalar yangilandi?</span>
+                        <span>v1.3 versiyasida qanday yangiliklar bor?</span>
                     </h3>
 
                     <ul class="grid sm:grid-cols-2 gap-3.5 text-xs sm:text-sm text-slate-700">
                         <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
                             <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
                             <div>
-                                <b class="text-slate-900">Inno Setup avtomatlashtirilgan o'rnatuvchi:</b>
-                                <p class="text-slate-500 text-xs mt-0.5">MS Word Startup katalogini o'zi aniqlaydi va makrosni 1-klikda lentaga o'rnatadi.</p>
+                                <b class="text-slate-900">Bitta universal Inno Setup o'rnatuvchi:</b>
+                                <p class="text-slate-500 text-xs mt-0.5">3 xil fayl o'rniga bitta yagona Setup. Word va Excel kataloglarini avtomatik topib, to'g'ri sozlaydi.</p>
                             </div>
-                        </li>
+                        </div>
                         <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
                             <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
                             <div>
-                                <b class="text-slate-900">Formatlashni 100% saqlash:</b>
-                                <p class="text-slate-500 text-xs mt-0.5">Jadvallar, qalin/kursiv shriftlar, ro'yxatlar va havolalar joy-joyida buzilmasdan saqlanadi.</p>
+                                <b class="text-slate-900">MS Excel uchun yangi modul:</b>
+                                <p class="text-slate-500 text-xs mt-0.5">Katta hajmdagi elektron jadvallar va katakchalarni formula hamda ranglarini buzmasdan o'girish imkoni.</p>
                             </div>
-                        </li>
+                        </div>
                         <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
                             <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
                             <div>
-                                <b class="text-slate-900">Apostrof va murakkab harflar aniqligi:</b>
-                                <p class="text-slate-500 text-xs mt-0.5">O', G', Sh, Ch, Ts va tutuq belgili so'zlar imlo qoidalariga to'liq moslashtirildi.</p>
+                                <b class="text-slate-900">Qaytarish (Undo / Ctrl+Z) integratsiyasi:</b>
+                                <p class="text-slate-500 text-xs mt-0.5">Lentadagi "Qaytarish" tugmasi orqali o'girilgan matnni bir klikda avvalgi holatiga qaytarish mumkin.</p>
                             </div>
-                        </li>
+                        </div>
                         <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
                             <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
                             <div>
-                                <b class="text-slate-900">Dastur ichidan avtomatik yangilanish:</b>
-                                <p class="text-slate-500 text-xs mt-0.5">Word lentasidagi tugma orqali to'g'ridan-to'g'ri jmapro.uz/alifbo sahifasiga o'tish imkoniyati.</p>
+                                <b class="text-slate-900">Tezkor klaviatura tugmalari:</b>
+                                <p class="text-slate-500 text-xs mt-0.5"><code>Alt+Q</code> (amaldagi lotin), <code>Alt+W</code> (kirill), <code>Alt+E</code> (yangi lotin: ō, ğ, ş, ç). Word'da muqobil <code>Ctrl+Alt+Q/W/E</code> ham bor.</p>
                             </div>
-                        </li>
+                        </div>
+                        <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+                            <div>
+                                <b class="text-slate-900">Xavfsiz zaxira va toza o'chirish:</b>
+                                <p class="text-slate-500 text-xs mt-0.5">Avvalgi makroslar xavfsiz zaxiralanadi. Windows Sozlamalari (Ilovalar) orqali toza o'chirish (Uninstall) qo'llab-quvvatlanadi.</p>
+                            </div>
+                        </div>
+                        <li class="flex items-start space-x-2.5 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+                            <div>
+                                <b class="text-slate-900">Office bo'lmagan kompyuterlar:</b>
+                                <p class="text-slate-500 text-xs mt-0.5">Office o'rnatilmagan bo'lsa, xatoliksiz o'tkazib yuborilib, mustaqil desktop dastur to'liq sozlanadi.</p>
+                            </div>
+                        </div>
                     </ul>
 
                     <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs text-brand-900 flex items-start space-x-3 mt-4">
                         <svg class="w-5 h-5 text-brand-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         <div>
-                            <b>Dastur muallifi:</b> Mo'minov Jaloliddin Azizjon o'g'li. Barcha huquqlar himoyalangan. Dastur ilmiy tadqiqotchilar, o'qituvchilar va talabalar uchun bepul taqdim etiladi.
+                            <b>Dastur muallifi:</b> Mo'minov Jaloliddin Azizjon o'g'li. Barcha huquqlar himoyalangan. Dastur ilmiy tadqiqotchilar, pedagoglar va talabalar uchun bepul taqdim etiladi.
                         </div>
                     </div>
                 </div>
@@ -459,7 +624,7 @@
         </div>
     </section>
 
-    <!-- 5. ESKI VERSIYALAR ARXIVI (Foydalanuvchi talabi: pastda eski versiyalarning oxirgi 1 tasi turadi) -->
+    <!-- 5. ESKI VERSIYALAR ARXIVI (v1.2 Arxiv) -->
     <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-6">
@@ -472,31 +637,31 @@
                 </p>
             </div>
 
-            <!-- Eski versiya kartasi (v1.1) -->
+            <!-- Eski versiya kartasi (v1.2) -->
             <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:border-slate-300 transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div class="space-y-1.5">
                     <div class="flex items-center space-x-3">
-                        <span class="text-base sm:text-lg font-bold text-slate-900">JMA Alifbo v1.1 (Arxiv)</span>
-                        <span class="px-2.5 py-0.5 bg-slate-100 text-slate-600 text-[11px] font-semibold rounded-md border border-slate-200">Oldingi nashr</span>
+                        <span class="text-base sm:text-lg font-bold text-slate-900">JMA-Alifbo-1.2.exe</span>
+                        <span class="px-2.5 py-0.5 bg-slate-100 text-slate-600 text-[11px] font-semibold rounded-md border border-slate-200">v1.2 (Arxiv)</span>
                     </div>
                     <p class="text-xs text-slate-600">
-                        Boshlang'ich MS Word VBA makros to'plami. Kichik va o'rta hajmdagi matnlar uchun barqaror vosita.
+                        Inno Setup asosidagi MS Word o'rnatuvchi fayli. Kichik va o'rta hajmdagi matnlar uchun barqaror vosita.
                     </p>
                     <div class="text-[11px] text-slate-400">
-                        Chiqarilgan sana: Sentyabr 2026 &bull; Hajmi: ~3.5 MB
+                        Chiqarilgan sana: 24-oktyabr, 2026 &bull; Hajmi: 11.8 MB
                     </div>
                 </div>
 
                 <div class="flex-shrink-0 w-full sm:w-auto">
-                    <a href="downloads/JMA-Alifbo-1.2.exe" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm rounded-xl border border-slate-300 transition">
+                    <a href="downloads/JMA-Alifbo-1.2.exe" download="JMA-Alifbo-1.2.exe" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm rounded-xl border border-slate-300 transition">
                         <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                        <span>v1.1 Yuklab Olish</span>
+                        <span>v1.2 Yuklab Olish</span>
                     </a>
                 </div>
             </div>
 
             <p class="text-xs text-slate-500 mt-4 text-center">
-                ⚠️ Yangi funksiyalar va yuqori tezlik uchun har doim yuqoridagi <b>v1.2 so'nggi versiyasidan</b> foydalanish tavsiya etiladi.
+                ⚠️ Yangi funksiyalar (Excel, Qaytarish, yangi alifbo) uchun har doim yuqoridagi <b>v1.3 universal o'rnatuvchisidan</b> foydalanish tavsiya etiladi.
             </p>
         </div>
     </section>
@@ -507,7 +672,7 @@
             <div class="text-center max-w-3xl mx-auto mb-14">
                 <span class="text-emerald-700 font-semibold text-xs sm:text-sm uppercase tracking-wider">Oddiy va Qulay</span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
-                    MS Word'ga Qanday O'rnatiladi?
+                    MS Office'ga Qanday O'rnatiladi?
                 </h2>
                 <p class="text-slate-600 mt-2 text-sm sm:text-base">
                     Maxsus texnik bilim talab etilmaydi — avtomatlashtirilgan o'rnatuvchi barcha amallarni o'zi bajaradi
@@ -522,7 +687,7 @@
                     </div>
                     <h3 class="text-base font-bold text-slate-900 mb-2">Yuklab oling</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Yuqoridagi tugma orqali <code>JMA-Alifbo-1.2.exe</code> o'rnatuvchi faylini kompyuteringizga yuklab oling.
+                        Yuqoridagi tugma orqali <code>JMA-Alifbo-Setup-1.3.exe</code> o'rnatuvchi faylini kompyuteringizga yuklab oling.
                     </p>
                 </div>
 
@@ -531,9 +696,9 @@
                     <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-base flex items-center justify-center mb-4 shadow-md shadow-emerald-600/30">
                         2
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 mb-2">Ishga tushiring</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Office'ni yopib, o'rnating</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Faylni oching va "O'rnatish" tugmasini bosing. Dastur makrosni MS Word'ning <code>Startup</code> katalogiga avtomatik joylaydi.
+                        Word va Excel oynalarini to'liq yoping. Faylni ishga tushirib "O'rnatish" tugmasini bosing — dastur barcha makroslarni o'zi to'g'ri joylaydi.
                     </p>
                 </div>
 
@@ -542,20 +707,23 @@
                     <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-base flex items-center justify-center mb-4 shadow-md shadow-emerald-600/30">
                         3
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 mb-2">Word'da foydalaning</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Word va Excel'da foydalaning</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Microsoft Word'ni oching — yuqori lentada (Ribbon) <b>"JMA Alifbo"</b> tugmasi paydo bo'ladi. Matnni belgilang va 1-klikda o'giring!
+                        Word yoki Excel'ni oching — yuqori lentada (Ribbon) <b>"JMA Alifbo"</b> tugmalari tayyor bo'ladi. Matnni belgilang va 1-klikda yoki <code>Alt+Q/W/E</code> orqali o'giring!
                     </p>
                 </div>
             </div>
 
             <!-- Savol va aloqa bloki -->
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center space-y-2">
                 <p class="text-xs sm:text-sm text-slate-600">
-                    O'rnatish yoki ishlash jarayonida savollaringiz bormi?
+                    O'rnatish yoki ishlash jarayonida savollaringiz bo'lsa:
                     <a href="https://t.me/JMApro_bot" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:text-emerald-800 font-bold ml-1 inline-flex items-center">
                         <span>@JMApro_bot orqali yozing &rarr;</span>
                     </a>
+                </p>
+                <p class="text-xs text-slate-400">
+                    Muallif bilan bevosita aloqa: <a href="https://t.me/JaloliddinMuminov" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-emerald-700 font-semibold">@JaloliddinMuminov</a> &bull; Tel: <a href="tel:+998901669944" class="text-slate-600 hover:text-emerald-700 font-semibold">+998 90 166 99 44</a>
                 </p>
             </div>
         </div>
@@ -570,7 +738,7 @@
                         <img src="assets/jmapro-logo-light.svg" alt="JMApro.uz" class="h-10 w-auto brightness-200">
                     </div>
                     <p class="text-xs text-slate-400 max-w-md leading-relaxed">
-                        PhD Mo'minov Jaloliddin Azizjon o'g'lining ilmiy-tadqiqot, pedagogik resurslar va muhandislik dasturlari markaziy portali.
+                        Mo'minov Jaloliddin Azizjon o'g'lining ilmiy-tadqiqot, pedagogik resurslar va muhandislik dasturlari markaziy portali.
                     </p>
                     <div class="text-xs text-slate-500">
                         Rasmiy domen: <a href="https://jmapro.uz" class="text-emerald-400 hover:underline">https://jmapro.uz</a>
@@ -594,6 +762,9 @@
                         <a href="https://t.me/JMApro_bot" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
                             Telegram Bot: @JMApro_bot
                         </a>
+                        <a href="https://t.me/JaloliddinMuminov" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
+                            Telegram Muallif: @JaloliddinMuminov
+                        </a>
                         <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center">
                             YouTube: @jaloliddinMuminov_yt
                         </a>
@@ -605,7 +776,7 @@
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <p>&copy; 2026 JMApro.uz &bull; Mo'minov Jaloliddin Azizjon o'g'li. Barcha huquqlar himoyalangan.</p>
                 <div class="flex items-center space-x-4">
-                    <a href="alifbo" class="hover:text-white transition">JMA Alifbo v1.2</a>
+                    <a href="alifbo" class="hover:text-white transition">JMA Alifbo v1.3</a>
                     <span>&bull;</span>
                     <a href="/#contact" class="hover:text-white transition">Qayta aloqa</a>
                 </div>
@@ -613,26 +784,29 @@
         </div>
     </footer>
 
-    <!-- JavaScript: Mobil menyu -->
+    <!-- JavaScript: Mobil menyu & Onlayn Konverter Mantiqi -->
     <script>
+        // --- 1. Mobil menyu ---
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
         const closeIcon = document.getElementById('closeIcon');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
-        });
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        }
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -640,6 +814,241 @@
                 menuIcon.classList.remove('hidden');
                 closeIcon.classList.add('hidden');
             });
+        });
+
+        // --- 2. Onlayn Konverter Interfeysi ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const sourceText = document.getElementById('sourceText');
+            const targetText = document.getElementById('targetText');
+            const sourceSelect = document.getElementById('sourceSelect');
+            const targetSelect = document.getElementById('targetSelect');
+            const detectedBadge = document.getElementById('detectedBadge');
+            const sourceStats = document.getElementById('sourceStats');
+            const targetStats = document.getElementById('targetStats');
+            const warningsBox = document.getElementById('warningsBox');
+            const warningsContent = document.getElementById('warningsContent');
+            const swapBtn = document.getElementById('swapBtn');
+            const sampleBtn = document.getElementById('sampleBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const convertBtn = document.getElementById('convertBtn');
+            const copyBtn = document.getElementById('copyBtn');
+            const copyBtnText = document.getElementById('copyBtnText');
+            const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+            const pasteBtn = document.getElementById('pasteBtn');
+            const charKeys = document.querySelectorAll('.char-key');
+
+            const SAMPLE_TEXT = `O‘zbekiston Respublikasi — kelajagi buyuk davlat. Shahar va qishloqlarda zamonaviy texnologiyalar, ssenariy va animatsiyalar yaratilmoqda. 
+
+JMA Alifbo konverteri bilan matnlarni amaldagi lotin, yangi qabul qilingan alifbo (Ö, Ğ, Ş, Ç) hamda kirill yozuviga bir zumda o‘giring.
+Formatlash 100% saqlanadi: aviatsiya, sement, epitsentr, dotsent va boshqa murakkab so‘zlar qat’iy imlo qoidalariga muvofiq qayta ishlanadi.`;
+
+            // Hisoblagich (Belgi va so'z)
+            function updateStats(text, elem) {
+                const chars = text.length;
+                const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+                elem.textContent = `${chars.toLocaleString()} ta belgi • ${words.toLocaleString()} ta so'z`;
+            }
+
+            // Asosiy konvertatsiya funksiyasi
+            function doConvert() {
+                const text = sourceText.value || '';
+                updateStats(text, sourceStats);
+
+                if (!text.trim()) {
+                    targetText.value = '';
+                    updateStats('', targetStats);
+                    detectedBadge.textContent = 'Aniqlash kutilmoqda...';
+                    detectedBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 transition';
+                    warningsBox.classList.add('hidden');
+                    warningsContent.innerHTML = '';
+                    return;
+                }
+
+                if (!window.JMAAlifbo) {
+                    console.error('JMA Alifbo dvigateli yuklanmadi');
+                    return;
+                }
+
+                const srcVal = sourceSelect.value;
+                const tgtVal = targetSelect.value;
+
+                const result = window.JMAAlifbo.convert(text, srcVal, tgtVal);
+                targetText.value = result.text;
+                updateStats(result.text, targetStats);
+
+                // Badge ranglarini yangilash
+                let badgeClass = 'px-3 py-1 rounded-full text-xs font-bold border transition ';
+                if (result.detected === 'Kirill') {
+                    badgeClass += 'bg-purple-950 text-purple-300 border-purple-800';
+                } else if (result.detected === 'Yangi lotin (Ö, Ğ, Ş, Ç)') {
+                    badgeClass += 'bg-emerald-950 text-emerald-300 border-emerald-800';
+                } else if (result.detected === 'Lotin (amaldagi)') {
+                    badgeClass += 'bg-blue-950 text-blue-300 border-blue-800';
+                } else if (result.detected === 'Aralash yozuv') {
+                    badgeClass += 'bg-amber-950 text-amber-300 border-amber-800';
+                } else {
+                    badgeClass += 'bg-slate-800 text-slate-300 border-slate-700';
+                }
+                detectedBadge.className = badgeClass;
+                detectedBadge.textContent = result.detected;
+
+                // Ogohlantirishlar va imlo eslatmalari
+                if (result.warnings && result.warnings.length > 0) {
+                    warningsContent.innerHTML = result.warnings.map(w => `<p class="leading-relaxed">&bull; ${escapeHtml(w)}</p>`).join('');
+                    warningsBox.classList.remove('hidden');
+                } else {
+                    warningsBox.classList.add('hidden');
+                    warningsContent.innerHTML = '';
+                }
+            }
+
+            function escapeHtml(str) {
+                return str.replace(/[&<>"']/g, m => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                })[m]);
+            }
+
+            // Real-time debounced input
+            let debounceTimer = null;
+            sourceText.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(doConvert, 40);
+            });
+
+            sourceSelect.addEventListener('change', doConvert);
+            targetSelect.addEventListener('change', doConvert);
+            convertBtn.addEventListener('click', doConvert);
+
+            // Almashtirish (Swap)
+            swapBtn.addEventListener('click', () => {
+                const currentSourceText = sourceText.value;
+                const currentTargetText = targetText.value;
+
+                if (!currentSourceText && !currentTargetText) return;
+
+                sourceText.value = currentTargetText;
+                targetText.value = currentSourceText;
+
+                // Selectlarni almashtirish
+                const oldSource = sourceSelect.value;
+                const oldTarget = targetSelect.value;
+
+                // Agar manba auto bo'lgan bo'lsa, aniqlangan yozuvga qarab yangi targetni tanlash
+                if (oldSource === 'auto') {
+                    const detected = window.JMAAlifbo ? window.JMAAlifbo.detect(currentSourceText) : '';
+                    if (detected === 'Kirill') {
+                        targetSelect.value = 'cyrillic';
+                    } else if (detected === 'Yangi lotin (Ö, Ğ, Ş, Ç)') {
+                        targetSelect.value = 'new_latin';
+                    } else {
+                        targetSelect.value = 'latin';
+                    }
+                } else {
+                    targetSelect.value = oldSource;
+                }
+
+                sourceSelect.value = oldTarget === 'cyrillic' ? 'cyrillic' : oldTarget === 'new_latin' ? 'new_latin' : 'latin';
+
+                doConvert();
+            });
+
+            // Namuna matn yuklash
+            sampleBtn.addEventListener('click', () => {
+                sourceText.value = SAMPLE_TEXT;
+                sourceSelect.value = 'auto';
+                targetSelect.value = 'new_latin';
+                doConvert();
+                sourceText.focus();
+            });
+
+            // Tozalash
+            clearBtn.addEventListener('click', () => {
+                sourceText.value = '';
+                targetText.value = '';
+                doConvert();
+                sourceText.focus();
+            });
+
+            // Nusxa olish (Copy)
+            copyBtn.addEventListener('click', async () => {
+                const text = targetText.value;
+                if (!text) return;
+
+                try {
+                    await navigator.clipboard.writeText(text);
+                    copyBtnText.textContent = 'Nusxalandi! ✓';
+                    copyBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+                    copyBtn.classList.add('bg-slate-900');
+                    setTimeout(() => {
+                        copyBtnText.textContent = 'Nusxa olish';
+                        copyBtn.classList.remove('bg-slate-900');
+                        copyBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+                    }, 2000);
+                } catch (e) {
+                    // Fallback
+                    targetText.select();
+                    document.execCommand('copy');
+                    copyBtnText.textContent = 'Nusxalandi! ✓';
+                    setTimeout(() => { copyBtnText.textContent = 'Nusxa olish'; }, 2000);
+                }
+            });
+
+            // Xotiradan joylash (Paste)
+            if (pasteBtn) {
+                pasteBtn.addEventListener('click', async () => {
+                    try {
+                        const clipText = await navigator.clipboard.readText();
+                        if (clipText) {
+                            sourceText.value = clipText;
+                            doConvert();
+                            sourceText.focus();
+                        }
+                    } catch (e) {
+                        sourceText.focus();
+                    }
+                });
+            }
+
+            // TXT yuklab olish (.txt export)
+            downloadTxtBtn.addEventListener('click', () => {
+                const text = targetText.value;
+                if (!text) return;
+
+                const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `JMA-Alifbo-${targetSelect.value}-${Date.now()}.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+            // Maxsus harf tugmachalari (Caret joyiga kiritish)
+            charKeys.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const char = btn.getAttribute('data-char');
+                    if (!char) return;
+
+                    const start = sourceText.selectionStart;
+                    const end = sourceText.selectionEnd;
+                    const val = sourceText.value;
+
+                    sourceText.value = val.substring(0, start) + char + val.substring(end);
+                    sourceText.selectionStart = sourceText.selectionEnd = start + char.length;
+                    sourceText.focus();
+                    doConvert();
+                });
+            });
+
+            // Dastlabki hisoblagich
+            updateStats('', sourceStats);
+            updateStats('', targetStats);
         });
     </script>
 </body>

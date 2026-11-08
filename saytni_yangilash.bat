@@ -34,7 +34,7 @@ if %ERRORLEVEL% EQU 0 (
     echo.
     echo ======================================================
     echo   MUVAFFAQIYATLI YUKLANDI!
-    echo   15-20 soniyada https://jmapro-sayt.vercel.app
+    echo   15-20 soniyada https://jmapro.uz
     echo   manzilida yangi ko'rinish paydo bo'ladi.
     echo ======================================================
     echo.

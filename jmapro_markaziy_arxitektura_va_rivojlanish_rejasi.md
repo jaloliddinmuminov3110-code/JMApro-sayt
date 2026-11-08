@@ -2,7 +2,7 @@
 
 ## 1. Loyiha Konsepsiyasi
 
-`jmapro-sayt.vercel.app` (kelgusida `jmapro.uz`) shunchaki shaxsiy vizitka yoki portfolio emas, balki olimlar, muhandislar, talabalar va tadqiqotchilar uchun ko'p tarmoqli raqamli markaz (Hub) vazifasini bajaradi. Tizim mantiqiy bog'langan, ammo texnik jihatdan o'z o'rni va funksiyasiga ega bo'lgan quyidagi asosiy bo'limlardan tashkil topadi.
+`jmapro.uz` shunchaki shaxsiy vizitka yoki portfolio emas, balki olimlar, muhandislar, talabalar va tadqiqotchilar uchun ko'p tarmoqli raqamli markaz (Hub) vazifasini bajaradi. Tizim mantiqiy bog'langan, ammo texnik jihatdan o'z o'rni va funksiyasiga ega bo'lgan quyidagi asosiy bo'limlardan tashkil topadi.
 
 ## 2. Tizim Tarkibi va Bo'limlar
 

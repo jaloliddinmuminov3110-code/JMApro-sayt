@@ -13,7 +13,7 @@
 * **Loyihaning Katta Konsepsiyasi:** `JMApro.uz` — shunchaki shaxsiy portfolio yoki vizitka sayt emas, balki olimlar, muhandislar, talabalar va tadqiqotchilar uchun mo'ljallangan **ko'p tarmoqli raqamli markaz (Hub)** va ilmiy-amaliy ekotizimdir.
 
 ## 2. Joriy Holat va Infratuzilma (08.11.2026)
-* **Jonli havola (Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app) (kelgusida `https://jmapro.uz`)
+* **Jonli havola (Production):** [https://jmapro.uz](https://jmapro.uz) (va [https://www.jmapro.uz](https://www.jmapro.uz))
 * **GitHub ombori:** `jaloliddinmuminov3110-code/JMApro-sayt` (Vercel CI/CD ga ulangan, avtomatik deploy).
 * **Texnologik stek:** Sof HTML5, Tailwind CSS, JavaScript (Vanilla Canvas/SVG/DOM), Vercel Hosting.
 * **Domen va DNS sozlamalari:**
@@ -78,7 +78,7 @@ Tizim mantiqiy bog'langan, ammo texnik jihatdan mustaqil bo'lgan quyidagi 4 ta a
 Saytni yangilash va yuritish tartibi:
 1. **AI yordamida (Antigravity):** Yangi bo'limlar, sahifalar yoki dasturiy kodlar yaratilganda avtomatik sinovdan o'tkazilib, `git push` orqali Vercel'ga uzatiladi.
 2. **Qo'lda tahrirlanganda (1-klik):** Foydalanuvchi fayllarni o'zi tahrirlasa, papkadagi `saytni_yangilash.bat` fayliga 2 marta bosadi.
-3. **Avto-deploy:** Vercel har qanday o'zgarishni 15 soniya ichida qabul qilib, `https://jmapro-sayt.vercel.app` (va `jmapro.uz`) da yangilaydi.
+3. **Avto-deploy:** Vercel har qanday o'zgarishni 15 soniya ichida qabul qilib, rasmiy `https://jmapro.uz` (va `https://www.jmapro.uz`) da yangilaydi.
 
 ## 6. Bajarilgan Ishlar va Navbatdagi Amaliy Reja
 * [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash.

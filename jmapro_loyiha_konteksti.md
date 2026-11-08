@@ -1,80 +1,94 @@
-# Loyiha Konteksti: JMApro.uz - Ilmiy va Muhandislik Portfolio Sayti
+# Loyiha Konteksti: JMApro Ilmiy-Muhandislik Markazi (Hub)
 
 ## 1. Asosiy Ma'lumotlar va Muallif
-* **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida).
-* **Muallif:** Mo'minov Jaloliddin Azizjon o'g'li (Texnika fanlari bo'yicha PhD, tadqiqotchi va o'qituvchi).
+* **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida; joriy jonli havola: `https://jmapro-sayt.vercel.app`).
+* **Muallif:** Mo'minov Jaloliddin Azizjon o'g'li (Texnika fanlari bo'yicha PhD, tadqiqotchi, muhandis va o'qituvchi).
 * **Ta'lim va ilmiy darajalar:**
   * PhD: Neft va gaz kimyosi va texnologiyasi (jarayon va apparatlar yo'nalishi)
   * Magistratura: Kimyo sanoati va qurilish materiallari korxonalarining mashinalari hamda apparatlari (pedagog-tadqiqotchi)
   * Bakalavriat: Texnologik mashinalar va jihozlar (muhandis-mexanik)
-* **Aloqa:** `JaloliddinMuminov3110@gmail.com` | Telegram: `@jaloliddinMuminov` | YouTube: `@jaloliddinMuminov_yt`
+* **Aloqa:** `JaloliddinMuminov3110@gmail.com` | Telegram: `@jaloliddinMuminov` | Rasmiy Telegram Bot: `@JMApro_bot` | YouTube: `Jaloliddin Mo'minov - Ilmiy kanal` (`@jaloliddinMuminov_yt`)
 * **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari: issiqlik almashinish jarayonlari va havoli sovitish apparatlari - HSA).
-* **Loyihaning maqsadi:** Akademik, muhandislik-texnik (issiqlik almashinish jarayonlari va qurilmalari, havoli sovitish apparatlari - HSA, qovurg'alangan quvurlar aerodinamikasi) hamda muhandislik 3D animatsiyalari va hisoblash dasturlari faoliyatini yaxlit namoyish etuvchi markaziy shaxsiy portfolio va resurslar bazasini yaratish.
+* **Loyihaning Katta Konsepsiyasi:** `JMApro.uz` — shunchaki shaxsiy portfolio yoki vizitka sayt emas, balki olimlar, muhandislar, talabalar va tadqiqotchilar uchun mo'ljallangan **ko'p tarmoqli raqamli markaz (Hub)** va ilmiy-amaliy ekotizimdir.
 
-## 2. Joriy Holat va Infratuzilma (07.11.2026)
-* **Jonli havola (Test/Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app)
-* **GitHub ombori (Repository):** `jmapro-sayt` (Vercel CI/CD ga ulangan).
-* **Texnologik stek (Stack):** Sof HTML5 va Tailwind CSS (CDN orqali).
-* **Xosting:** Vercel (bepul bulutli hosting, avtomatik deploy).
-* **Domen va DNS sozlamalari:**
-  * Domen provayderi: `my.eskiz.uz`
-  * Vercel'ning A va CNAME yozuvlari tayyorlangan.
-  * Domen faollashishi bilan (kutilayotgan vaqt: dushanba kuni) DNS yozuvlari `my.eskiz.uz` boshqaruv paneliga kiritiladi.
-* **Fayllar va ma'lumotlar saqlash:** Google Drive (5 TB hajm – maqolalar, darsliklar, 3D modellar va video materiallar uchun).
-* **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`) orqali xabarlarni to'g'ridan-to'g'ri muallifning shaxsiy Telegramiga yetkazish (faol).
+## 2. Joriy Holat va Infratuzilma (08.11.2026)
+* **Jonli havola (Production):** [https://jmapro-sayt.vercel.app](https://jmapro-sayt.vercel.app) (kelgusida `https://jmapro.uz`)
+* **GitHub ombori:** `jaloliddinmuminov3110-code/JMApro-sayt` (Vercel CI/CD ga ulangan, avtomatik deploy).
+* **Texnologik stek:** Sof HTML5, Tailwind CSS, JavaScript (Vanilla Canvas/SVG/DOM), Vercel Hosting.
+* **Domen va DNS sozlamalari:** Domen provayderi `my.eskiz.uz`, Vercel DNS A va CNAME yozuvlari tayyorlangan.
+* **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`, Token va Chat ID `6471413331` bilan to'g'ridan-to'g'ri integratsiya qilingan).
+* **Arxitektura:** Ko'p sahifali (Multi-page) modulli tizim: `index.html`, `research.html`, `teaching.html`, `channel.html`.
 
-## 3. Rivojlanish Bosqichlari va Texnik Strategiya
-* **1-bosqich (Joriy – Tejamkor va Tezkor):**
-  * Sof HTML + Tailwind CSS bilan barcha asosiy bo'limlarni yaratish.
-  * Vercel + GitHub orqali avtomatik yangilanish.
-  * Google Drive va Google Sheets integratsiyasi.
-* **O'rta bosqich (Ish oqimini qulaylashtirish) - BAJARILDI (07.11.2026):**
-  * Git CLI o'rnatildi va kompyuter to'g'ridan-to'g'ri `jaloliddinmuminov3110-code/JMApro-sayt` bilan ulandi.
-  * Har bir o'zgarish Antigravity tomonidan avtomatik `git push` orqali Vercel'ga jo'natiladi. Qo'lda fayl yuklash bosqichi to'liq bekor qilindi.
-* **2-bosqich (Kelajak – Katta ekotizim):**
-  * Issiqlik almashinish qurilmalari va havoli sovitish apparatlarini (HSA) hisoblash uchun interaktiv muhandislik kalkulyatorlari (JS yoki Python/FastAPI/Django).
-  * Talabalar va tadqiqotchilar uchun shaxsiy kabinet / avtorizatsiya tizimi zarur bo'lganda mustaqil VPS hostingga ko'chirish.
+## 3. Markaziy Arxitektura va Modullar (JMApro Ekotizimi)
 
-## 4. Sayt Arxitekturasi (Multi-page Arxitektura)
-1. **Bosh sahifa (`index.html`):**
-   * Shaxsiy tanishtiruv ("PhD | Tadqiqotchi | Muhandis"), muhandislik 3D fotosurati.
-   * Qisqa tarjimai hol va akademik bosqichlar (`#about`).
-   * Ilmiy faoliyat ko'rgazmasi (`#research`) -> to'liq sahifa: `research.html`.
-   * Ta'lim resurslari ko'rgazmasi (`#teaching`) -> to'liq sahifa: `teaching.html`.
-   * YouTube kanali taqdimoti (`#channel`) -> to'liq sahifa: `channel.html`.
-   * Interaktiv HSA Muhandislik Kalkulyatori (`#it-calc`).
-   * Qayta aloqa formasi (`#contact` - Telegram `@JMApro_bot` ga ulangan).
-2. **Ilmiy faoliyat sahifasi (`research.html`):**
-   * Xalqaro ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate).
-   * 3 ta chuqurlashtirilgan tadqiqot yo'nalishi (HSA, issiqlik tizimlari, CFD tahlil).
-   * Interaktiv filtrli nashrlar bazasi (Scopus, OAK, DGU EHM dasturlari).
-3. **Ta'lim va Resurslar sahifasi (`teaching.html`):**
-   * TMJ yo'nalishi uchun o'qitiladigan fanlar.
-   * Ma'ruzalar matni, laboratoriya va amaliy mashg'ulotlar, kurs loyihalari va slaydlar bazasi.
-   * Talabalar va magistrantlar uchun ilmiy rahbarlik bo'limi.
-4. **YouTube Ilmiy Kanal sahifasi (`channel.html`):**
-   * Rasmiy brend: **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`).
-   * Qizil YouTube obuna tugmasi va dasturiy ta'minot nishonlari (Kompas 3D, SolidWorks, Blender, Ansys Fluent).
-   * Mavzuli video to'plamlar va 3D sanoat animatsiyalari buyurtma moduli.
+Tizim mantiqiy bog'langan, ammo texnik jihatdan mustaqil bo'lgan quyidagi 4 ta asosiy blokdan iborat:
+
+### 3.1. Asosiy Portal (Main Portal & Portfolio)
+* **Bosh sahifa (`index.html`):** Shaxsiy taqdimot ("PhD | Tadqiqotchi | Muhandis"), 3D muhandislik portret kartasi, ko'rsatkichlar, qisqa tarjimai hol, tezkor sarhisoblar va interaktiv HSA kalkulyatori.
+* **Ilmiy Faoliyat (`research.html`):** Xalqaro ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate), 3 ta asosiy tadqiqot yo'nalishi (HSA, issiqlik tizimlari, CFD tahlil) hamda filtrli to'liq nashrlar bazasi (Scopus, OAK, DGU dasturlari).
+* **Ta'lim va Resurslar (`teaching.html`):** TMJ yo'nalishi bo'yicha o'qitiladigan fanlar, ma'ruzalar matni, laboratoriya ko'rsatmalari, kurs loyihalari va slaydlar bazasi hamda ilmiy rahbarlik.
+* **YouTube Ilmiy Kanal (`channel.html`):** "Jaloliddin Mo'minov - Ilmiy kanal" (@jaloliddinMuminov_yt), 3D animatsiyalar, video to'plamlar va sanoat korxonalari uchun 3D vizualizatsiya xizmatlari.
+
+### 3.2. JMA Alifbo (Amaliy Lingvistik Vosita)
+* **URL joylashuvi:** `/alifbo` bo'limi (yoki `alifbo.html`).
+* **Vazifasi:** Lotin-Kirill-Lotin matnlarini yuqori aniqlikda, o'zbek tili orfografik qoidalariga to'liq rioya qilgan holda o'girish tizimi (apostrof, tutuq belgisi, sh, ch, ng, yo, yu, ya qoidalari).
+* **Tarkibi:**
+  1. **Web App:** Brauzerda ishlovchi, hech narsa o'rnatmasdan matnni onlayn tezkor konvertatsiya qiluvchi toza va qulay interfeys.
+  2. **Desktop Installer (.exe):** Inno Setup orqali yig'ilgan avtomatlashtirilgan o'rnatuvchi. Foydalanuvchi kompyuteridagi Microsoft Word dasturining `Startup` papkasiga maxsus tayyorlangan Word makrosini to'g'ridan-to'g'ri joylashtiradi (Word lentasida JMA Alifbo tugmasi paydo bo'ladi).
+  3. **Yangilanish mexanizmi:** Makros ichidagi "Yangilash" tugmasi bosilganda brauzerda `jmapro.uz/alifbo` sahifasi ochilib, foydalanuvchiga so'nggi versiyani yuklab olish imkonini beradi.
+
+### 3.3. Muhandislik Dasturlari va Vizual Simulyatorlar (Vizual Laboratoriya)
+* **Bog'liqligi:** Asosiy saytdagi muhandislik kalkulyatorlari va "IT & Dasturlash" bo'limi bilan uzviy integratsiya.
+* **Vazifasi:** Murakkab issiqlik-massa almashinuv va gidrodinamik jarayonlarni real vaqtda modellashtirish va talabalar uchun vizual anglash vositasi yaratish.
+* **Tarkibi:**
+  1. **JMA Muhandislik Dasturlari:** Muallif tomonidan ishlab chiqilgan va DGU guvohnomalariga ega bo'lgan yuklab olinuvchi desktop dasturlar va hisoblash skriptlari arxivi.
+  2. **Interaktiv Veb-Simulyatorlar (Web Simulators):** HTML5 Canvas, SVG va JavaScript yordamida qurilgan dinamik interaktiv sxemalar (masalan, Issiqlik almashinish jarayoni, quvurlar bo'ylab harorat gradiyenti o'zgarishi, havoli sovitish apparati ventilyatori tezligining sovish dinamikasiga ta'siri). Foydalanuvchi parametrlarni o'zgartirganida jarayon animatsiyasi va hisob natijalari ko'z o'ngida jonlanadi.
+
+### 3.4. Ilmiy Jurnal Platformasi (`journal.jmapro.uz`) — Kelgusi Strategik Maqsad
+* **URL joylashuvi:** `journal.jmapro.uz` (Alohida mustaqil subdomen).
+* **Vazifasi:** Rasmiy ro'yxatdan o'tgan (OAV guvohnomasi, ISSN, DOI, Crossref) xalqaro darajadagi mustaqil ilmiy jurnal platformasi.
+* **Texnik Yechim:** OJS (Open Journal Systems) platformasi yoki maxsus ishlab chiqiladigan zamonaviy akademik CMS.
+* **Tarkibi va Jarayonlar:**
+  * Mualliflar uchun maqola yuborish (Submit manuscript) onlayn tizimi;
+  * Ikki tomonlama yashirin taqrizlash tizimi (Double-blind peer-review workflow);
+  * Muallif, taqrizchi va bosh muharrir shaxsiy kabinetlari;
+  * Yillar va sonlar bo'yicha to'liq ochiq kirish (Open Access) ilmiy maqolalar arxivi;
+  * Worldofscience.uz va boshqa jurnallardagi tizimli xato va kamchiliklarni hisobga olgan holda mukammal, xalqaro indeksatsiyaga (Scopus/WoS talablariga) mos arxitektura.
+
+## 4. Rivojlantirish Bosqichlari (Strategik Roadmap)
+
+* **1-bosqich: Baza va Amaliyot (Joriy navbatdagi vazifa)**
+  * JMA Alifbo bo'limini (`/alifbo`) to'liq yaratish va ishga tushirish.
+  * Onlayn Web App konverter UI interfeysini ishlab chiqish.
+  * MS Word uchun VBA makrosini yaratish va Inno Setup orqali `.exe` installer tayyorlash mexanizmini yo'lga qo'yish.
+* **2-bosqich: Vizualizatsiya va Dasturlar (Vizual Laboratoriya)**
+  * "IT va Muhandislik dasturlari" bo'limini kengaytirish.
+  * Birinchi sinov (demo) interaktiv veb-simulyatorini yaratish (masalan: Havoli Sovitish Apparatida issiqlik almashinish jarayonining dinamik animatsiyali HTML5 simulyatori).
+  * Yuklab olinuvchi dasturlar katalogi va qo'llanmalarini joylashtirish.
+* **3-bosqich: Ilmiy Nashriyot (`journal.jmapro.uz`)**
+  * Yuridik hujjatlar, OAV va nashriyot ro'yxatdan o'tish masalalari hal etilgach, jurnal subdomenini ko'tarish.
+  * OJS platformasini o'rnatish va moslashtirish, xalqaro indeksatsiya talablariga javob beradigan akademik dizayn yaratish.
 
 ## 5. Ish Oqimi (Workflow)
 Saytni yangilash va yuritish tartibi:
-1. **AI yordamida (Antigravity):** Matnlar yoki yangi kod aytiladi, Antigravity uni o'zgartirib darhol avtomatik `git push` qiladi.
-2. **Qo'lda tahrirlanganda (1-klik):** Foydalanuvchi `index.html`ni o'zi tahrirlasa, papkadagi `saytni_yangilash.bat` fayliga 2 marta bosadi.
-3. **Avto-deploy:** Vercel har qanday o'zgarishni 15 soniya ichida qabul qilib, `https://jmapro-sayt.vercel.app` (va `jmapro.uz`) da yangilaydi. Foydalanuvchi brauzer orqali GitHub'ga kirishi umuman talab etilmaydi.
+1. **AI yordamida (Antigravity):** Yangi bo'limlar, sahifalar yoki dasturiy kodlar yaratilganda avtomatik sinovdan o'tkazilib, `git push` orqali Vercel'ga uzatiladi.
+2. **Qo'lda tahrirlanganda (1-klik):** Foydalanuvchi fayllarni o'zi tahrirlasa, papkadagi `saytni_yangilash.bat` fayliga 2 marta bosadi.
+3. **Avto-deploy:** Vercel har qanday o'zgarishni 15 soniya ichida qabul qilib, `https://jmapro-sayt.vercel.app` (va `jmapro.uz`) da yangilaydi.
 
-## 6. Navbatdagi Amaliy Qadamlar va Natijalar
-1. [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash (07.11.2026 da muvaffaqiyatli bajarildi va tekshirildi).
-2. [x] Aloqa formasini to'g'ridan-to'g'ri Telegram botga (`@JMApro_bot`) ulash (07.11.2026 da muvaffaqiyatli ulandi va sinovdan o'tkazildi).
-3. [x] Rasmiy vektor logotip va muhandislik SVG fonlari (`jmapro-logo-light.svg`, `jmapro-background-light.svg`, `jmapro-background-dark.svg`, `jmapro-icon-512.png`) Header, Hero, YouTube bo'limi va Footerga to'liq tatbiq etildi (08.11.2026).
-4. [x] Ilmiy nashrlar (`#research`) bo'limida interaktiv filtr teglari (Scopus, OAK, DGU dasturlari) va xalqaro ilmiy identifikatorlar (Google Scholar, Scopus ID, ORCID, ResearchGate) yaratildi.
-5. [x] YouTube `@jaloliddinMuminov_yt` bo'limi sanoat 3D modellar ko'rgazmasi va CAD/CFD dasturiy nishonlari bilan boyitildi.
-6. [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori (`#it-calc`) yaratildi (mahsulot sarfi, haroratlar va issiqlik uzatish koeffitsientiga qarab issiqlik yuki, logarifmik harorat, zaruriy sirt, quvurlar soni va havo sarfini real vaqtda hisoblaydi).
-7. [x] Rasmiy Profile2 kompozitsiyasi (HSA zavodi, 3D CAD/CFD geksagonlari va JMApro.uz brendi bilan) asosiy kartaga joylashtirildi va WebP formatida tezlashtirildi.
-8. [x] Foydalanuvchi qulayligi uchun suzuvchi "Scroll to Top" tugmasi qo'shildi.
-9. [ ] Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.
-10. [ ] YouTube videolari havolalari muallif tomonidan taqdim etilganda bo'limni real videolar bilan boyitish.
-11. [ ] Infografik zamonaviy CV (Section 7) vizual sahifasini ishlab chiqish.
+## 6. Bajarilgan Ishlar va Navbatdagi Amaliy Reja
+* [x] Yangilangan `index.html` faylini GitHub omboriga yuklash orqali Vercel'dagi jonli saytni yangilash.
+* [x] Aloqa formasini to'g'ridan-to'g'ri Telegram botga (`@JMApro_bot`) ulash (Token va Chat ID `6471413331`).
+* [x] Rasmiy vektor logotip va muhandislik SVG fonlari Header, Hero va Footerga to'liq tatbiq etildi.
+* [x] Ko'p sahifali (Multi-page) arxitektura yo'lga qo'yildi: `research.html`, `teaching.html`, `channel.html`.
+* [x] Yangi 3D muhandislik portret kartasi (`JMApro_3D_portret_1variant_yuz.jpg`) asosiy sahifaga o'rnatildi va WebP formatida tezlashtirildi.
+* [x] Navigatsiya paneli yuqori kontrastli shriftlar va mos piktogrammalar (ikokalar) bilan boyitildi.
+* [x] YouTube tugmalari rasmiy qizil rangda **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`) nomi ostida yangilandi.
+* [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
+* [ ] **Navbatdagi 1-vazifa:** JMA Alifbo (`/alifbo`) bo'limini yaratish — Web konverter (Lotin-Kirill-Lotin) va MS Word makrosi/o'rnatuvchisi arxitekturasi.
+* [ ] **Navbatdagi 2-vazifa:** Issiqlik almashinish jarayonining interaktiv veb-simulyatori (Vizual laboratoriya demo maketi).
+* [ ] **Navbatdagi 3-vazifa:** Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.
+* [ ] **Navbatdagi 4-vazifa:** Zamonaviy Infografik CV sahifasini ishlab chiqish.
+* [ ] **Kelgusi 5-vazifa:** `journal.jmapro.uz` ilmiy jurnal loyihasi infratuzilmasini tayyorlash.
 
 ## 7. Reja: Zamonaviy Infografik CV (Interaktiv Rezyume)
 * **Konsepsiya:** Standart quruq matnli CV emas, balki markazda muallif portreti joylashgan, atrofida esa shoxlangan zamonaviy infografik vizual bloklar:

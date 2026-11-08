@@ -87,6 +87,7 @@ Saytni yangilash va yuritish tartibi:
 * [x] Ko'p sahifali (Multi-page) arxitektura yo'lga qo'yildi: `research.html`, `teaching.html`, `channel.html`.
 * [x] Yangi 3D muhandislik portret kartasi (`JMApro_3D_portret_1variant_yuz.jpg`) asosiy sahifaga o'rnatildi va WebP formatida tezlashtirildi.
 * [x] Navigatsiya paneli yuqori kontrastli shriftlar va mos piktogrammalar (ikokalar) bilan boyitildi.
+* [x] Saytning barcha sahifalari yuqori qismiga (Head/Header) o'ngdan chapga uzluksiz harakatlanuvchi zamonaviy animatsion **"Sayt test rejimida ishlamoqda"** lentasi (Marquee ticker) o'rnatildi.
 * [x] YouTube tugmalari rasmiy qizil rangda **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`) nomi ostida yangilandi.
 * [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
 * [ ] **Navbatdagi 1-vazifa:** JMA Alifbo (`/alifbo`) bo'limini yaratish — Web konverter (Lotin-Kirill-Lotin) va MS Word makrosi/o'rnatuvchisi arxitekturasi.

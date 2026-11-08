@@ -21,8 +21,8 @@
   * Asosiy domen (A Record): `jmapro.uz` -> `216.198.79.1` (Vercel individual Anycast IP)
   * Subdomen (CNAME Record): `www.jmapro.uz` -> `3a390ef50b2c1cde.vercel-dns-017.com` (Vercel individual CNAME)
   * Domen UZINFOCOM tomonidan tasdiqlandi va faol holatda.
-* **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`, Token va Chat ID `6471413331` bilan to'g'ridan-to'g'ri integratsiya qilingan).
-* **Arxitektura:** Ko'p sahifali (Multi-page) modulli tizim: `index.html` (`/`), `research.html` (`/research`), `teaching.html` (`/teaching`), `channel.html` (`/channel`). `vercel.json` orqali toza havolalar (Clean URLs - `.html`siz) yo'lga qo'yilgan.
+* **Qayta aloqa (Backend):** Telegram Bot API (`@JMApro_bot`, Token va Chat ID `6471413331` bilan to'g'ridan-to'g'ri integratsiya qilingan). Vercel serverless webhook (`/api/telegram`) orqali 24/7 ikki tomonlama (Two-way communication) xabarlashuv tizimi ishga tushirildi.
+* **Arxitektura:** Ko'p sahifali (Multi-page) modulli tizim: `index.html` (`/`), `research.html` (`/research`), `teaching.html` (`/teaching`), `channel.html` (`/channel`). `vercel.json` orqali toza havolalar (Clean URLs - `.html`siz) yo'lga qo'yilgan. Serverless API: `/api/telegram`.
 
 ## 3. Markaziy Arxitektura va Modullar (JMApro Ekotizimi)
 
@@ -89,6 +89,7 @@ Saytni yangilash va yuritish tartibi:
 * [x] Navigatsiya paneli yuqori kontrastli shriftlar va mos piktogrammalar (ikokalar) bilan boyitildi.
 * [x] Saytning barcha sahifalari yuqori qismiga (Head/Header) o'ngdan chapga uzluksiz harakatlanuvchi zamonaviy animatsion **"Sayt test rejimida ishlamoqda"** lentasi (Marquee ticker) o'rnatildi.
 * [x] Brauzer manzili panelidan `.html` kengaytmasi to'liq olib tashlandi (Clean URLs: `jmapro.uz/research`, `jmapro.uz/teaching`, `jmapro.uz/channel`).
+* [x] `@JMApro_bot` 24/7 serverless webhook tizimiga ulandi (`/api/telegram`), istalgan akkauntdan yozilgan xabarlar Jaloliddin Mo'minovga yetkaziladi va Telegram'da "Reply" qilish orqali to'g'ridan-to'g'ri foydalanuvchiga javob qaytarish imkoniyati yaratildi.
 * [x] YouTube tugmalari rasmiy qizil rangda **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`) nomi ostida yangilandi.
 * [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
 * [ ] **Navbatdagi 1-vazifa:** JMA Alifbo (`/alifbo`) bo'limini yaratish — Web konverter (Lotin-Kirill-Lotin) va MS Word makrosi/o'rnatuvchisi arxitekturasi.

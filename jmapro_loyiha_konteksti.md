@@ -1,7 +1,8 @@
 # Loyiha Konteksti: JMApro Ilmiy-Muhandislik Markazi (Hub)
 
 ## 1. Asosiy Ma'lumotlar va Muallif
-* **Domen:** `jmapro.uz` (Xarid qilingan, UZINFOCOM tomonidan tasdiqlanish jarayonida; joriy jonli havola: `https://jmapro-sayt.vercel.app`).
+* **Domen:** `jmapro.uz` (UZINFOCOM tomonidan tasdiqlangan, Vercel'ga to'liq ulangan va SSL xavfsizlik sertifikati faol).
+* **Jonli rasmiy havola:** [https://jmapro.uz](https://jmapro.uz) (va [https://www.jmapro.uz](https://www.jmapro.uz))
 * **Muallif:** Mo'minov Jaloliddin Azizjon o'g'li (Texnika fanlari bo'yicha PhD, tadqiqotchi, muhandis va o'qituvchi).
 * **Ta'lim va ilmiy darajalar:**
   * PhD: Neft va gaz kimyosi va texnologiyasi (jarayon va apparatlar yo'nalishi)
@@ -90,7 +91,7 @@ Saytni yangilash va yuritish tartibi:
 * [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
 * [ ] **Navbatdagi 1-vazifa:** JMA Alifbo (`/alifbo`) bo'limini yaratish — Web konverter (Lotin-Kirill-Lotin) va MS Word makrosi/o'rnatuvchisi arxitekturasi.
 * [ ] **Navbatdagi 2-vazifa:** Issiqlik almashinish jarayonining interaktiv veb-simulyatori (Vizual laboratoriya demo maketi).
-* [ ] **Navbatdagi 3-vazifa:** Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish.
+* [x] **Navbatdagi 3-vazifa:** Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish (08.11.2026 da to'liq muvaffaqiyatli ulandi va HTTPS jonli ishga tushdi).
 * [ ] **Navbatdagi 4-vazifa:** Zamonaviy Infografik CV sahifasini ishlab chiqish.
 * [ ] **Kelgusi 5-vazifa:** `journal.jmapro.uz` ilmiy jurnal loyihasi infratuzilmasini tayyorlash.
 

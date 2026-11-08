@@ -1,8 +1,46 @@
 // JMApro.uz - Telegram Bot Serverless Webhook Handler (24/7 on Vercel)
 // Bot: @JMApro_bot | Admin Chat ID: 6471413331 (Jaloliddin Mo'minov)
 
+const fs = require("fs");
+const STATE_FILE = "/tmp/jmapro_user_quotas.json";
+
 const BOT_TOKEN = "9039848468:AAEx2BXB2VrWELvm4K71JfQffBFPbhicOXY";
 const ADMIN_CHAT_ID = "6471413331";
+
+// -----------------------------------------------------------------
+// Kvota (limit) boshqaruvi: Admin javob bermaguncha max 3 ta xabar
+// -----------------------------------------------------------------
+function loadUserQuotas() {
+    try {
+        if (fs.existsSync(STATE_FILE)) {
+            return JSON.parse(fs.readFileSync(STATE_FILE, "utf8"));
+        }
+    } catch (e) {}
+    return {};
+}
+
+function saveUserQuotas(quotas) {
+    try {
+        fs.writeFileSync(STATE_FILE, JSON.stringify(quotas));
+    } catch (e) {}
+}
+
+const memoryQuotas = loadUserQuotas();
+
+function getUserCount(userId) {
+    return memoryQuotas[userId] || 0;
+}
+
+function incrementUserCount(userId) {
+    memoryQuotas[userId] = (memoryQuotas[userId] || 0) + 1;
+    saveUserQuotas(memoryQuotas);
+    return memoryQuotas[userId];
+}
+
+function resetUserCount(userId) {
+    delete memoryQuotas[userId];
+    saveUserQuotas(memoryQuotas);
+}
 
 function escapeHtml(text) {
     if (!text) return "";
@@ -59,29 +97,45 @@ module.exports = async (req, res) => {
         const from = msg.from || {};
         const text = msg.text || msg.caption || "";
         const senderName = `${from.first_name || ""} ${from.last_name || ""}`.trim() || "Foydalanuvchi";
-        const senderUsername = from.username ? `@${from.username}` : "yo'q";
+        const senderUsername = from.username ? `@${from.username}` : "mavjud emas";
         const senderId = String(from.id || chatId);
 
         // -------------------------------------------------------------
         // 1. ADMIN (Jaloliddin Mo'minov) TOMONI
         // -------------------------------------------------------------
         if (chatId === ADMIN_CHAT_ID) {
-            // Admin biror xabarga "Reply" (Ответить) qilib yozsa
-            if (msg.reply_to_message && msg.reply_to_message.text) {
-                const replyText = msg.reply_to_message.text;
-                const match = replyText.match(/TG_ID:\s*(\d+)/i) || replyText.match(/Telegram ID:\s*(\d+)/i);
+            // Admin biror xabarga "Reply" (Ответить) qilib yozganida
+            if (msg.reply_to_message) {
+                let targetUserId = null;
 
-                if (match && match[1]) {
-                    const targetUserId = match[1];
+                // 1. Avval entities ichidagi ko'rinmas havola orqali ID ni aniqlaymiz
+                const entities = msg.reply_to_message.entities || [];
+                for (const ent of entities) {
+                    if (ent.url && ent.url.includes("uid=")) {
+                        const m = ent.url.match(/uid=(\d+)/);
+                        if (m) targetUserId = m[1];
+                    }
+                }
 
-                    // Foydalanuvchiga javob yuborish
+                // 2. Agar ko'rinmas havolada bo'lmasa, matn ichidan (eski xabarlar uchun fallback)
+                if (!targetUserId && msg.reply_to_message.text) {
+                    const m = msg.reply_to_message.text.match(/TG_ID:\s*(\d+)/i) || 
+                              msg.reply_to_message.text.match(/ID:\s*(\d+)/i);
+                    if (m) targetUserId = m[1];
+                }
+
+                if (targetUserId) {
+                    // Foydalanuvchiga javobni yetkazamiz
                     await callTelegram("sendMessage", {
                         chat_id: targetUserId,
                         text: `💬 <b>Jaloliddin Mo'minovdan javob:</b>\n\n${escapeHtml(text)}`,
                         parse_mode: "HTML"
                     });
 
-                    // Adminga qisqa 1 qator tasdiq
+                    // Foydalanuvchining xabar limitini nollaymiz (endi u yana 3 ta xabar yozishi mumkin!)
+                    resetUserCount(targetUserId);
+
+                    // Adminga atigi 1 so'zli ixcham tasdiq
                     await callTelegram("sendMessage", {
                         chat_id: ADMIN_CHAT_ID,
                         text: `✅ Yetkazildi.`,
@@ -96,7 +150,7 @@ module.exports = async (req, res) => {
             if (text === "/start") {
                 await callTelegram("sendMessage", {
                     chat_id: ADMIN_CHAT_ID,
-                    text: `👋 Assalomu alaykum, Jaloliddin aka!\n@JMApro_bot faol ishlamoqda. Murojaatlarga Reply qilib javob yozishingiz mumkin.`
+                    text: `👋 Assalomu alaykum, Jaloliddin aka!\n@JMApro_bot faol ishlamoqda. Murojaatlarga "Reply" qilib qisqa javob, shaxsiy username yoki tel raqamingizni yuborishingiz mumkin.`
                 });
                 return res.status(200).json({ ok: true });
             }
@@ -105,26 +159,23 @@ module.exports = async (req, res) => {
         }
 
         // -------------------------------------------------------------
-        // 2. MEHMON / FOYDALANUVCHI TOMONI
+        // 2. MEHMON / TALABA / FOYDALANUVCHI TOMONI
         // -------------------------------------------------------------
 
-        // Foydalanuvchi /start bosganda
+        // Foydalanuvchi /start bosganda (1-band: aynan rasmda ko'rsatilgan matn shakli)
         if (text === "/start") {
             const welcomeText = 
-`👋 <b>Assalomu alaykum, ${escapeHtml(from.first_name || "hurmatli foydalanuvchi")}!</b>
+`👋 <b>Assalomu alaykum, ${escapeHtml(from.first_name || "foydalanuvchi")}!</b>
 
-Siz <b>Jaloliddin Mo'minov</b>ning rasmiy aloqa botiga xush kelibsiz.
+<b>Jaloliddin Mo'minov</b>ning rasmiy <b>JMApro</b> aloqa botiga xush kelibsiz.
 
-<b>Bu yerda:</b>
-• 📚 Ilmiy tadqiqotlar va nashrlar;
-• 🎓 TMJ fanlari va o'quv materiallari;
-• ⚙️ Havoli sovitish apparatlari va hisoblash vositalari;
-• 🎬 <a href="https://www.youtube.com/@jaloliddinMuminov_yt">YouTube: Ilmiy kanal</a> videolari;
-• 💼 Hamkorlik va loyiha takliflaringizni yozib qoldirishingiz mumkin.
+📚 Ilmiy tadqiqotlar, ilmiy nashrlar, o'quv materiallari va dasturlarga oid
+✍️ Savol yoki fikringizni bemalol yozib qoldiring
 
 ℹ️ <i>Eslatma: Bu bot sun'iy intellekt (AI) emas — barcha xabarlar to'g'ridan-to'g'ri Jaloliddin Mo'minovga yetkaziladi va sizga shaxsan javob qaytariladi.</i>
 
-✍️ <b>Savol yoki fikringizni bemalol yozib qoldiring.</b>`;
+• 🎬 <a href="https://www.youtube.com/@jaloliddinMuminov_yt">YouTube: Ilmiy kanal videolari;</a>
+• 🌐 Rasmiy portal: <a href="https://jmapro.uz">jmapro.uz</a>`;
 
             await callTelegram("sendMessage", {
                 chat_id: chatId,
@@ -133,17 +184,38 @@ Siz <b>Jaloliddin Mo'minov</b>ning rasmiy aloqa botiga xush kelibsiz.
                 disable_web_page_preview: true
             });
 
-            // Eslatma: /start bosilganda adminga ortiqcha xabar yuborilmaydi (chat to'lib ketmasligi uchun)
             return res.status(200).json({ ok: true });
         }
 
-        // Foydalanuvchi biror xabar (savol, matn, fayl) yozganida:
-        // 1. Adminga ixcham, qisqa xabar uzatamiz:
-        const adminText = 
-`📩 <b>#Murojaat:</b> ${escapeHtml(senderName)} (${senderUsername})
-💬 ${escapeHtml(text || "[Media/fayl yuborildi]")}
+        // -------------------------------------------------------------
+        // 3-band: Foydalanuvchi xabar yozganda kvota tekshiruvi (Max 3 ta)
+        // -------------------------------------------------------------
+        const currentCount = getUserCount(senderId);
 
-TG_ID: ${senderId}`;
+        if (currentCount >= 3) {
+            // Agar foydalanuvchi 3 tadan oshiq yozsa — adminga yuborilmaydi, foydalanuvchiga kutish eslatiladi
+            await callTelegram("sendMessage", {
+                chat_id: chatId,
+                text: `⏳ <i>Iltimos, avvalgi xabarlaringizga javob berilishini kuting. Jaloliddin Mo'minov sizga javob qaytargach, yana xabar yuborishingiz mumkin bo'ladi.</i>`,
+                parse_mode: "HTML",
+                reply_to_message_id: msg.message_id
+            });
+            return res.status(200).json({ ok: true });
+        }
+
+        // Yangi hisob
+        const newCount = incrementUserCount(senderId);
+
+        // -------------------------------------------------------------
+        // 2-band: Adminga yuborish (Tg ID ko'rinmas qilib yashiriladi)
+        // -------------------------------------------------------------
+        // Nol-kenglikdagi ko'rinmas havola orqali ID matnda ko'rinmaydi, lekin Reply qilganda bot uni taniydi
+        const hiddenIdTag = `<a href="https://t.me/jmapro?uid=${senderId}">&#8205;</a>`;
+        
+        const countBadge = newCount > 1 ? ` (${newCount}/3)` : "";
+        const adminText = 
+`${hiddenIdTag}📩 <b>#Murojaat${countBadge}:</b> ${escapeHtml(senderName)} (${senderUsername})\n` +
+`💬 ${escapeHtml(text || "[Media / fayl yuborildi]")}`;
 
         await callTelegram("sendMessage", {
             chat_id: ADMIN_CHAT_ID,
@@ -151,7 +223,7 @@ TG_ID: ${senderId}`;
             parse_mode: "HTML"
         });
 
-        // Agar fayl/rasm bo'lsa adminga forward
+        // Agar foydalanuvchi fayl/rasm yuborgan bo'lsa, adminga forward
         if (msg.photo || msg.document || msg.voice || msg.video || msg.audio) {
             await callTelegram("forwardMessage", {
                 chat_id: ADMIN_CHAT_ID,
@@ -160,10 +232,15 @@ TG_ID: ${senderId}`;
             });
         }
 
-        // 2. Foydalanuvchiga faqat bitta ixcham qator:
+        // Foydalanuvchiga tasdiq (Agar 3-xabar bo'lsa, limit to'lgani bildiriladi)
+        let confirmText = `✅ <i>Xabaringiz Jaloliddin Mo'minovga yetkazildi.</i>`;
+        if (newCount === 3) {
+            confirmText = `✅ <i>Xabaringiz yetkazildi. (Ketma-ket 3 ta xabar yubordingiz. Yangi xabar yuborish uchun Jaloliddin Mo'minovning javobini kuting).</i>`;
+        }
+
         await callTelegram("sendMessage", {
             chat_id: chatId,
-            text: `✅ <i>Xabaringiz Jaloliddin Mo'minovga yetkazildi.</i>`,
+            text: confirmText,
             parse_mode: "HTML",
             reply_to_message_id: msg.message_id
         });

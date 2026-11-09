@@ -97,14 +97,14 @@ Saytni yangilash va yuritish tartibi:
 * [x] Brauzer manzili panelidan `.html` kengaytmasi to'liq olib tashlandi (Clean URLs: `jmapro.uz/research`, `jmapro.uz/teaching`, `jmapro.uz/channel`).
 * [x] `@JMApro_bot` 24/7 serverless webhook tizimiga ulandi (`/api/telegram`), istalgan akkauntdan yozilgan xabarlar Jaloliddin Mo'minovga yetkaziladi va Telegram'da "Reply" qilish orqali to'g'ridan-to'g'ri foydalanuvchiga javob qaytarish imkoniyati yaratildi.
 * [x] `@JMApro_bot` salomlashuvi rasmiy matnga moslashtirildi, TG ID ko'rinmas qilib yashirildi, va admin javob bermagunicha foydalanuvchiga ketma-ket maksimal 3 ta xabar cheklovi (anti-spam kvota) o'rnatildi.
-* [x] **JMA Alifbo ekotizimi sahifasi (`/alifbo`)** to'liq ishga tushirildi: Onlayn veb-konverter maydoni, So'nggi v1.2 versiyasi (Changelog va to'g'ridan-to'g'ri `JMA-Alifbo-1.2.exe` yuklab olish), v1.1 arxiv versiyasi va Word'ga o'rnatish yo'riqnomasi. Barcha sahifalarga "JMA Alifbo" menyusi ulandi.
+* [x] **JMA Alifbo ekotizimi sahifasi (`/alifbo`)** to'liq ishga tushirildi: Onlayn veb-konverter maydoni (100% offline, 847/847 golden testlardan o'tgan dvigatel), So'nggi v1.3 universal Inno Setup o'rnatuvchisi (`JMA-Alifbo-Setup-1.3.exe` va `.zip`), SmartScreen/Chrome tushuntirishlari, v1.2 arxiv versiyasi va Office makroslari integratsiyasi.
+* [x] **SEO va Ijtimoiy tarmoqlar (Open Graph):** Telegram va boshqa tarmoqlarda havola yuborilganda chiroyli va ixcham chiqishi uchun barcha sahifalardan "PhD" prefiksi olib tashlanib, toza taqdimot holatiga keltirildi.
+* [x] **Telegram Bot (@JMApro_bot) Anti-Spam tizimi:** Reklama tarqatuvchi qidiruv botlari ("Новый поисковый бот", "Глаз бога", "Пробив"), inline reklama tugmalari (`reply_markup`), fishing havolalari (`t.me/+...`, `t.me/...bot`) va kazino/kripto spamlarini avtomatik aniqlab, sukutli bloklovchi aqlli filtr ishga tushirildi.
 * [x] YouTube tugmalari rasmiy qizil rangda **"Jaloliddin Mo'minov - Ilmiy kanal"** (`@jaloliddinMuminov_yt`) nomi ostida yangilandi.
 * [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
-* [ ] **Navbatdagi 1-vazifa:** JMA Alifbo (`/alifbo`) bo'limini yaratish — Web konverter (Lotin-Kirill-Lotin) va MS Word makrosi/o'rnatuvchisi arxitekturasi.
-* [ ] **Navbatdagi 2-vazifa:** Issiqlik almashinish jarayonining interaktiv veb-simulyatori (Vizual laboratoriya demo maketi).
-* [x] **Navbatdagi 3-vazifa:** Domen faollashishi bilanoq `my.eskiz.uz` da Vercel DNS (A va CNAME) yozuvlarini kiritish va SSL sertifikatini tekshirish (08.11.2026 da to'liq muvaffaqiyatli ulandi va HTTPS jonli ishga tushdi).
-* [ ] **Navbatdagi 4-vazifa:** Zamonaviy Infografik CV sahifasini ishlab chiqish.
-* [ ] **Kelgusi 5-vazifa:** `journal.jmapro.uz` ilmiy jurnal loyihasi infratuzilmasini tayyorlash.
+* [ ] **Navbatdagi 1-vazifa:** Issiqlik almashinish jarayonining interaktiv veb-simulyatori (Vizual laboratoriya demo maketi).
+* [ ] **Navbatdagi 2-vazifa:** Zamonaviy Infografik CV sahifasini ishlab chiqish.
+* [ ] **Kelgusi 3-vazifa:** `journal.jmapro.uz` ilmiy jurnal loyihasi infratuzilmasini tayyorlash.
 
 ## 7. Reja: Zamonaviy Infografik CV (Interaktiv Rezyume)
 * **Konsepsiya:** Standart quruq matnli CV emas, balki markazda muallif portreti joylashgan, atrofida esa shoxlangan zamonaviy infografik vizual bloklar:

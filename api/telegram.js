@@ -42,6 +42,81 @@ function resetUserCount(userId) {
     saveUserQuotas(memoryQuotas);
 }
 
+// -----------------------------------------------------------------
+// Anti-Spam Himoya Mexanizmi: Reklama botlari va fishingni bloklash
+// -----------------------------------------------------------------
+function isSpamMessage(msg) {
+    if (!msg) return { isSpam: false };
+
+    const text = (msg.text || msg.caption || "").toLowerCase();
+
+    // 1. Reklama xabarlaridagi inline tugmalar (Запустить Бот, Перейдите va h.k.)
+    if (msg.reply_markup && msg.reply_markup.inline_keyboard && msg.reply_markup.inline_keyboard.length > 0) {
+        return { isSpam: true, reason: "inline_keyboard_promo" };
+    }
+
+    // 2. Kanallardan yoki boshqa botlardan forward qilingan reklama
+    if (msg.forward_from_chat || msg.forward_from) {
+        if (text.includes("t.me/") || text.includes("http") || text.includes("бот") || text.includes("bot") || text.includes("канал")) {
+            return { isSpam: true, reason: "forwarded_ad" };
+        }
+    }
+
+    // 3. Spammer va fishing kalit so'zlari (Search bot, probiv, casino, crypto spam)
+    const spamKeywords = [
+        "поисковый бот",
+        "запустить бот",
+        "глаз бога",
+        "поиск по номеру",
+        "поиск по фото",
+        "поиск по авто",
+        "пробив",
+        "деанон",
+        "слив фото",
+        "взлом",
+        "казино",
+        "1xbet",
+        "melbet",
+        "слоты",
+        "заработок онлайн",
+        "лёгкий заработок",
+        "заработок в интернете",
+        "инвестиции от",
+        "пассивный доход",
+        "криптобот",
+        "crypto bot",
+        "trading signals",
+        "pump and dump",
+        "airdrop",
+        "darknet",
+        "вип канал",
+        "vip канал",
+        "переходи по ссылке",
+        "подпишись на наш",
+        "девочки 18+",
+        "интим знакомства",
+        "голые девушки"
+    ];
+
+    for (const kw of spamKeywords) {
+        if (text.includes(kw)) {
+            return { isSpam: true, reason: `keyword: ${kw}` };
+        }
+    }
+
+    // 4. Boshqa botlarga taklif havolalari (t.me/...bot yoki @...bot)
+    if (/t\.me\/[a-zA-Z0-9_]+bot\b/i.test(text) || /tg:\/\/resolve\?domain=[a-zA-Z0-9_]+bot\b/i.test(text)) {
+        return { isSpam: true, reason: "bot_invite_link" };
+    }
+
+    // 5. Yopiq kanal/guruhlarga qo'shilish havolalari (t.me/+... yoki t.me/joinchat/...)
+    if (/t\.me\/\+[a-zA-Z0-9_-]+/i.test(text) || /t\.me\/joinchat\//i.test(text)) {
+        return { isSpam: true, reason: "private_invite_link" };
+    }
+
+    return { isSpam: false };
+}
+
 function escapeHtml(text) {
     if (!text) return "";
     return text
@@ -161,6 +236,14 @@ module.exports = async (req, res) => {
         // -------------------------------------------------------------
         // 2. MEHMON / TALABA / FOYDALANUVCHI TOMONI
         // -------------------------------------------------------------
+
+        // Anti-Spam Tekshiruvi: reklama botlari, fishing yoki spam xabarlarni to'xtatish
+        const spamCheck = isSpamMessage(msg);
+        if (spamCheck.isSpam) {
+            console.log(`[SPAM BLOCKED] from ${senderId} (${senderUsername}): ${spamCheck.reason}`);
+            // Spammerga javob berilmaydi, adminga ham yuborilmaydi (sukutli blokirovka)
+            return res.status(200).json({ ok: true, spam_blocked: true, reason: spamCheck.reason });
+        }
 
         // Foydalanuvchi /start bosganda (1-band: aynan rasmda ko'rsatilgan matn shakli)
         if (text === "/start") {

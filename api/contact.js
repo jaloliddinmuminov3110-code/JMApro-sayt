@@ -149,12 +149,16 @@ module.exports = async (req, res) => {
     }
 
     try {
-        let body = req.body;
+        let body = req.body || {};
         if (typeof body === "string") {
-            try { body = JSON.parse(body); } catch (e) {}
+            try { body = JSON.parse(body); } catch (e) { body = {}; }
+        }
+        if (!body || typeof body !== "object") {
+            body = {};
         }
 
-        const clientIp = req.headers["x-forwarded-for"] || req.headers["x-real-ip"] || (req.socket && req.socket.remoteAddress) || "unknown";
+        const headers = req.headers || {};
+        const clientIp = String(headers["x-forwarded-for"] || headers["x-real-ip"] || (req.socket && req.socket.remoteAddress) || "unknown").split(",")[0].trim();
 
         const fullName = (body.fullName || "").trim();
         const contactInfo = (body.contactInfo || "").trim();
@@ -232,6 +236,6 @@ ${escapeHtml(message)}
 
     } catch (error) {
         console.error("Contact handler error:", error);
-        return res.status(500).json({ ok: false, error: "Server ichki xatosi." });
+        return res.status(500).json({ ok: false, error: String(error.message || error) });
     }
 };

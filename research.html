@@ -362,6 +362,119 @@
                     </div>
                 </a>
             </div>
+            <!-- Jonli Ilmiy Ko'rsatkichlar & Metrikalar (Academic Impact & Citations Dashboard) -->
+            <div class="mb-14 bg-gradient-to-br from-slate-900 via-slate-950 to-brand-950 rounded-3xl p-6 sm:p-8 text-white border border-slate-800 shadow-2xl relative overflow-hidden" id="academicMetricsPanel">
+                <!-- Fon bezaklari -->
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>Jonli Ilmiy Statistika &bull; Google Scholar, Scopus &amp; WoS</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                                Akademik Metrikalar va Ta'sir Ko'rsatkichlari
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                                Xalqaro jurnallar va ilmiy hamjamiyatdagi iqtiboslik, h-indeks hamda maqolalar sarhisobi
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <a href="https://scholar.google.com/citations?user=mwDmf6oAAAAJ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-md hover:shadow-lg transition">
+                                <span>Scholar profilini tekshirish</span>
+                                <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4 ta Asosiy Jonli Metrika Kartalari -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6">
+                        <!-- Metrika 1: Jami Iqtiboslar -->
+                        <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-blue-500/50 transition shadow-lg group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Google Scholar</span>
+                                <span class="text-lg">📈</span>
+                            </div>
+                            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline">
+                                <span class="stat-counter" data-target="123" id="metric-citations">123</span>
+                                <span class="text-blue-400 text-xl font-bold ml-1">+</span>
+                            </div>
+                            <div class="text-xs font-bold text-slate-200 mt-1.5">Jami Ilmiy Iqtiboslar</div>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
+                                Xalqaro tadqiqotchilar tomonidan maqolalarga berilgan jami iqtiboslar
+                            </p>
+                            <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500">
+                                <span>Baza: Google Scholar</span>
+                                <span class="text-emerald-400 font-semibold">Jonli sinxron</span>
+                            </div>
+                        </div>
+
+                        <!-- Metrika 2: h-indeks -->
+                        <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-amber-500/50 transition shadow-lg group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Hirsch Index</span>
+                                <span class="text-lg">🎯</span>
+                            </div>
+                            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline">
+                                <span class="stat-counter" data-target="7" id="metric-hindex">7</span>
+                                <span class="text-amber-400 text-sm font-bold ml-1.5 font-mono">h-indeks</span>
+                            </div>
+                            <div class="text-xs font-bold text-slate-200 mt-1.5">h-indeks Ko'rsatkichi</div>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
+                                Kamida 7 ta ilmiy maqola 7 va undan ortiq marta iqtibos qilingan
+                            </p>
+                            <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500">
+                                <span>Hirsh baholash</span>
+                                <span class="text-amber-400 font-semibold">Yuqori samaradorlik</span>
+                            </div>
+                        </div>
+
+                        <!-- Metrika 3: i10-indeks -->
+                        <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-purple-500/50 transition shadow-lg group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Top Nashrlar</span>
+                                <span class="text-lg">🏅</span>
+                            </div>
+                            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline">
+                                <span class="stat-counter" data-target="5" id="metric-i10index">5</span>
+                                <span class="text-purple-400 text-sm font-bold ml-1.5 font-mono">i10</span>
+                            </div>
+                            <div class="text-xs font-bold text-slate-200 mt-1.5">i10-indeks Natijasi</div>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
+                                10 va undan ortiq iqtibos to'plagan eng nufuzli ilmiy ishlar soni
+                            </p>
+                            <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500">
+                                <span>Iqtibos ≥ 10</span>
+                                <span class="text-purple-400 font-semibold">Xalqaro daraja</span>
+                            </div>
+                        </div>
+
+                        <!-- Metrika 4: Xalqaro Nashrlar va Bazalar -->
+                        <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-emerald-500/50 transition shadow-lg group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Scopus &amp; WoS</span>
+                                <span class="text-lg">🌐</span>
+                            </div>
+                            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline">
+                                <span class="stat-counter" data-target="15" id="metric-pubs">15</span>
+                                <span class="text-emerald-400 text-xl font-bold ml-1">+</span>
+                            </div>
+                            <div class="text-xs font-bold text-slate-200 mt-1.5">Indekslangan Nashrlar</div>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
+                                Scopus (58744843900), Web of Science (KHD-3312-2024) va OAK
+                            </p>
+                            <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500">
+                                <span>ORCID tasdiqlangan</span>
+                                <span class="text-emerald-400 font-semibold">Q1/Q2/OAK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -753,6 +866,75 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+    
+        // 7. Jonli Akademik Metrikalar (CountUp Animatsiyasi va Live API Sync)
+        (function() {
+            let countersAnimated = false;
+
+            function animateCounters() {
+                if (countersAnimated) return;
+                countersAnimated = true;
+
+                document.querySelectorAll('.stat-counter').forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target') || counter.innerText, 10);
+                    if (isNaN(target)) return;
+                    let current = 0;
+                    const duration = 1400;
+                    const stepTime = 30;
+                    const totalSteps = Math.max(1, Math.floor(duration / stepTime));
+                    const stepInc = Math.max(1, Math.ceil(target / totalSteps));
+
+                    const timer = setInterval(() => {
+                        current += stepInc;
+                        if (current >= target) {
+                            counter.innerText = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = current;
+                        }
+                    }, stepTime);
+                });
+            }
+
+            const metricsSection = document.getElementById('academicMetricsPanel');
+            if (metricsSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0] && entries[0].isIntersecting) {
+                        animateCounters();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.15 });
+                observer.observe(metricsSection);
+            } else {
+                animateCounters();
+            }
+
+            // Real-vaqt sinxronlash (Vercel Serverless /api/academic-stats)
+            fetch('/api/academic-stats')
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.ok && data.scholar) {
+                        const citEl = document.getElementById('metric-citations');
+                        const hEl = document.getElementById('metric-hindex');
+                        const i10El = document.getElementById('metric-i10index');
+
+                        if (citEl && data.scholar.citations) {
+                            citEl.setAttribute('data-target', data.scholar.citations);
+                            citEl.innerText = data.scholar.citations;
+                        }
+                        if (hEl && data.scholar.h_index) {
+                            hEl.setAttribute('data-target', data.scholar.h_index);
+                            hEl.innerText = data.scholar.h_index;
+                        }
+                        if (i10El && data.scholar.i10_index) {
+                            i10El.setAttribute('data-target', data.scholar.i10_index);
+                            i10El.innerText = data.scholar.i10_index;
+                        }
+                    }
+                })
+                .catch(() => {});
+        })();
+
     </script>
 </body>
 </html>

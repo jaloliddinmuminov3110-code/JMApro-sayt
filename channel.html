@@ -312,109 +312,526 @@
         </div>
     </section>
 
-    <!-- 3. Interaktiv YouTube Pleer / Asosiy Ko'rgazma -->
-    <section class="py-16 bg-slate-900 border-b border-slate-800">
+        <!-- 3. Interaktiv YouTube Pleer / Asosiy Ko'rgazma -->
+    <section class="py-12 md:py-16 bg-slate-900 border-b border-slate-800" id="playerSection">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl p-4 sm:p-7">
                 <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 relative shadow-inner">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed?listType=user_uploads&list=jaloliddinMuminov_yt" title="Jaloliddin Mo'minov 3D Muhandislik Videolari" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe id="mainVideoFrame" class="w-full h-full" src="https://www.youtube-nocookie.com/embed/MZDlx5GDdQk?rel=0" title="Plastinkali issiqlik almashish apparati" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-400">
-                    <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>Issiqlik texnikasi, havoli sovitish apparatlari va 3D modellar</span>
-                    <a href="https://www.youtube.com/@jaloliddinMuminov_yt?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 font-bold flex items-center">
-                        Kanalga obuna bo'lish &rarr;
-                    </a>
-                </div>
-                <div class="mt-4 p-3.5 bg-slate-900 border border-slate-800 rounded-xl text-center text-xs text-slate-400">
-                    📌 <em>Videolarning alohida to'g'ridan-to'g'ri havolalari muallif tomonidan yangilanishi bilan ushbu bo'limga muntazam joylashtirib boriladi.</em>
+                <div class="mt-5 flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-lg text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 mb-2" id="mainVideoBadge">
+                            🔥 Issiqlik Texnikasi
+                        </div>
+                        <h2 id="mainVideoTitle" class="text-xl sm:text-2xl font-extrabold text-white">
+                            Plastinkali issiqlik almashish apparati
+                        </h2>
+                        <p id="mainVideoDesc" class="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
+                            Plastinkali issiqlik almashtirgichning ichki tuzilishi, oqimlar harakati va issiqlik almashinish jarayonining 3D vizualizatsiyasi.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <a id="mainVideoYoutubeLink" href="https://www.youtube.com/watch?v=MZDlx5GDdQk" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg transition flex items-center space-x-2">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            <span>YouTube'da ochish</span>
+                        </a>
+                        <a href="https://www.youtube.com/@jaloliddinMuminov_yt?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs sm:text-sm rounded-xl border border-slate-700 transition">
+                            Obuna bo'lish
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Video Kartalari (3 ta mavzu yo'nalishi) -->
-    <section class="py-16 bg-slate-950 border-b border-slate-800">
+    <!-- 4. Video Kartalari Galereyasi (11 ta video) -->
+    <section class="py-16 bg-slate-950 border-b border-slate-800" id="videoGallery">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-rose-400 font-semibold text-xs uppercase tracking-wider">Mavzuli To'plamlar</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Muhandislik 3D Video Yo'nalishlari</h2>
-                <div class="w-16 h-1 bg-rose-600 mx-auto mt-3 rounded-full"></div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="text-rose-400 font-semibold text-xs uppercase tracking-wider">Muhandislik 3D Videolari</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Rasmiy Kanaldagi Barcha Videolar</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-1">Videoni tanlang va uni to'g'ridan-to'g'ri sayt ichidagi pleerda tomosha qiling</p>
+                </div>
+                
+                <!-- Filtr Tablari -->
+                <div class="flex flex-wrap items-center gap-2" id="filterTabs">
+                    <button type="button" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white transition shadow-sm">
+                        Barchasi (11)
+                    </button>
+                    <button type="button" data-filter="heat" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition">
+                        🔥 Issiqlik &amp; Gidravlika (3)
+                    </button>
+                    <button type="button" data-filter="machinery" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition">
+                        ⚙️ Maydalash Uskunalari (3)
+                    </button>
+                    <button type="button" data-filter="mechanisms" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition">
+                        💡 Mexanizmlar &amp; Amaliyot (5)
+                    </button>
+                </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Video 1 -->
-                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500 transition card-hover flex flex-col">
-                    <div class="h-52 bg-slate-950 flex flex-col items-center justify-center relative group p-6 text-center border-b border-slate-800">
-                        <div class="w-16 h-16 rounded-2xl bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
-                            <svg class="w-7 h-7 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <!-- 11 ta video kartalari to'plami -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7" id="videosGrid">
+                <!-- Video Karta: Plastinkali issiqlik almashish apparati -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="heat" data-vid="MZDlx5GDdQk" data-title="Plastinkali issiqlik almashish apparati" data-desc="Plastinkali issiqlik almashtirgichning ichki tuzilishi, oqimlar harakati va issiqlik almashinish jarayonining 3D vizualizatsiyasi." data-badge="🔥 Issiqlik texnikasi" data-yt="https://www.youtube.com/watch?v=MZDlx5GDdQk">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/MZDlx5GDdQk/hqdefault.jpg" alt="Plastinkali issiqlik almashish apparati" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <span class="text-sm text-slate-200 font-bold">Havoli Sovitish Apparati (HSA)</span>
-                        <span class="text-xs text-slate-500 font-mono mt-1">Quvurlar to'plami &amp; Ventilyator</span>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                🔥 Issiqlik texnikasi
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-7 flex-1 flex flex-col justify-between">
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <span class="text-xs font-bold text-rose-400 uppercase tracking-wide">Issiqlik Texnikasi</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">HSA Ventilyator &amp; Aerodinamika</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                Bimetallik qovurg'alangan quvurlar paketi, parrakli ventilyatorning havo haydash yo'nalishi va issiqlik olib ketish dinamikasining 3D modeli.
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Plastinkali issiqlik almashish apparati
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Plastinkali issiqlik almashtirgichning ichki tuzilishi, oqimlar harakati va issiqlik almashinish jarayonining 3D vizualizatsiyasi.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-mono">Kompas 3D / Blender</span>
-                            <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center">
-                                Kanalda ko'rish &rarr;
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=MZDlx5GDdQk" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Video 2 -->
-                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500 transition card-hover flex flex-col">
-                    <div class="h-52 bg-slate-950 flex flex-col items-center justify-center relative group p-6 text-center border-b border-slate-800">
-                        <div class="w-16 h-16 rounded-2xl bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
-                            <svg class="w-7 h-7 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <!-- Video Karta: Sharli ventil (klapan) qanday ishlaydi? | Ball valve -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="heat" data-vid="Ze16XyVkdd0" data-title="Sharli ventil (klapan) qanday ishlaydi? | Ball valve" data-desc="Sharli jo'mrak ichki tuzilishi, ochilish-yopilish kinematikasi, sharning o'tish teshigi va yuqori germetiklik mexanizmi." data-badge="🚰 Quvur armaturalari" data-yt="https://www.youtube.com/watch?v=Ze16XyVkdd0">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/Ze16XyVkdd0/hqdefault.jpg" alt="Sharli ventil (klapan) qanday ishlaydi? | Ball valve" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <span class="text-sm text-slate-200 font-bold">Qovurg'alangan Quvurlar CFD Modeli</span>
-                        <span class="text-xs text-slate-500 font-mono mt-1">Gidrogazodinamik Modellashtirish</span>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                🚰 Quvur armaturalari
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-7 flex-1 flex flex-col justify-between">
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <span class="text-xs font-bold text-rose-400 uppercase tracking-wide">Issiqlik-Gidravlika</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Issiqlik O'tishi va Harorat Maydoni</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                Quvurlar atrofidagi havo oqimining tezlik gradiyenti, turbulentlik rejimi va issiqlik o'tkazish intensivligining 3D kompyuter simulyatsiyasi.
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Sharli ventil (klapan) qanday ishlaydi? | Ball valve
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Sharli jo'mrak ichki tuzilishi, ochilish-yopilish kinematikasi, sharning o'tish teshigi va yuqori germetiklik mexanizmi.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-mono">SolidWorks / Ansys</span>
-                            <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center">
-                                Kanalda ko'rish &rarr;
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=Ze16XyVkdd0" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Video 3 -->
-                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500 transition card-hover flex flex-col">
-                    <div class="h-52 bg-slate-950 flex flex-col items-center justify-center relative group p-6 text-center border-b border-slate-800">
-                        <div class="w-16 h-16 rounded-2xl bg-rose-600 group-hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition mb-3">
-                            <svg class="w-7 h-7 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <!-- Video Karta: Tutash idishlarda suyuqlik sathi | Liquid level in containers -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="heat" data-vid="QMpF-F-cGiI" data-title="Tutash idishlarda suyuqlik sathi | Liquid level in containers" data-desc="Tutash idishlar qonuni, turli zichlikdagi suyuqliklarning muvozanati va gidrostatik bosim taqsimotining ko'rgazmali modeli." data-badge="💧 Gidravlika" data-yt="https://www.youtube.com/watch?v=QMpF-F-cGiI">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/QMpF-F-cGiI/hqdefault.jpg" alt="Tutash idishlarda suyuqlik sathi | Liquid level in containers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <span class="text-sm text-slate-200 font-bold">Sanoat Issiqlik Almashtirgichlari</span>
-                        <span class="text-xs text-slate-500 font-mono mt-1">Kimyo va Neft-gaz Uskunalari</span>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                💧 Gidravlika
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-7 flex-1 flex flex-col justify-between">
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <span class="text-xs font-bold text-rose-400 uppercase tracking-wide">Neft-gaz Texnologiyalari</span>
-                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Issiqlik Regeneratsiya Tizimlari</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                Gaz kondensati va neftni qayta ishlash qurilmalarida energiya tejash hamda quvurlar to'plamining 3D yig'ma chizmalari vizualizatsiyasi.
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Tutash idishlarda suyuqlik sathi | Liquid level in containers
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Tutash idishlar qonuni, turli zichlikdagi suyuqliklarning muvozanati va gidrostatik bosim taqsimotining ko'rgazmali modeli.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-mono">Kompas 3D &amp; CAD</span>
-                            <a href="https://www.youtube.com/@jaloliddinMuminov_yt" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center">
-                                Kanalda ko'rish &rarr;
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=QMpF-F-cGiI" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Jagʻli maydalagich qanday ishlaydi | Jaw crusher -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="machinery" data-vid="eh7QAu1ZIxk" data-title="Jagʻli maydalagich qanday ishlaydi | Jaw crusher" data-desc="Tog'-kon, kimyo va qurilish sanoatida xomashyoni maydalash uchun mo'ljallangan jag'li maydalagichning kinematik modeli." data-badge="⚙️ TMJ maydalash" data-yt="https://www.youtube.com/watch?v=eh7QAu1ZIxk">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/eh7QAu1ZIxk/hqdefault.jpg" alt="Jagʻli maydalagich qanday ishlaydi | Jaw crusher" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                ⚙️ TMJ maydalash
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Jagʻli maydalagich qanday ishlaydi | Jaw crusher
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Tog'-kon, kimyo va qurilish sanoatida xomashyoni maydalash uchun mo'ljallangan jag'li maydalagichning kinematik modeli.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=eh7QAu1ZIxk" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Konusli maydalagich | Конусная дробилка | Cone crusher -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="machinery" data-vid="T1mSir3ojtg" data-title="Konusli maydalagich | Конусная дробилка | Cone crusher" data-desc="Uzluksiz ishlovchi konusli maydalash uskunasi: ekssentrik mil harakati, maydalovchi konus va fraksiya chiqishi." data-badge="⚙️ TMJ maydalash" data-yt="https://www.youtube.com/watch?v=T1mSir3ojtg">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/T1mSir3ojtg/hqdefault.jpg" alt="Konusli maydalagich | Конусная дробилка | Cone crusher" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                ⚙️ TMJ maydalash
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Konusli maydalagich | Конусная дробилка | Cone crusher
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Uzluksiz ishlovchi konusli maydalash uskunasi: ekssentrik mil harakati, maydalovchi konus va fraksiya chiqishi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=T1mSir3ojtg" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Rotorli maydalagich | Роторная дробилка | Rotary crusher -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="machinery" data-vid="miO2p0z2k4s" data-title="Rotorli maydalagich | Роторная дробилка | Rotary crusher" data-desc="Zarbali harakatga ega rotorli maydalagich: yuqori tezlikdagi bolg'achalar va materialning zarb bilan parchalanish dinamikasi." data-badge="⚙️ TMJ maydalash" data-yt="https://www.youtube.com/watch?v=miO2p0z2k4s">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/miO2p0z2k4s/hqdefault.jpg" alt="Rotorli maydalagich | Роторная дробилка | Rotary crusher" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                ⚙️ TMJ maydalash
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Rotorli maydalagich | Роторная дробилка | Rotary crusher
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Zarbali harakatga ega rotorli maydalagich: yuqori tezlikdagi bolg'achalar va materialning zarb bilan parchalanish dinamikasi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=miO2p0z2k4s" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: 99 xil Mexanizmlar | 99 различных механизмов | 99 Mechanisms -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="mechanisms" data-vid="g4AMRkIiAig" data-title="99 xil Mexanizmlar | 99 различных механизмов | 99 Mechanisms" data-desc="Mashinasozlik va avtomatlashtirishda qo'llaniladigan 99 xil kinematik zanjir, tishli uzatmalar va harakat uzatish mexanizmlari." data-badge="💡 Mexanizmlar" data-yt="https://www.youtube.com/watch?v=g4AMRkIiAig">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/g4AMRkIiAig/hqdefault.jpg" alt="99 xil Mexanizmlar | 99 различных механизмов | 99 Mechanisms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                💡 Mexanizmlar
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                99 xil Mexanizmlar | 99 различных механизмов | 99 Mechanisms
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Mashinasozlik va avtomatlashtirishda qo'llaniladigan 99 xil kinematik zanjir, tishli uzatmalar va harakat uzatish mexanizmlari.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=g4AMRkIiAig" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Perforator qanday ishlaydi? | How does a perforator work? -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="mechanisms" data-vid="eV9tZLKUin0" data-title="Perforator qanday ishlaydi? | How does a perforator work?" data-desc="Elektromexanik va pnevmatik zarba berish mexanizmi: piston, uruvchi bo'g'in va burg'ulash kinematikasining 3D tahlili." data-badge="🛠️ Asbobsozlik" data-yt="https://www.youtube.com/watch?v=eV9tZLKUin0">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/eV9tZLKUin0/hqdefault.jpg" alt="Perforator qanday ishlaydi? | How does a perforator work?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                🛠️ Asbobsozlik
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Perforator qanday ishlaydi? | How does a perforator work?
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Elektromexanik va pnevmatik zarba berish mexanizmi: piston, uruvchi bo'g'in va burg'ulash kinematikasining 3D tahlili.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=eV9tZLKUin0" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Beton qancha kuchga chidashini bilasizmi? | Concrete Strength -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="mechanisms" data-vid="1qRVtFV6cDA" data-title="Beton qancha kuchga chidashini bilasizmi? | Concrete Strength" data-desc="Gidravlik laboratoriya pressi yordamida beton namunalarini siqilishga sinash va mustahkamlik chegarasini aniqlash." data-badge="🧱 Materialshunoslik" data-yt="https://www.youtube.com/watch?v=1qRVtFV6cDA">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/1qRVtFV6cDA/hqdefault.jpg" alt="Beton qancha kuchga chidashini bilasizmi? | Concrete Strength" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                🧱 Materialshunoslik
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Beton qancha kuchga chidashini bilasizmi? | Concrete Strength
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Gidravlik laboratoriya pressi yordamida beton namunalarini siqilishga sinash va mustahkamlik chegarasini aniqlash.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=1qRVtFV6cDA" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Bolgarkadan Motopila yasash | Electric chain saw adapter -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="mechanisms" data-vid="fwgGfefhHlg" data-title="Bolgarkadan Motopila yasash | Electric chain saw adapter" data-desc="Burchakli silliqlash mashinasi (bolgarka) asosida zanjirli arra nasadkasini o'rnatish va amaliy xavfsizlik prinsiplari." data-badge="🔧 Muhandislik" data-yt="https://www.youtube.com/watch?v=fwgGfefhHlg">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/fwgGfefhHlg/hqdefault.jpg" alt="Bolgarkadan Motopila yasash | Electric chain saw adapter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                🔧 Muhandislik
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Bolgarkadan Motopila yasash | Electric chain saw adapter
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Burchakli silliqlash mashinasi (bolgarka) asosida zanjirli arra nasadkasini o'rnatish va amaliy xavfsizlik prinsiplari.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=fwgGfefhHlg" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Karta: Yangi Loyiha taqdimoti: Ilmiy g'oyalar va muhandislik namunalari -->
+                <div class="video-card bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-rose-500/80 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col group" data-cat="mechanisms" data-vid="mpL4ogksHxw" data-title="Yangi Loyiha taqdimoti: Ilmiy g'oyalar va muhandislik namunalari" data-desc="Jaloliddin Mo'minov tomonidan ishlab chiqilayotgan yangi 3D muhandislik ishlanmalari va kelgusi videolar anonsi." data-badge="📐 3D Loyihalar" data-yt="https://www.youtube.com/watch?v=mpL4ogksHxw">
+                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950 cursor-pointer video-thumb-action">
+                        <img src="https://i.ytimg.com/vi/mpL4ogksHxw/hqdefault.jpg" alt="Yangi Loyiha taqdimoti: Ilmiy g'oyalar va muhandislik namunalari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF0000] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/85 text-rose-300 border border-slate-700/60 backdrop-blur-md shadow-sm">
+                                📐 3D Loyihalar
+                            </span>
+                        </div>
+                        <div class="absolute bottom-2.5 right-2.5">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-black/80 text-white font-mono">
+                                1080p HD
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug cursor-pointer video-title-action">
+                                Yangi Loyiha taqdimoti: Ilmiy g'oyalar va muhandislik namunalari
+                            </h3>
+                            <p class="text-slate-400 text-xs mt-2 line-clamp-3 leading-relaxed">
+                                Jaloliddin Mo'minov tomonidan ishlab chiqilayotgan yangi 3D muhandislik ishlanmalari va kelgusi videolar anonsi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                            <button type="button" class="video-play-btn inline-flex items-center space-x-1.5 text-xs font-bold text-rose-400 hover:text-rose-300 transition">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Saytda ko'rish</span>
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=mpL4ogksHxw" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition flex items-center">
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             </a>
                         </div>
                     </div>
@@ -544,6 +961,77 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+    
+        // 2. Video Galereyasi va Pleer Mantiqi
+        function setupVideoGallery() {
+            const mainVideoFrame = document.getElementById('mainVideoFrame');
+            const mainVideoBadge = document.getElementById('mainVideoBadge');
+            const mainVideoTitle = document.getElementById('mainVideoTitle');
+            const mainVideoDesc = document.getElementById('mainVideoDesc');
+            const mainVideoYoutubeLink = document.getElementById('mainVideoYoutubeLink');
+            const playerSection = document.getElementById('playerSection');
+
+            // Video kartalarini bosganda pleerga uzatish
+            document.querySelectorAll('.video-card').forEach(card => {
+                const vid = card.getAttribute('data-vid');
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-desc');
+                const badge = card.getAttribute('data-badge');
+                const yt = card.getAttribute('data-yt');
+
+                function playThisVideo() {
+                    if (mainVideoFrame) {
+                        mainVideoFrame.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&rel=0';
+                    }
+                    if (mainVideoTitle) mainVideoTitle.textContent = title;
+                    if (mainVideoDesc) mainVideoDesc.textContent = desc;
+                    if (mainVideoBadge) mainVideoBadge.textContent = badge;
+                    if (mainVideoYoutubeLink) mainVideoYoutubeLink.href = yt;
+
+                    // Pleerga silliq siljish
+                    if (playerSection) {
+                        playerSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+
+                const thumbAction = card.querySelector('.video-thumb-action');
+                if (thumbAction) thumbAction.addEventListener('click', playThisVideo);
+
+                const titleAction = card.querySelector('.video-title-action');
+                if (titleAction) titleAction.addEventListener('click', playThisVideo);
+
+                const playBtn = card.querySelector('.video-play-btn');
+                if (playBtn) playBtn.addEventListener('click', playThisVideo);
+            });
+
+            // Kategoriya Filtrlari
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const videoCards = document.querySelectorAll('.video-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-rose-600', 'text-white', 'active');
+                        b.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+                    });
+                    btn.classList.add('bg-rose-600', 'text-white', 'active');
+                    btn.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+
+                    const filter = btn.getAttribute('data-filter');
+                    videoCards.forEach(card => {
+                        const cat = card.getAttribute('data-cat');
+                        if (filter === 'all' || cat === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        setupVideoGallery();
+
     </script>
 </body>
 </html>

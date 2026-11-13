@@ -43,75 +43,197 @@ function resetUserCount(userId) {
 }
 
 // -----------------------------------------------------------------
-// Anti-Spam Himoya Mexanizmi: Reklama botlari va fishingni bloklash
+// Anti-Spam Himoya Mexanizmi: Barcha "teshik"larni yopuvchi ko'p bosqichli filtr
 // -----------------------------------------------------------------
+
+// Lotin va Kirill o'xshash harflarini normallashtirish (homoglyph bypass)
+function normalizeSpamText(str) {
+    if (!str) return { raw: "", norm: "", collapsed: "" };
+    let raw = str.toLowerCase();
+    // Ko'rinmas va maxsus zero-width belgilarni tozalash
+    raw = raw.replace(/[\u200B-\u200D\uFEFF\u00AD\u2060\u200E\u200F]/g, "");
+    
+    const latToCyr = {
+        'a': 'а', 'c': 'с', 'e': 'е', 'k': 'к', 'o': 'о',
+        'p': 'р', 'x': 'х', 'y': 'у', 'h': 'н', 'm': 'м', 't': 'т'
+    };
+    let norm = "";
+    for (let i = 0; i < raw.length; i++) {
+        norm += latToCyr[raw[i]] || raw[i];
+    }
+    // Bo'shliqlar, nuqta, chiziqcha va maxsus belgilardan tozalangan siqiq shakli
+    const collapsed = norm.replace(/[\s\.\-_–—*#•:;,~`\/\\!?\(\)\[\]\{\}]+/g, "");
+    return { raw, norm, collapsed };
+}
+
+// Xabar ichidagi barcha havolalarni (ochiq matn + entities giperhavolalari) yig'ish
+function extractAllLinks(msg) {
+    const urls = [];
+    const text = ((msg.text || "") + " " + (msg.caption || ""));
+
+    // 1. Ochiq matndagi havolalar (http, https, t.me, tg://)
+    const regex = /(https?:\/\/[^\s]+|t\.me\/[^\s]+|telegram\.me\/[^\s]+|tg:\/\/[^\s]+)/gi;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+        urls.push(match[1]);
+    }
+
+    // 2. Rich text entities (ko'rinmas giperhavolalar text_link va mentions)
+    const allEntities = [...(msg.entities || []), ...(msg.caption_entities || [])];
+    for (const ent of allEntities) {
+        if (ent.type === "text_link" && ent.url) {
+            urls.push(ent.url);
+        } else if (ent.type === "url") {
+            const rawUrl = text.substring(ent.offset, ent.offset + ent.length);
+            if (rawUrl) urls.push(rawUrl);
+        } else if (ent.type === "mention") {
+            const mention = text.substring(ent.offset, ent.offset + ent.length);
+            if (mention) urls.push(mention);
+        }
+    }
+    return urls;
+}
+
 function isSpamMessage(msg) {
     if (!msg) return { isSpam: false };
 
-    const text = (msg.text || msg.caption || "").toLowerCase();
-
-    // 1. Reklama xabarlaridagi inline tugmalar (Запустить Бот, Перейдите va h.k.)
-    if (msg.reply_markup && msg.reply_markup.inline_keyboard && msg.reply_markup.inline_keyboard.length > 0) {
-        return { isSpam: true, reason: "inline_keyboard_promo" };
+    // 1. Inline bot orqali yuborilgan xabarlar (via_bot)
+    if (msg.via_bot) {
+        return { isSpam: true, reason: `via_inline_bot: @${msg.via_bot.username || "unknown"}` };
     }
 
-    // 2. Kanallardan yoki boshqa botlardan forward qilingan reklama
-    if (msg.forward_from_chat || msg.forward_from) {
-        if (text.includes("t.me/") || text.includes("http") || text.includes("бот") || text.includes("bot") || text.includes("канал")) {
-            return { isSpam: true, reason: "forwarded_ad" };
+    // 2. Reklama tugmalari (inline keyboard / reply markup)
+    if (msg.reply_markup && (msg.reply_markup.inline_keyboard || msg.reply_markup.keyboard)) {
+        return { isSpam: true, reason: "has_reply_markup" };
+    }
+
+    // 3. Forward qilingan xabarlar (Kanallar, guruhlar yoki boshqa botlardan)
+    // Telegram Bot API 7.0+ (forward_origin) va eski formatlarni to'liq qamrab oladi
+    if (msg.forward_from_chat || msg.forward_from || msg.forward_origin || msg.forward_sender_name) {
+        if (msg.forward_from_chat && msg.forward_from_chat.type === "channel") {
+            return { isSpam: true, reason: "forwarded_from_channel" };
+        }
+        if (msg.forward_origin && (msg.forward_origin.type === "channel" || msg.forward_origin.type === "chat")) {
+            return { isSpam: true, reason: "forward_origin_channel" };
+        }
+        if (msg.forward_from && msg.forward_from.is_bot) {
+            return { isSpam: true, reason: "forwarded_from_bot" };
+        }
+        if (msg.forward_origin && msg.forward_origin.sender_user && msg.forward_origin.sender_user.is_bot) {
+            return { isSpam: true, reason: "forward_origin_bot" };
+        }
+        const forwardLinks = extractAllLinks(msg);
+        if (forwardLinks.length > 0) {
+            return { isSpam: true, reason: "forwarded_with_link" };
         }
     }
 
-    // 3. Spammer va fishing kalit so'zlari (Search bot, probiv, casino, crypto spam)
-    const spamKeywords = [
-        "поисковый бот",
-        "запустить бот",
-        "глаз бога",
-        "поиск по номеру",
-        "поиск по фото",
-        "поиск по авто",
-        "пробив",
-        "деанон",
-        "слив фото",
-        "взлом",
-        "казино",
-        "1xbet",
-        "melbet",
-        "слоты",
-        "заработок онлайн",
-        "лёгкий заработок",
-        "заработок в интернете",
-        "инвестиции от",
-        "пассивный доход",
-        "криптобот",
-        "crypto bot",
-        "trading signals",
-        "pump and dump",
-        "airdrop",
-        "darknet",
-        "вип канал",
-        "vip канал",
-        "переходи по ссылке",
-        "подпишись на наш",
-        "девочки 18+",
-        "интим знакомства",
-        "голые девушки"
-    ];
+    // 4. Barcha havolalarni (t.me kanallar, guruhlar, qisqartirilgan havolalar) tekshirish
+    const links = extractAllLinks(msg);
+    for (const url of links) {
+        const u = url.toLowerCase();
 
-    for (const kw of spamKeywords) {
-        if (text.includes(kw)) {
-            return { isSpam: true, reason: `keyword: ${kw}` };
+        // Ruxsat berilgan rasmiy xavfsiz havolalar
+        const isSafe = u.includes("jmapro.uz") || 
+                       u.includes("t.me/jaloliddinmuminov") || 
+                       u.includes("t.me/jmapro_bot") ||
+                       u.includes("youtube.com/@jaloliddinmuminov") ||
+                       u.includes("youtu.be");
+
+        if (!isSafe) {
+            // Begona Telegram havolalari: har qanday begona kanal, guruh, bot yoki private invite (t.me/..., t.me/+...)
+            if (/t\.me\/|telegram\.me\/|tg:\/\/join|tg:\/\/resolve/i.test(u)) {
+                return { isSpam: true, reason: `unsolicited_telegram_link: ${url}` };
+            }
+
+            // Qisqartirilgan fishing havolalari
+            const shorteners = [
+                "bit.ly", "tinyurl.com", "clck.ru", "cutt.ly", "is.gd", 
+                "vk.cc", "rb.gy", "goo.su", "qps.ru", "v.gd", "t.co", "ow.ly"
+            ];
+            for (const sh of shorteners) {
+                if (u.includes(sh)) {
+                    return { isSpam: true, reason: `url_shortener: ${url}` };
+                }
+            }
+
+            // Kazino, kripto, pul tikish va moliyaviy fishing domenlari
+            const badDomains = [
+                "1xbet", "melbet", "mostbet", "casino", "aviator", "stake", 
+                "slot", "vulkan", "crypto", "binance", "bybit", "airdrop", 
+                "invest", "bonus", "dating", "sex", "porn", "intim"
+            ];
+            for (const bd of badDomains) {
+                if (u.includes(bd)) {
+                    return { isSpam: true, reason: `spam_domain: ${url}` };
+                }
+            }
         }
     }
 
-    // 4. Boshqa botlarga taklif havolalari (t.me/...bot yoki @...bot)
-    if (/t\.me\/[a-zA-Z0-9_]+bot\b/i.test(text) || /tg:\/\/resolve\?domain=[a-zA-Z0-9_]+bot\b/i.test(text)) {
-        return { isSpam: true, reason: "bot_invite_link" };
+    // 5. Xavfli fayllar (APK, EXE, SCR, BAT, VBS, JS)
+    if (msg.document) {
+        const fileName = (msg.document.file_name || "").toLowerCase();
+        if (/\.(apk|exe|bat|cmd|scr|vbs|js|msi|pif|reg|ps1|sh)$/i.test(fileName)) {
+            return { isSpam: true, reason: `dangerous_file: ${fileName}` };
+        }
     }
 
-    // 5. Yopiq kanal/guruhlarga qo'shilish havolalari (t.me/+... yoki t.me/joinchat/...)
-    if (/t\.me\/\+[a-zA-Z0-9_-]+/i.test(text) || /t\.me\/joinchat\//i.test(text)) {
-        return { isSpam: true, reason: "private_invite_link" };
+    // 6. Spam media turlari (Kontakt kartasi, so'rovnoma, o'yin, hikoyalar)
+    if (msg.contact || msg.poll || msg.game || msg.story) {
+        return { isSpam: true, reason: "unsolicited_media_type" };
+    }
+
+    // 7. Matn va kalit so'zlar bo'yicha chuqur semantik tekshiruv
+    const combinedText = ((msg.text || "") + " " + (msg.caption || "")).trim();
+    if (combinedText) {
+        const { raw, norm, collapsed } = normalizeSpamText(combinedText);
+
+        const spamPatterns = [
+            // Qidiruv / Probiv / Osint
+            "поисковый бот", "поисковыйбот", "глаз бога", "глазбога", "поиск по номеру",
+            "поиск по фото", "поиск по авто", "пробив", "деанон", "слив фото", "слив данных",
+            "взлом", "база данных", "найти человека", "поиск данных", "поиск информации", "запустить бот",
+
+            // Wildberries / Ozon / Ish / Podrabotka
+            "wildberries", "вайлдберриз", "вайлдбериз", "ozon", "озон", "мегамаркет",
+            "удаленная работа", "удалённая работа", "работа на дому", "подработка", "подработк",
+            "ставьте лайки", "ставить лайки", "оплата за лайки", "оплата за отзывы",
+            "отзывы за деньги", "выкуп товара", "менеджер маркетплейса", "заработок",
+            "заработать", "заработай", "доход от", "лёгкий заработок", "легкий заработок",
+            "вакансия на удаленке", "вакансия", "пассивный доход",
+
+            // Kripto / Treyding / Investitsiya
+            "криптовалюта", "криптобот", "crypto bot", "trading signals", "pump and dump",
+            "airdrop", "раздача usdt", "ноткоин", "blum", "hamster kombat", "арбитраж p2p",
+            "арбитраж", "сигналы", "бинанс", "bybit", "binance", "инвестиц", "инвестируй",
+
+            // Kazino / Qimor / Stavka
+            "казино", "1xbet", "melbet", "mostbet", "слоты", "авиатор", "aviator",
+            "букмекер", "ставки на спорт", "ставк", "договорные матчи", "выигрыш",
+
+            // 18+ / Intim
+            "девочки 18+", "интим знакомства", "голые девушки", "слив приват",
+            "знакомства 18+", "порно", "проститутки", "секс знакомства",
+
+            // Reklama / Nakrutka
+            "накрутка подписчиков", "накрутка", "раскрутка каналов", "раскрутка",
+            "рассылка сообщений", "рассылка", "купить рекламу", "вип канал", "vip канал",
+            "переходи по ссылке", "подпишись на", "подпишитесь на", "вступай в",
+            "вступить в группу", "бесплатный бот",
+
+            // O'zbekcha moliyaviy va spam iboralar
+            "kunlik daromad", "onlayn daromad", "uyda o'tirib", "sarmoyasiz daromad",
+            "karta raqam", "payme pul", "click pul", "kanalimizga a'zo", "kanalga obuna",
+            "obunachi qo'shish", "nakrutka", "pul ishlash", "daromad topish", "sarmoyasiz pul"
+        ];
+
+        for (const pattern of spamPatterns) {
+            const pNorm = normalizeSpamText(pattern);
+            if (raw.includes(pattern) || norm.includes(pNorm.norm) || collapsed.includes(pNorm.collapsed)) {
+                return { isSpam: true, reason: `keyword: ${pattern}` };
+            }
+        }
     }
 
     return { isSpam: false };
@@ -166,6 +288,12 @@ module.exports = async (req, res) => {
         const msg = update.message;
         if (!msg) {
             return res.status(200).json({ ok: true });
+        }
+
+        // Faqat shaxsiy (1-ga-1) chatlardan xabarlarni qabul qilamiz!
+        // Guruhlar yoki kanallardan botga kelgan har qanday xabarni e'tiborsiz qoldiramiz
+        if (msg.chat && msg.chat.type && msg.chat.type !== "private") {
+            return res.status(200).json({ ok: true, ignored: "non_private_chat" });
         }
 
         const chatId = String(msg.chat.id);

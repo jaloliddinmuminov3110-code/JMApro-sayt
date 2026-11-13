@@ -1215,6 +1215,12 @@
                             <textarea id="message" name="message" rows="4" required placeholder="Murojaatingiz mazmunini yozing..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition"></textarea>
                         </div>
 
+                        <!-- Honeypot: Spam-botlar uchun ko'rinmas qopqon (Inson ko'ziga ko'rinmaydi) -->
+                        <div style="display:none !important; position:absolute; left:-9999px;" aria-hidden="true">
+                            <label for="contact_hp_code">Do not fill this field</label>
+                            <input type="text" id="contact_hp_code" name="contact_hp_code" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <div id="formStatus" class="hidden text-sm p-4 rounded-xl"></div>
 
                         <button type="submit" id="submitBtn" class="w-full py-3.5 px-6 text-white font-bold bg-brand-700 hover:bg-brand-800 rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2">
@@ -1415,13 +1421,11 @@
             });
         });
 
-        // 5. Aloqa formasi (Telegram Bot integratsiyasi)
+        // 5. Aloqa formasi (Xavfsiz Serverless API va Honeypot integratsiyasi)
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');
-
-        const TELEGRAM_BOT_TOKEN = "9039848468:AAEx2BXB2VrWELvm4K71JfQffBFPbhicOXY";
-        const TELEGRAM_CHAT_ID = "6471413331";
+        const formLoadTimestamp = Date.now();
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -1430,6 +1434,9 @@
             const contactInfo = document.getElementById('contactInfo').value.trim();
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value.trim();
+            const hpElem = document.getElementById('contact_hp_code');
+            const hpField = hpElem ? hpElem.value : '';
+            const duration = Math.round((Date.now() - formLoadTimestamp) / 1000);
 
             if (!fullName || !contactInfo || !message) {
                 showStatus("Iltimos, barcha majburiy maydonlarni to'ldiring.", "error");
@@ -1447,35 +1454,26 @@
             `;
 
             try {
-                const now = new Date().toLocaleString("uz-UZ", { timeZone: "Asia/Tashkent" });
-                const telegramText = 
-`🔔 <b>JMApro.uz saytidan yangi murojaat!</b>
-
-👤 <b>F.I.Sh:</b> ${fullName}
-📞 <b>Aloqa:</b> ${contactInfo}
-📌 <b>Mavzu:</b> ${subject}
-💬 <b>Xabar:</b>
-${message}
-
-🕒 <i>Vaqt: ${now}</i>`;
-
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: telegramText,
-                        parse_mode: 'HTML'
+                        fullName,
+                        contactInfo,
+                        subject,
+                        message,
+                        hpField,
+                        duration
                     })
                 });
 
                 const result = await response.json();
 
                 if (result.ok) {
-                    showStatus("Tashakkur, " + fullName + "! Murojaatingiz to'g'ridan-to'g'ri Telegramimizga qabul qilindi. Tez orada siz bilan bog'lanamiz.", "success");
+                    showStatus("Tashakkur, " + fullName + "! Murojaatingiz to'g'ridan-to'g'ri qabul qilindi. Tez orada siz bilan bog'lanamiz.", "success");
                     contactForm.reset();
                 } else {
-                    showStatus("Xatolik yuz berdi. Iltimos, to'g'ridan-to'g'ri @JMApro_bot orqali yozing.", "error");
+                    showStatus(result.error || "Xatolik yuz berdi. Iltimos, to'g'ridan-to'g'ri @JMApro_bot orqali yozing.", "error");
                 }
             } catch (err) {
                 showStatus("Aloqa xatosi. Iltimos, to'g'ridan-to'g'ri Telegram (@JMApro_bot) orqali bog'laning.", "error");

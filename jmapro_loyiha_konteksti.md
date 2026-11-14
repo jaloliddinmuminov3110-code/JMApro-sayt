@@ -9,7 +9,7 @@
   * Magistratura: Kimyo sanoati va qurilish materiallari korxonalarining mashinalari hamda apparatlari (pedagog-tadqiqotchi)
   * Bakalavriat: Texnologik mashinalar va jihozlar (muhandis-mexanik)
 * **Aloqa:** `JaloliddinMuminov3110@gmail.com` | Telegram: `@jaloliddinMuminov` | Rasmiy Telegram Bot: `@JMApro_bot` | YouTube: `Jaloliddin Mo'minov - Ilmiy kanal` (`@jaloliddinMuminov_yt`)
-* **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari: issiqlik almashinish jarayonlari va havoli sovitish apparatlari - HSA).
+* **Yo'nalish:** Muhandislik va sanoat texnologiyalari (kimyoviy texnologiya jarayonlari va apparatlari: issiqlik almashinish jarayonlari va havoli sovitish apparatlari).
 * **Loyihaning Katta Konsepsiyasi:** `JMApro.uz` — shunchaki shaxsiy portfolio yoki vizitka sayt emas, balki olimlar, muhandislar, talabalar va tadqiqotchilar uchun mo'ljallangan **ko'p tarmoqli raqamli markaz (Hub)** va ilmiy-amaliy ekotizimdir.
 
 ## 2. Joriy Holat va Infratuzilma (08.11.2026)
@@ -29,8 +29,8 @@
 Tizim mantiqiy bog'langan, ammo texnik jihatdan mustaqil bo'lgan quyidagi 4 ta asosiy blokdan iborat:
 
 ### 3.1. Asosiy Portal (Main Portal & Portfolio)
-* **Bosh sahifa (`index.html`):** Shaxsiy taqdimot ("PhD | Tadqiqotchi | Muhandis"), 3D muhandislik portret kartasi, ko'rsatkichlar, qisqa tarjimai hol, tezkor sarhisoblar va interaktiv HSA kalkulyatori.
-* **Ilmiy Faoliyat (`research.html`):** Xalqaro ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate), 3 ta asosiy tadqiqot yo'nalishi (HSA, issiqlik tizimlari, CFD tahlil) hamda filtrli to'liq nashrlar bazasi (Scopus, OAK, DGU dasturlari).
+* **Bosh sahifa (`index.html`):** Shaxsiy taqdimot ("PhD | Tadqiqotchi | Muhandis"), 3D muhandislik portret kartasi, ko'rsatkichlar, qisqa tarjimai hol, tezkor sarhisoblar va interaktiv muhandislik kalkulyatori.
+* **Ilmiy Faoliyat (`research.html`):** Xalqaro ilmiy profillar (Google Scholar, Scopus, WoS, ORCID, ResearchGate), 3 ta asosiy tadqiqot yo'nalishi (havoli sovitish apparatlari, issiqlik tizimlari, CFD tahlil) hamda filtrli to'liq nashrlar bazasi (Scopus, OAK, DGU dasturlari).
 * **Ta'lim va Resurslar (`teaching.html`):** TMJ yo'nalishi bo'yicha o'qitiladigan fanlar, ma'ruzalar matni, laboratoriya ko'rsatmalari, kurs loyihalari va slaydlar bazasi hamda ilmiy rahbarlik.
 * **YouTube Ilmiy Kanal (`channel.html`):** "Jaloliddin Mo'minov - Ilmiy kanal" (@jaloliddinMuminov_yt), 3D animatsiyalar, video to'plamlar va sanoat korxonalari uchun 3D vizualizatsiya xizmatlari.
 
@@ -104,7 +104,7 @@ Saytni yangilash va yuritish tartibi:
 * [x] **YouTube Ilmiy Kanal videolari to'liq integratsiya qilindi (`/channel`, `/teaching` va `index.html`):** Muallifning rasmiy kanalidagi barcha 11 ta 3D muhandislik videolari (Plastinkali issiqlik almashish apparati, Sharli ventil, Tutash idishlar, Jag'li/Konusli/Rotorli maydalagichlar, 99 xil mexanizmlar, Perforator, Beton sinovi, Bolgarka nasadka va Yangi loyiha) `/channel` sahifasida dinamik interaktiv pleer va 3 ta mavzuli filtr bilan joylashtirildi. Shuningdek `teaching.html` ga TMJ talabalari uchun 3D video qo'llanmalar bloki, hamda **bosh sahifaning You Tube uchun ajratilgan 6-bo'limiga (`#channel`)** asosiy interaktiv spotlight pleer va 4 ta saralangan video kartalari (bosilganda shu pleerda ochiladigan qilib) to'liq joylashtirildi.
 * [x] **Rasmiy Xalqaro Ilmiy Bazalar Profillari Integratsiya qilindi:** Saytning bosh sahifasi (`index.html`), Ilmiy faoliyat sahifasi (`research.html`) hamda barcha sahifalar footer qismlariga muallifning 5 ta asosiy akademik bazalardagi rasmiy profillari (Google Scholar `mwDmf6oAAAAJ`, Scopus `58744843900`, Web of Science `KHD-3312-2024`, ORCID `0000-0002-2332-2550`, ResearchGate `Jalolidin-Muminov`) interaktiv va to'liq tasdiqlangan identifikatorlar ko'rinishida biriktirildi.
 * [x] **Jonli Akademik Metrikalar Paneli va API (`/api/academic-stats`):** Xalqaro ilmiy identifikatorlar ostida har bir ilmiy baza uchun alohida to'rtburchak kartochkalar yaratildi: 1) Google Scholar (123 iqtibos, h: 7, i10: 5), 2) Scopus Elsevier (18 iqtibos, h: 3, 6 hujjat), 3) Web of Science Clarivate (20 iqtibos, H: 3, 3 nashr), 4) ResearchGate (36 iqtibos, h: 4, 24.8 RI score), 5) ORCID ID (0000-0002-2332-2550, Scopus & WoS ga to'liq bog'langan). ORCID qatorning eng oxiriga joylashtirildi va barcha sonlar CountUp animatsiyasi bilan ta'minlandi.
-* [x] Interaktiv Havoli Sovitish Apparati (HSA) Kalkulyatori yaratildi.
+* [x] Interaktiv Havoli Sovitish Apparati Kalkulyatori yaratildi.
 * [ ] **Navbatdagi 1-vazifa:** Issiqlik almashinish jarayonining interaktiv veb-simulyatori (Vizual laboratoriya demo maketi).
 * [ ] **Navbatdagi 2-vazifa:** Zamonaviy Infografik CV sahifasini ishlab chiqish.
 * [ ] **Kelgusi 3-vazifa:** `journal.jmapro.uz` ilmiy jurnal loyihasi infratuzilmasini tayyorlash.
@@ -113,7 +113,7 @@ Saytni yangilash va yuritish tartibi:
 * **Konsepsiya:** Standart quruq matnli CV emas, balki markazda muallif portreti joylashgan, atrofida esa shoxlangan zamonaviy infografik vizual bloklar:
   * 🎓 **Akademik unvonlar:** PhD (Neft-gaz kimyosi va texnologiyasi, jarayon va apparatlar), Magistratura, Bakalavriat.
   * 🔬 **Ilmiy natijalar:** Scopus, Acta Polytechnica, ARPN xalqaro maqolalari, DGU dasturlari, iqtiboslar ko'rsatkichi.
-  * ⚙️ **Muhandislik yo'nalishlari:** Issiqlik almashinish tizimlari, havoli sovitish apparatlari (HSA), CFD tahlil va aerodinamika.
+  * ⚙️ **Muhandislik yo'nalishlari:** Issiqlik almashinish tizimlari, havoli sovitish apparatlari, CFD tahlil va aerodinamika.
   * 💻 **Dasturiy kompetensiyalar:** Kompas 3D, SolidWorks, AutoCAD, Blender 3D, Ansys Fluent, Python, Colab.
   * 👨‍🏫 **Pedagogik faoliyat:** TMJ kafedrasi o'qituvchisi, darsliklar va ilmiy rahbarlik.
 * **Format:** Sayt ichida alohida interaktiv infografik sahifa/modal hamda yuklab olish uchun yuqori sifatli A4 PDF formatida tayyorlanadi.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- 1. Bosh sahifa (Portfolio, Hisoblagich, Aloqa) -->
+    <url>
+        <loc>https://jmapro.uz/</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- 2. Ilmiy faoliyat (Maqolalar, Scopus, Web of Science, DGU) -->
+    <url>
+        <loc>https://jmapro.uz/research</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 3. Ilmiy kanal (YouTube, 3D animatsiyalar, CFD modellari) -->
+    <url>
+        <loc>https://jmapro.uz/channel</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 4. Ta'lim resurslari (Ma'ruzalar, Kurs loyihalari, Laboratoriya) -->
+    <url>
+        <loc>https://jmapro.uz/teaching</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 5. JMA Alifbo (Lotin-Kirill onlayn konverteri & MS Office) -->
+    <url>
+        <loc>https://jmapro.uz/alifbo</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>

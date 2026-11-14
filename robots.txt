@@ -1,0 +1,8 @@
+# robots.txt for https://jmapro.uz
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host and Sitemap
+Host: https://jmapro.uz
+Sitemap: https://jmapro.uz/sitemap.xml

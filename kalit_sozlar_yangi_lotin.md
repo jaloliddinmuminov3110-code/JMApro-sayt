@@ -25,8 +25,12 @@
 - jma.uz
 - Jaloliddin Möminov rasmiy sayti
 - Jaloliddin Möminov ilmiy portali
-- FarPI Jaloliddin Möminov
-- Farğona politexnika instituti Jaloliddin Möminov
+- FDTU Jaloliddin Möminov
+- TDTU Jaloliddin Möminov
+- Farğona davlat texnika universiteti Jaloliddin Möminov
+- Toşkent davlat texnika universiteti Jaloliddin Möminov
+- FDTU
+- TDTU
 - Texnika fanlari böyiça falsafa doktori (PhD) Möminov
 - Özbekiston yoş olimlari muhandislik
 - Ilmiy tadqiqotçi Jaloliddin Möminov
@@ -94,7 +98,10 @@
 - Jarayonlar va apparatlar maʼruzalar matni
 - Issiqlik texnikasi fanidan öquv qöllanmalar
 - Issiqlik almaşiniş qurilmalari kurs loyihasi
-- FarPI kimyo-texnologiya öquv materiallari
+- FDTU kimyo-texnologiya öquv materiallari
+- TDTU öquv materiallari
+- Farğona davlat texnika universiteti öquv resurslari
+- Toşkent davlat texnika universiteti maʼruzalari
 - Sanoat apparatlari laboratoriya işlari
 - Talabalar uçun muhandislik qöllanmalari
 - Öquv-uslubiy majmualar issiqlik texnikasi
